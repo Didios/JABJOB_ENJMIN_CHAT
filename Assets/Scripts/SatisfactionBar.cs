@@ -13,6 +13,12 @@ public class SatisfactionBar : MonoBehaviour
     public TextMeshProUGUI percent;
     private int percentGood = 0;
 
+    public bool finish
+    {
+        get { return percentGood == 100 || nbrObjBreak == nbrObjToBreak; }
+        private set { }
+    }
+
     private void Start()
     {
         sizeMax = transform.localScale.x;

@@ -15,8 +15,13 @@ public class OwnerHand : MonoBehaviour
     public Transform tempTrans;
 
     // other
-    private float pressCounter = 0;
+    private float pressCounter = -1;
+    public int escapeCount = 30;
     public float m_Thrust = 10f;
+
+    // info
+    public bool finish = false;
+    public bool activate = true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,18 +33,20 @@ public class OwnerHand : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.transform.tag == "Player")
         {
             playerGrabbed = true;
             Debug.Log("[OwnerHand]\n owner grabbed Player");
             //colliderDetectionStatus = true;
             //If the GameObject's name matches the one you suggest, output this message in the console
         }
+        else { Debug.Log("[OwnerHand]\n owner touch something"); }
     }
 
     void ChangeParent()
     {
         player.parent = handPosition;
+        player.position = handPosition.position;
         playerRigidBody.constraints = RigidbodyConstraints.FreezeAll;
         playerController.activate = false;
     }
@@ -58,25 +65,46 @@ public class OwnerHand : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (playerGrabbed)
+        if (activate)
         {
-            ChangeParent();
-
-            if (Input.GetButton("Jump"))
+            if (playerGrabbed)
             {
-                pressCounter++;
-                Debug.Log(pressCounter);
-            }
+                ChangeParent();
 
-            if (pressCounter > 0) { pressCounter -= Time.deltaTime * 5f; }
+                if (pressCounter == -1) { pressCounter = escapeCount; }
 
-            if (pressCounter > 15)
-            {
-                playerGrabbed = false;
-                RevertParent();
-                Debug.Log("[OwnerHand]\n Player escaped from Owner");
-                pressCounter = 0;
+                if (Input.GetButton("Jump"))
+                {
+                    pressCounter++;
+                    Debug.Log($"[OwnerHand]\n pressCounter : {pressCounter}");
+                }
+
+                pressCounter -= Time.deltaTime * 5f;
+
+                if (pressCounter < 0)
+                {
+                    playerGrabbed = false;
+                    RevertParent();
+                    pressCounter = -1;
+                    finish = true;
+
+                    Debug.Log("[OwnerHand]\n Player grab by the Owner");
+                }
+
+                if (pressCounter > escapeCount)
+                {
+                    playerGrabbed = false;
+                    RevertParent();
+                    pressCounter = -1;
+
+                    Debug.Log("[OwnerHand]\n Player escaped from Owner");
+                }
             }
+        }
+        else if (!playerController.activate)
+        {
+            playerGrabbed = false;
+            finish = false;
         }
     }
 }

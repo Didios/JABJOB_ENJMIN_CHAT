@@ -20,6 +20,8 @@ public class PathFinding : MonoBehaviour
     // message
     public TextMeshProUGUI message;
 
+    public bool activate = true;
+
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -49,43 +51,62 @@ public class PathFinding : MonoBehaviour
 
     private void GotoNextPoint()
     {
-        // Returns if no points have been set up
-        if (points.Length == 0)
-            return;
+        if (activate)
+        {
+            // Returns if no points have been set up
+            if (points.Length == 0)
+                return;
 
-        // Set the agent to go to the currently selected destination.
-        agent.destination = points[indexDestPoint].position;
+            // Set the agent to go to the currently selected destination.
+            agent.destination = points[indexDestPoint].position;
 
-        // Choose the next point in the array as the destination,
-        // cycling to the start if necessary.
-        indexDestPoint = (indexDestPoint + 1) % points.Length;
+            // Choose the next point in the array as the destination,
+            // cycling to the start if necessary.
+            indexDestPoint = (indexDestPoint + 1) % points.Length;
+        }
     }
 
     // Update is called once per frame
     public void Update()
     {
-        // Choose the next destination point when the agent gets
-        // close to the current one.
-        if (colliderDetectionStatus)
+        if (activate)
         {
-            if (stunnedTime > waitingTime)
+            // Choose the next destination point when the agent gets
+            // close to the current one.
+            if (colliderDetectionStatus)
             {
-                // make the agent moveable
-                agentRigidbody.constraints = RigidbodyConstraints.None;
-                agent.isStopped = false;
+                if (stunnedTime > waitingTime)
+                {
+                    // make the agent moveable
+                    agentRigidbody.constraints = RigidbodyConstraints.None;
+                    agent.isStopped = false;
 
-                // reset composant Timer
-                colliderDetectionStatus = false;
-                stunnedTime = 0;
+                    // reset composant Timer
+                    colliderDetectionStatus = false;
+                    stunnedTime = 0;
 
-                // delete message for player
-                message.text = "";
+                    // delete message for player
+                    message.text = "";
+                }
+                else { stunnedTime += Time.deltaTime; }
             }
-            else { stunnedTime += Time.deltaTime; }
-        } 
-        else
+            else
+            {
+                if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
+            }
+        }
+        
+        if (!activate && !agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
+            // stop the agent
+            agentRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            agent.isStopped = true;
+        }
+        else if (agentRigidbody.constraints == RigidbodyConstraints.FreezeAll)
+        {
+            // destop the agent
+            agentRigidbody.constraints = RigidbodyConstraints.None;
+            agent.isStopped = false;
         }
     }
 

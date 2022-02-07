@@ -50,6 +50,12 @@ public class FPSController : MonoBehaviour
     {
         if (activate)
         {
+            if (Cursor.visible)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
             // We are grounded, so recalculate move direction based on axes
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
@@ -109,6 +115,11 @@ public class FPSController : MonoBehaviour
                 //transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
                 transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
             }
+        }
+        else if (!Cursor.visible)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
