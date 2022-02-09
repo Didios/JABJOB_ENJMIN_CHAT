@@ -20,7 +20,7 @@ public class PathFinding : MonoBehaviour
     // message
     public TextMeshProUGUI message;
 
-    public bool activate = true;
+    public bool activate = false;
 
     public void Start()
     {

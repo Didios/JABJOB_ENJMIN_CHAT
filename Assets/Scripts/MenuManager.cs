@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -16,9 +17,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private OwnerHand ownerHand;
 
-    [Header("Other informations")]
+    [Header("Canvas informations")]
     // scoreboard
     public SatisfactionBar scorebar;
+    public TextMeshProUGUI levelText;
 
     // Menus info
     public Transform canvasMenu;
@@ -26,6 +28,7 @@ public class MenuManager : MonoBehaviour
 
     public Vector3 posUse; 
     public Vector3 posStock;
+    public Vector3 posCameraMenu;
 
     // infos
     private bool inGame = false;
@@ -39,6 +42,7 @@ public class MenuManager : MonoBehaviour
 
         ownerPathFinding = owner.GetComponent<PathFinding>();
 
+        levelText.text = "Start a new Game !";
         Menu();
     }
 
@@ -48,12 +52,14 @@ public class MenuManager : MonoBehaviour
         {
             if (ownerHand.finish) // lose case
             {
+                levelText.text = "You Lose";
                 Menu();
             }
             else if (scorebar.finish) // win case
             {
                 level += 1;
 
+                levelText.text = "You Win";
                 Menu();
             }
         }
@@ -77,12 +83,17 @@ public class MenuManager : MonoBehaviour
 
     public void Menu()
     {
+        // arrêt mécanique de jeu
+        ownerPathFinding.activate = false;
+        ownerHand.activate = false;
+
         playerRigidbody.useGravity = false;
         playerController.activate = false;
         playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
-        ownerPathFinding.activate = false;
-        ownerHand.activate = false;
+        // repositionnement menu
+        player.position = posCameraMenu;
+        player.rotation = new Quaternion();
 
         canvasInGame.position = posStock;
         canvasMenu.position = posUse;
