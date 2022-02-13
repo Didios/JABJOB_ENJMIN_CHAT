@@ -78,7 +78,7 @@ public class OwnerHand : MonoBehaviour
 
                 if (pressCounter == -1) { pressCounter = escapeCount; }
 
-                if (Input.GetButton("Jump"))
+                if (Input.GetButtonDown("Jump"))
                 {
                     pressCounter++;
                     Debug.Log($"[OwnerHand]\n pressCounter : {pressCounter}");

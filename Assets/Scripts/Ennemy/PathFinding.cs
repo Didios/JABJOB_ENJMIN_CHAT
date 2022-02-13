@@ -28,7 +28,10 @@ public class PathFinding : MonoBehaviour
         agent.autoBraking = false;
         agentRigidbody = GetComponent<Rigidbody>();
 
-        GotoNextPoint();
+        if (activate)
+        {
+            GotoNextPoint();
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -95,18 +98,14 @@ public class PathFinding : MonoBehaviour
                 if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
             }
         }
-        
-        if (!activate && !agent.pathPending && agent.remainingDistance < 0.5f)
+        else
         {
             // stop the agent
             agentRigidbody.constraints = RigidbodyConstraints.FreezeAll;
             agent.isStopped = true;
-        }
-        else if (agentRigidbody.constraints == RigidbodyConstraints.FreezeAll)
-        {
-            // destop the agent
-            agentRigidbody.constraints = RigidbodyConstraints.None;
-            agent.isStopped = false;
+
+            colliderDetectionStatus = true;
+            stunnedTime = 100;
         }
     }
 
