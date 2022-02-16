@@ -12,6 +12,14 @@ public class PathFinding : MonoBehaviour
     private Rigidbody agentRigidbody;
     private int indexDestPoint = 0;
 
+    // target
+    public bool goToPriority = false;
+    public Vector3 targetPriority;
+
+    // player
+    public bool goToPlayer = false;
+    public Transform player;
+
     // collision
     private bool colliderDetectionStatus = false;
     public float stunnedTime = 0;
@@ -56,16 +64,29 @@ public class PathFinding : MonoBehaviour
     {
         if (activate)
         {
-            // Returns if no points have been set up
-            if (points.Length == 0)
-                return;
+            if (goToPriority)
+            {
+                agent.destination = targetPriority;
+                goToPriority = false;
+            }
+            else if (goToPlayer)
+            {
+                agent.destination = player.position;
+                if (agent.remainingDistance < 0.1f) { goToPlayer = false; }
+            }
+            else
+            {
+                // Returns if no points have been set up
+                if (points.Length == 0)
+                    return;
 
-            // Set the agent to go to the currently selected destination.
-            agent.destination = points[indexDestPoint].position;
+                // Set the agent to go to the currently selected destination.
+                agent.destination = points[indexDestPoint].position;
 
-            // Choose the next point in the array as the destination,
-            // cycling to the start if necessary.
-            indexDestPoint = (indexDestPoint + 1) % points.Length;
+                // Choose the next point in the array as the destination,
+                // cycling to the start if necessary.
+                indexDestPoint = (indexDestPoint + 1) % points.Length;
+            }
         }
     }
 
@@ -95,7 +116,8 @@ public class PathFinding : MonoBehaviour
             }
             else
             {
-                if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
+                if (goToPriority || goToPlayer) { GotoNextPoint(); }
+                else if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
             }
         }
         else

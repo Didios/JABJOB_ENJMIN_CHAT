@@ -21,6 +21,7 @@ public class OwnerHand : MonoBehaviour
     public float m_Thrust = 10f;
 
     // info
+    public bool lose = true;
     public bool finish = false;
     public bool activate = true;
 

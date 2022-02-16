@@ -52,7 +52,15 @@ public class MenuManager : MonoBehaviour
         {
             if (ownerHand.finish) // lose case
             {
-                levelText.text = "You Lose";
+                if (ownerHand.lose)
+                {
+                    levelText.text = "You Lose";
+                }
+                else
+                {
+                    level += 1;
+                    levelText.text = "Next Level";
+                }
                 Menu();
             }
             else if (scorebar.finish) // win case
@@ -98,6 +106,8 @@ public class MenuManager : MonoBehaviour
         canvasInGame.position = posStock;
         canvasMenu.position = posUse;
 
+        // reset
+        scorebar.ResetBar(3);
         inGame = false;
     }
 }

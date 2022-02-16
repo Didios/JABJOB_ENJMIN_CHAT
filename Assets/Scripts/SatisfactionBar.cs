@@ -25,9 +25,9 @@ public class SatisfactionBar : MonoBehaviour
         percent.text = "100 %";
     }
 
-    public void AddBreakObj()
+    public void AddBreakObj(int weight)
     {
-        nbrObjBreak += 1;
+        nbrObjBreak += weight;
 
         float probaNotGood = 1 - (nbrObjBreak / (nbrObjToBreak + 0.0f));
         percentGood = Mathf.RoundToInt(probaNotGood * 100);
