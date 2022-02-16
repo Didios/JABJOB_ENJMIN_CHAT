@@ -13,15 +13,21 @@ public class SatisfactionBar : MonoBehaviour
     public TextMeshProUGUI percent;
     private int percentGood = 0;
 
+    public bool finish
+    {
+        get { return percentGood == 100 || nbrObjBreak == nbrObjToBreak; }
+        private set { }
+    }
+
     private void Start()
     {
         sizeMax = transform.localScale.x;
         percent.text = "100 %";
     }
 
-    public void AddBreakObj()
+    public void AddBreakObj(int weight)
     {
-        nbrObjBreak += 1;
+        nbrObjBreak += weight;
 
         float probaNotGood = 1 - (nbrObjBreak / (nbrObjToBreak + 0.0f));
         percentGood = Mathf.RoundToInt(probaNotGood * 100);
