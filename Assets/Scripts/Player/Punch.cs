@@ -26,8 +26,12 @@ public class Punch : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distMax))
             {
-                if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * (-(strengthMax / distMax) * hit.distance + strengthMax)); }
-                Debug.Log("Hit something with a strength of :\n" + (-(strengthMax / distMax) * hit.distance + strengthMax));
+                var hitTurn = hit.transform.GetComponent<OrientableObject>();
+
+                if (hitTurn != null) { hitTurn.AddTurn(transform.forward * (-(strengthMax / distMax) * hit.distance + strengthMax)); }
+                else if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * (-(strengthMax / distMax) * hit.distance + strengthMax)); }
+
+                Debug.Log("[Punch]:\n Strength : " + (-(strengthMax / distMax) * hit.distance + strengthMax));
             }
         }
     }

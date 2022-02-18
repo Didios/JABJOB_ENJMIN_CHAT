@@ -26,6 +26,7 @@ public class FPSController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private float rotationY = 0;
+    private Vector3 forceToAdd = Vector3.zero;
 
     [Header("Projectile")]
     // projectile
@@ -148,6 +149,9 @@ public class FPSController : MonoBehaviour
             }
             if (shootTimer > 0) { shootTimer -= Time.deltaTime; }
 
+            moveDirection += forceToAdd;
+            forceToAdd = Vector3.zero;
+
             // gravité
             if (!characterController.isGrounded)
             {
@@ -174,6 +178,11 @@ public class FPSController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
+
+    public void AddForce(Vector3 force)
+    {
+        forceToAdd += force;
     }
 
     private void Throw(Transform obj, bool new_)

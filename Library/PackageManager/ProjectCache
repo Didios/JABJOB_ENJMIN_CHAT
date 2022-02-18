@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637803761509188484
+      ticks: 637806089130526898
     m_Hash: 263041770
   m_LockFileStatus:
     m_FilePath: D:/Computer/cours_ENJMIN/cours_angouleme/realisations/Unity/JABJOB/Repo_GitHub/JABJOB_ENJMIN_CHAT/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637803761509208492
+      ticks: 637806089130546896
     m_Hash: 3703154689
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

@@ -56,17 +56,19 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Object\OrientableObject.cs" />
     <Compile Include="Assets\Scripts\Object\BreakableObject.cs" />
+    <Compile Include="Assets\Scripts\Object\BounceObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\OwnerHand.cs" />
     <Compile Include="Assets\Scripts\Ennemy\PathFinding.cs" />
     <Compile Include="Assets\Scripts\Player\FPSController.cs" />
+    <Compile Include="Assets\Scripts\Object\EphemeralObject.cs" />
     <Compile Include="Assets\Scripts\Player\Punch.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\SatisfactionBar.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\Object\EphemeralObject.cs" />
+    <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
     <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
-    <Compile Include="Assets\Scripts\Object\BounceObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
