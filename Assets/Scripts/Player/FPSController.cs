@@ -8,8 +8,14 @@ public class FPSController : MonoBehaviour
 {
     [Header("Move")]
     // speed
+
+    public AnimationCurve speedCurve;
+    [SerializeField]
+    private float time = 0;
+    /*
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
+    */
     // saut
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -27,6 +33,12 @@ public class FPSController : MonoBehaviour
     private float rotationX = 0;
     private float rotationY = 0;
     private Vector3 forceToAdd = Vector3.zero;
+
+    // fear something
+    [Header("Fear")]
+    public string tagFear = "Water";
+    public float forceUp = 5;
+    public float forceBack = 10;
 
     [Header("Projectile")]
     // projectile
@@ -71,10 +83,6 @@ public class FPSController : MonoBehaviour
                 Cursor.visible = false;
             }
 
-            // We are grounded, so recalculate move direction based on axes
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 right = transform.TransformDirection(Vector3.right);
-
             // course ?
             bool isRunning = Input.GetButton("Fire3");
 
@@ -83,6 +91,22 @@ public class FPSController : MonoBehaviour
             float curSpeedY = 0;
             if (canMove)
             {
+                if (isRunning && time < 1)
+                {
+                    time += 0.03f;
+                }
+                else if (!isRunning && time > 0)
+                {
+                    time -= 0.2f;
+                }
+
+                if (time > 1) time = 1;
+                else if (time < 0) time = 0;
+
+
+                curSpeedX = Mathf.FloorToInt(speedCurve.Evaluate(time)) * Input.GetAxis("Vertical");
+                curSpeedY = Mathf.FloorToInt(speedCurve.Evaluate(time)) * Input.GetAxis("Horizontal");
+                /*/
                 if (isRunning)
                 {
                     curSpeedX = runningSpeed * Input.GetAxis("Vertical");
@@ -93,10 +117,11 @@ public class FPSController : MonoBehaviour
                     curSpeedX = walkingSpeed * Input.GetAxis("Vertical");
                     curSpeedY = walkingSpeed * Input.GetAxis("Horizontal");
                 }
+                /*/
             }
 
             float movementDirectionY = moveDirection.y;
-            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            moveDirection = (transform.forward * curSpeedX) + (transform.right * curSpeedY);
 
             // on gère le saut
             if (Input.GetButton("Jump") && canMove && characterController.isGrounded) { moveDirection.y = jumpSpeed; }
@@ -203,6 +228,18 @@ public class FPSController : MonoBehaviour
 
             //Ajout d une impulsion de départ
             obj.GetComponent<Rigidbody>().AddForce(transform.forward * speedProj, ForceMode.Impulse);
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == tagFear)
+        {
+            Debug.Log("OUCH !");
+            Vector3 forceFear = -transform.forward * forceBack;
+            forceFear.y = forceUp;
+
+            AddForce(forceFear);
         }
     }
 

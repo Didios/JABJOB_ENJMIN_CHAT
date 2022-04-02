@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
     <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
+    <Compile Include="Assets\Scripts\Object\RegenObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
