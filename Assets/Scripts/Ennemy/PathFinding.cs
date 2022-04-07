@@ -12,6 +12,10 @@ public class PathFinding : MonoBehaviour
     private Rigidbody agentRigidbody;
     private int indexDestPoint = 0;
 
+    //animation
+    public bool hasAnim = false;
+    private Animator animator;
+
     // target
     public bool goToPriority = false;
     public Vector3 targetPriority;
@@ -35,6 +39,12 @@ public class PathFinding : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agentRigidbody = GetComponent<Rigidbody>();
+
+        if (hasAnim)
+        {
+            animator = GetComponent<Animator>();
+            animator.SetBool("walk", true);
+        }
 
         if (activate)
         {
@@ -140,7 +150,7 @@ public class PathFinding : MonoBehaviour
             if (i == points.Length - 1) { Gizmos.DrawLine(points[i].position, points[0].position); }
             else { Gizmos.DrawLine(points[i].position, points[i+1].position); }
 
-            Gizmos.DrawSphere(points[i].position, 1);
+            Gizmos.DrawSphere(points[i].position, 0.5f);
         }
     }
 }

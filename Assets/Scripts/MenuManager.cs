@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public Transform player;
     private Rigidbody playerRigidbody;
     private FPSController playerController;
+    private CharacterController playerCharacterController;
 
     // owner
     public Transform owner;
@@ -30,15 +31,23 @@ public class MenuManager : MonoBehaviour
     public Vector3 posStock;
     public Vector3 posCameraMenu;
 
+    [Header("Info Level")]
+    [SerializeField]
+    private List<Vector3> spawnpoints = new List<Vector3>();
+    [SerializeField]
+    private List<int> scoreToObtain = new List<int>();
+
     // infos
     private bool inGame = false;
-    private int level = 1;
+    private int lvl = -1;
+    private Vector3 spawnpoint;
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = player.GetComponent<FPSController>();
         playerRigidbody = player.GetComponent<Rigidbody>();
+        playerCharacterController = player.GetComponent<CharacterController>();
 
         ownerPathFinding = owner.GetComponent<PathFinding>();
 
@@ -55,27 +64,31 @@ public class MenuManager : MonoBehaviour
                 if (ownerHand.lose)
                 {
                     levelText.text = "You Lose";
+
+                    Menu();//fonction ecran perdu retour au spawnpoint
                 }
                 else
                 {
-                    level += 1;
                     levelText.text = "Next Level";
+                    NextLevel(false);
                 }
-                Menu();
             }
             else if (scorebar.finish) // win case
             {
-                level += 1;
-
                 levelText.text = "You Win";
-                Menu();
+                NextLevel(false);
             }
         }
+
+        // CheatCode
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.N)) NextLevel(false);
+#endif
     }
 
     // Switch between screen mode
     public void Game()
-    {
+    {        
         playerRigidbody.useGravity = true;
         playerController.activate = true;
         playerRigidbody.constraints = RigidbodyConstraints.None;
@@ -83,8 +96,8 @@ public class MenuManager : MonoBehaviour
         ownerPathFinding.activate = true;
         ownerHand.activate = true;
 
-        canvasMenu.position = posStock;
-        canvasInGame.position = posUse;
+        canvasMenu.localPosition = posStock;
+        canvasInGame.localPosition = posUse;
 
         inGame = true;
     }
@@ -103,11 +116,35 @@ public class MenuManager : MonoBehaviour
         player.position = posCameraMenu;
         player.rotation = new Quaternion();
 
-        canvasInGame.position = posStock;
-        canvasMenu.position = posUse;
+        canvasInGame.localPosition = posStock;
+        canvasMenu.localPosition = posUse;
 
         // reset
-        scorebar.ResetBar(3);
         inGame = false;
+    }
+
+    public void NextLevel(bool ui)
+    {
+        if (inGame && ui) return;
+
+        lvl += 1;
+
+        if (lvl >= spawnpoints.Count)
+        {
+            levelText.text = "You Finish C.A.T\nThanks for Playing !";
+            Menu();
+        }
+        else
+        {
+            spawnpoint = spawnpoints[lvl];
+
+            playerCharacterController.enabled = false;
+            player.position = spawnpoint;
+            playerCharacterController.enabled = true;
+
+            scorebar.ResetBar(scoreToObtain[lvl]);
+
+            Game();
+        }
     }
 }

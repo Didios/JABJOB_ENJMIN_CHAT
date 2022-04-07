@@ -8,7 +8,7 @@ public class OwnerHand : MonoBehaviour
     public Transform player;
     private Rigidbody playerRigidBody;
     private FPSController playerController;
-    private CapsuleCollider playerCollider;
+    private SphereCollider playerCollider;
     public bool playerGrabbed = false;
 
     // hand
@@ -31,7 +31,7 @@ public class OwnerHand : MonoBehaviour
         //Fetch the Rigidbody from the GameObject with this script attached
         playerRigidBody = player.GetComponent<Rigidbody>();
         playerController = player.GetComponent<FPSController>();
-        playerCollider = player.GetComponent<CapsuleCollider>();
+        playerCollider = player.GetComponent<SphereCollider>();
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -51,9 +51,9 @@ public class OwnerHand : MonoBehaviour
         player.parent = handPosition;
         player.position = handPosition.position;
 
+        playerController.activate = false;
         playerCollider.isTrigger = true;
         playerRigidBody.constraints = RigidbodyConstraints.FreezeAll;
-        playerController.activate = false;
     }
 
     //Revert the parent of object 2.

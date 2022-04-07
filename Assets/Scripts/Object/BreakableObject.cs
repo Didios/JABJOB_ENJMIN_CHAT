@@ -59,8 +59,11 @@ public class BreakableObject : MonoBehaviour
 
     private void Break()
     {
-        score.Increment();
-        bar.AddBreakObj(weight);
+        if (weight > 0)
+        {
+            score.Increment();
+            bar.AddBreakObj(weight);
+        }
 
         if (breakedObject != null)
         {

@@ -8,7 +8,36 @@ public class BounceObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // don't work on character controller
-        collision.transform.GetComponent<Rigidbody>().AddForce(transform.up * strenght, ForceMode.Impulse);
+        if (collision.transform.GetComponent<FPSController>() != null)
+        {
+            collision.transform.GetComponent<FPSController>().AddForce(transform.up * strenght);
+            Debug.Log("[BounceObject]:\n Character");
+        }
+        else
+        {
+            // don't work on character controller
+            collision.transform.GetComponent<Rigidbody>().AddForce(transform.up * strenght, ForceMode.Impulse);
+            Debug.Log("[BounceObject]:\n Object");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.GetComponent<FPSController>() != null)
+        {
+            other.transform.GetComponent<FPSController>().AddForce(transform.up * strenght);
+            Debug.Log("[BounceObject]:\n Character");
+        }
+        else
+        {
+            // don't work on character controller
+            other.transform.GetComponent<Rigidbody>().AddForce(transform.up * strenght, ForceMode.Impulse);
+            Debug.Log("[BounceObject]:\n Object");
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + transform.up);
     }
 }
