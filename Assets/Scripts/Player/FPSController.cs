@@ -15,7 +15,7 @@ public class FPSController : MonoBehaviour
     /*
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
-    */
+    //*/
     // saut
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -103,10 +103,10 @@ public class FPSController : MonoBehaviour
                 if (time > 1) time = 1;
                 else if (time < 0) time = 0;
 
-
-                curSpeedX = Mathf.FloorToInt(speedCurve.Evaluate(time)) * Input.GetAxis("Vertical");
-                curSpeedY = Mathf.FloorToInt(speedCurve.Evaluate(time)) * Input.GetAxis("Horizontal");
-                /*/
+                
+                curSpeedX = speedCurve.Evaluate(time) * Input.GetAxis("Vertical");
+                curSpeedY = speedCurve.Evaluate(time) * Input.GetAxis("Horizontal");
+                /*
                 if (isRunning)
                 {
                     curSpeedX = runningSpeed * Input.GetAxis("Vertical");
@@ -117,7 +117,7 @@ public class FPSController : MonoBehaviour
                     curSpeedX = walkingSpeed * Input.GetAxis("Vertical");
                     curSpeedY = walkingSpeed * Input.GetAxis("Horizontal");
                 }
-                /*/
+                //*/
             }
 
             float movementDirectionY = moveDirection.y;

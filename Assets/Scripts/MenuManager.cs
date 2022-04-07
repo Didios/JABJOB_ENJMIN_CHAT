@@ -96,8 +96,8 @@ public class MenuManager : MonoBehaviour
         ownerPathFinding.activate = true;
         ownerHand.activate = true;
 
-        canvasMenu.position = posStock;
-        canvasInGame.position = posUse;
+        canvasMenu.localPosition = posStock;
+        canvasInGame.localPosition = posUse;
 
         inGame = true;
     }
@@ -116,8 +116,8 @@ public class MenuManager : MonoBehaviour
         player.position = posCameraMenu;
         player.rotation = new Quaternion();
 
-        canvasInGame.position = posStock;
-        canvasMenu.position = posUse;
+        canvasInGame.localPosition = posStock;
+        canvasMenu.localPosition = posUse;
 
         // reset
         inGame = false;
