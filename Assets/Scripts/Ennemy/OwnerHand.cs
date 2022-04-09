@@ -12,7 +12,9 @@ public class OwnerHand : MonoBehaviour
     public bool playerGrabbed = false;
 
     // hand
+    public Animator animator;
     public Transform handPosition;
+    public Vector3 handVector;
     public Transform tempTrans;
 
     // other
@@ -46,10 +48,29 @@ public class OwnerHand : MonoBehaviour
         else { Debug.Log("[OwnerHand]\n owner touch something"); }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            playerGrabbed = true;
+            Debug.Log("[OwnerHand]\n owner grabbed Player");
+            //colliderDetectionStatus = true;
+            //If the GameObject's name matches the one you suggest, output this message in the console
+        }
+        else { Debug.Log("[OwnerHand]\n owner touch something"); }
+    }
+
     void ChangeParent()
     {
+        animator.SetBool("inHand", true);
+
         player.parent = handPosition;
-        player.position = handPosition.position;
+
+        var position = handPosition.transform.position;
+        position += handPosition.transform.right * handVector.x;
+        position += handPosition.transform.forward * handVector.z;
+        position += handPosition.transform.up * handVector.y;
+        player.position = position;
 
         playerController.activate = false;
         playerCollider.isTrigger = true;
@@ -59,6 +80,8 @@ public class OwnerHand : MonoBehaviour
     //Revert the parent of object 2.
     void RevertParent()
     {
+        animator.SetBool("inHand", false);
+
         playerRigidBody.constraints = RigidbodyConstraints.None;
         playerCollider.isTrigger = false;
         player.parent = tempTrans;
@@ -112,5 +135,15 @@ public class OwnerHand : MonoBehaviour
             playerGrabbed = false;
             finish = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        var position = handPosition.transform.position;
+        position += handPosition.transform.right * handVector.x;
+        position += handPosition.transform.forward * handVector.z;
+        position += handPosition.transform.up * handVector.y;
+
+        Gizmos.DrawWireSphere(position, 0.1f);
     }
 }

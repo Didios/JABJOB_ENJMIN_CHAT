@@ -59,6 +59,8 @@ public class PathFinding : MonoBehaviour
             colliderDetectionStatus = true;
             Destroy(collision.gameObject); // the collision object is remove
 
+            if (hasAnim) animator.SetBool("walk", false);
+
             // stop the agent
             agentRigidbody.constraints = RigidbodyConstraints.FreezeAll;
             agent.isStopped = true;
@@ -114,6 +116,7 @@ public class PathFinding : MonoBehaviour
                     // make the agent moveable
                     agentRigidbody.constraints = RigidbodyConstraints.None;
                     agent.isStopped = false;
+                    if (hasAnim) animator.SetBool("walk", true);
 
                     // reset composant Timer
                     colliderDetectionStatus = false;
