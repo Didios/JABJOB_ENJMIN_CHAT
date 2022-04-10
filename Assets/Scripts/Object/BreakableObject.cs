@@ -19,12 +19,15 @@ public class BreakableObject : MonoBehaviour
     private float ancientSpeed = 0;
 
     // zone
-    public bool usingZone = false;
-    public string tagDestroy;
+    public bool usingZone = true;
+    public string tagDestroy = "DeathZone";
 
     // UI
     public ScoreBoard score;
     public SatisfactionBar bar;
+
+    //infos
+    private bool hasBreak = false;
 
     private void Start()
     {
@@ -59,25 +62,38 @@ public class BreakableObject : MonoBehaviour
 
     private void Break()
     {
-        if (weight > 0)
+        if (!hasBreak)
         {
-            score.Increment();
-            bar.AddBreakObj(weight);
+            if (weight > 0)
+            {
+                score.Increment();
+                bar.AddBreakObj(weight);
+            }
+
+            if (breakedObject != null)
+            {
+                // creation of the break object at the exact same position
+                var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
+
+                // give the same parent
+                obj.parent = transform.parent;
+                //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
+                obj.GetComponent<Rigidbody>().velocity = rigidBody.velocity;
+
+                // delete the ancient object
+                Destroy(gameObject);
+            }
+
+            Debug.Log($"[BreakableObject]\n {transform.name} Break");
+            hasBreak = true;
         }
+    }
 
-        if (breakedObject != null)
-        {
-            // creation of the break object at the exact same position
-            var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
-
-            // give the same parent
-            obj.parent = transform.parent;
-            //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
-            obj.GetComponent<Rigidbody>().velocity = rigidBody.velocity;
-
-            // delete the ancient object
-            Destroy(gameObject);
-        }
+    public void Freeze()
+    {
+        transform.rotation = new Quaternion();
+        rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+        collider_.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)

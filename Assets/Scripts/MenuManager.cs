@@ -25,6 +25,7 @@ public class MenuManager : MonoBehaviour
     // Menus info
     public Transform canvasMenu;
     public Transform canvasInGame;
+    public Transform canvasHowToPlay;
 
     public Vector3 posUse; 
     public Vector3 posStock;
@@ -33,7 +34,11 @@ public class MenuManager : MonoBehaviour
     [Header("Canvas sub-infos")]
     public Button playButton;
 
-    [Header("Info Level")]
+    [Header("Info Level")]/*
+    [SerializeField]
+    private List<Transform> levels = new List<Transform>();
+    [SerializeField]
+    private List<Vector3> levelPos = new List<Vector3>();*/
     [SerializeField]
     private List<Vector3> spawnpoints = new List<Vector3>();
     [SerializeField]
@@ -46,7 +51,8 @@ public class MenuManager : MonoBehaviour
     // infos
     private bool inGame = false;
     private int lvl = 0;
-    private Vector3 spawnpoint;
+    private Vector3 spawnpoint;/*
+    private Transform currentLvl;*/
 
     // Start is called before the first frame update
     void Start()
@@ -95,7 +101,7 @@ public class MenuManager : MonoBehaviour
 
     // Switch between screen mode
     public void Game()
-    {        
+    {
         //player
         playerRigidbody.useGravity = true;
         playerController.activate = true;
@@ -130,11 +136,15 @@ public class MenuManager : MonoBehaviour
         player.rotation = new Quaternion();
 
         canvasInGame.localPosition = posStock;
+        canvasHowToPlay.localPosition = posStock;
         canvasMenu.localPosition = posUse;
 
         playButton.interactable = true;
 
         // reset
+        /*
+        if (currentLvl != null) Destroy(currentLvl.gameObject);
+        currentLvl = Instantiate<Transform>(levels[lvl], levelPos[lvl], new Quaternion());*/
         inGame = false;
     }
 
@@ -162,6 +172,13 @@ public class MenuManager : MonoBehaviour
             if (win) Game();
             else Menu();
         }
+    }
+
+    public void HowToPlay()
+    {
+        canvasInGame.localPosition = posStock;
+        canvasMenu.localPosition = posStock;
+        canvasHowToPlay.localPosition = posUse;
     }
 
     public void Quit()

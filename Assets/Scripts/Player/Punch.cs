@@ -17,21 +17,23 @@ public class Punch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire3"))
         {
             // punch animation launch
             _animator.SetTrigger("punch");
 
             // punch In-Game
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distMax))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, distMax))
             {
+                var force = -(strengthMax / distMax) * hit.distance + strengthMax;
+
                 var hitTurn = hit.transform.GetComponent<OrientableObject>();
 
-                if (hitTurn != null) { hitTurn.AddTurn(transform.forward * (-(strengthMax / distMax) * hit.distance + strengthMax)); }
-                else if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * (-(strengthMax / distMax) * hit.distance + strengthMax)); }
+                if (hitTurn != null) { hitTurn.AddTurn(transform.forward * force); }
+                else if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * force, ForceMode.Impulse); }
 
-                Debug.Log("[Punch]:\n Strength : " + (-(strengthMax / distMax) * hit.distance + strengthMax));
+                Debug.Log("[Punch]:\n Strength : " + force);
             }
         }
     }

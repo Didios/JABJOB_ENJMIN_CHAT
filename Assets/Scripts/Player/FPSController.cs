@@ -142,9 +142,13 @@ public class FPSController : MonoBehaviour
                             {
                                 holdObj = hit.transform;
                                 obj.hold = true;
-
-                                holdObj.position = transform.position + transform.forward * posHoldObj.x + transform.right * posHoldObj.y + transform.up * posHoldObj.z;
-                                hit.transform.parent = transform;
+                                obj.Freeze();
+                                
+                                holdObj.position = transform.position + 
+                                                    transform.forward * posHoldObj.x + 
+                                                    transform.right * posHoldObj.y + 
+                                                    transform.up * posHoldObj.z;
+                                holdObj.parent = transform;
 
                                 holdSomething = true;
                                 Debug.Log("[FPSController]:\n Grab something");
@@ -153,6 +157,7 @@ public class FPSController : MonoBehaviour
                     }
                 }
             }
+
             // on gère le tir
             if (Input.GetButtonDown("Fire1") && shootTimer <= 0)
             {
@@ -216,15 +221,15 @@ public class FPSController : MonoBehaviour
         {
             //Création du projectile au bon endroit
             Transform proj = GameObject.Instantiate<Transform>(obj,
-                transform.position + transform.forward * 1.5f, transform.rotation);
+                transform.position + transform.forward * 1.1f, transform.rotation);
 
             //Ajout d une impulsion de départ
             proj.GetComponent<Rigidbody>().AddForce(transform.forward * speedProj, ForceMode.Impulse);
         }
         else
         {
-            // repossitionnement
-            obj.position = transform.position + transform.forward * 1.5f;
+            // repositionnement
+            //obj.position = transform.position + transform.forward * 1.1f;
 
             //Ajout d une impulsion de départ
             obj.GetComponent<Rigidbody>().AddForce(transform.forward * speedProj, ForceMode.Impulse);
@@ -246,7 +251,7 @@ public class FPSController : MonoBehaviour
     private void OnDrawGizmos()
     {
         // debug position de lancement
-        Gizmos.DrawSphere(transform.position + transform.forward * 1.5f, 0.2f);
+        Gizmos.DrawSphere(transform.position + transform.forward * 1.1f, 0.2f);
         // debug position tenir objet
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position + 
