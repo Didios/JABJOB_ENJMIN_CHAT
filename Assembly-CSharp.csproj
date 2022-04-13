@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Object\BounceObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\OwnerHand.cs" />
     <Compile Include="Assets\Scripts\Ennemy\PathFinding.cs" />
+    <Compile Include="Assets\Scripts\Object\RegenObject.cs" />
     <Compile Include="Assets\Scripts\Player\FPSController.cs" />
     <Compile Include="Assets\Scripts\Object\EphemeralObject.cs" />
     <Compile Include="Assets\Scripts\Player\Punch.cs" />
@@ -69,7 +70,7 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
     <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
-    <Compile Include="Assets\Scripts\Object\RegenObject.cs" />
+    <Compile Include="Assets\Scripts\LevelConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

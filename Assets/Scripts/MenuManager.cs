@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -14,8 +15,8 @@ public class MenuManager : MonoBehaviour
     private CharacterController playerCharacterController;
 
     //owner
-    private PathFinding actualOwner;
-    private OwnerHand actualOwnerHand;
+    private PathFinding ownerPath;
+    private OwnerHand ownerHand;
 
     [Header("Canvas informations")]
     // scoreboard
@@ -34,11 +35,13 @@ public class MenuManager : MonoBehaviour
     [Header("Canvas sub-infos")]
     public Button playButton;
 
-    [Header("Info Level")]/*
+    [Header("Info Level")]
+    public List<LevelConfig> levels = new List<LevelConfig>();
+    /*
     [SerializeField]
     private List<Transform> levels = new List<Transform>();
     [SerializeField]
-    private List<Vector3> levelPos = new List<Vector3>();*/
+    private List<Vector3> levelPos = new List<Vector3>();
     [SerializeField]
     private List<Vector3> spawnpoints = new List<Vector3>();
     [SerializeField]
@@ -46,13 +49,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private List<PathFinding> ownerLvl = new List<PathFinding>();
     [SerializeField]
-    private List<OwnerHand> ownerHandLvl = new List<OwnerHand>();
+    private List<OwnerHand> ownerHandLvl = new List<OwnerHand>();*/
 
     // infos
     private bool inGame = false;
     private int lvl = 0;
-    private Vector3 spawnpoint;/*
-    private Transform currentLvl;*/
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +62,9 @@ public class MenuManager : MonoBehaviour
         playerRigidbody = player.GetComponent<Rigidbody>();
         playerCharacterController = player.GetComponent<CharacterController>();
 
-        actualOwner = ownerLvl[0];
-        actualOwnerHand = ownerHandLvl[0];
+        levels[lvl].Reset();
+        ownerPath = levels[lvl].pathfindingOwner;
+        ownerHand = levels[lvl].handOwner;
 
         levelText.text = "Start a new Game !";
         Menu();
@@ -72,9 +74,9 @@ public class MenuManager : MonoBehaviour
     {
         if (inGame)
         {
-            if (actualOwnerHand.finish) // lose case
+            if (ownerHand.finish) // lose case
             {
-                if (actualOwnerHand.lose)
+                if (ownerHand.lose)
                 {
                     levelText.text = "You Lose";
 
@@ -108,12 +110,8 @@ public class MenuManager : MonoBehaviour
         playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner
-        foreach (PathFinding agent in ownerLvl) agent.activate = false;
-        foreach (OwnerHand agentHand in ownerHandLvl) agentHand.activate = false;
-        actualOwner = ownerLvl[lvl];
-        actualOwnerHand = ownerHandLvl[lvl];
-        actualOwner.activate = true;
-        actualOwnerHand.activate = true;
+        ownerPath.activate = true;
+        ownerHand.activate = true;
 
         canvasMenu.localPosition = posStock;
         canvasInGame.localPosition = posUse;
@@ -123,28 +121,29 @@ public class MenuManager : MonoBehaviour
 
     public void Menu()
     {
-        // arrêt mécanique de jeu
-        actualOwner.activate = false;
-        actualOwnerHand.activate = false;
-
+        // stop player
         playerRigidbody.useGravity = false;
         playerController.activate = false;
         playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
-        // repositionnement menu
+        // reset du niveau/set du prochain
+        // stop and set/reset owner
+        ownerPath.activate = false;
+        ownerHand.activate = false;
+        levels[lvl].Reset();
+        ownerPath = levels[lvl].pathfindingOwner;
+        ownerHand = levels[lvl].handOwner;
+
+        // placement camera (player)
         player.position = posCameraMenu;
         player.rotation = new Quaternion();
-
+        // placement menu
         canvasInGame.localPosition = posStock;
         canvasHowToPlay.localPosition = posStock;
         canvasMenu.localPosition = posUse;
 
+        // other
         playButton.interactable = true;
-
-        // reset
-        /*
-        if (currentLvl != null) Destroy(currentLvl.gameObject);
-        currentLvl = Instantiate<Transform>(levels[lvl], levelPos[lvl], new Quaternion());*/
         inGame = false;
     }
 
@@ -153,7 +152,7 @@ public class MenuManager : MonoBehaviour
         playButton.interactable = false;
         if (win) lvl += 1;
 
-        if (lvl >= spawnpoints.Count)
+        if (lvl >= levels.Count)
         {
             levelText.text = "You Finish C.A.T\nThanks for Playing !";
             lvl = 0;
@@ -161,13 +160,11 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            spawnpoint = spawnpoints[lvl];
-
             playerCharacterController.enabled = false;
-            player.position = spawnpoint;
+            player.position = levels[lvl].worldSpawnPlayer;
             playerCharacterController.enabled = true;
 
-            scorebar.ResetBar(scoreToObtain[lvl]);
+            scorebar.ResetBar(levels[lvl].scoreToGet);
 
             if (win) Game();
             else Menu();
@@ -187,9 +184,17 @@ public class MenuManager : MonoBehaviour
         Debug.Log("[MenuManager]\n Game quit");
     }
 
-    public void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.black;
-        foreach (Vector3 spawn in spawnpoints) Gizmos.DrawSphere(spawn, 0.75f);
+        // Gizmos Levels
+        foreach (LevelConfig L in levels)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawSphere(L.worldSpawnPlayer, 0.75f);
+            Gizmos.DrawWireSphere(L.worldSpawnOwner, 0.75f);
+
+            Gizmos.color = Color.grey;
+            Gizmos.DrawWireCube(L.worldSaveMove, new Vector3(3, 3, 3));
+        }
     }
 }

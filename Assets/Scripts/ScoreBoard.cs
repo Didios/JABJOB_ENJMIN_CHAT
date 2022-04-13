@@ -8,16 +8,17 @@ public class ScoreBoard : MonoBehaviour
 {
     private TextMeshProUGUI scoreboard;
     private int score = 0;
+    public string text = "Broken object : ";
 
     private void Start()
     {
         scoreboard = GetComponent<TextMeshProUGUI>();
-        scoreboard.text = "Object break : " + score.ToString();
+        scoreboard.text = text + score.ToString();
     }
 
     public void Increment()
     {
         score += 1;
-        scoreboard.text = "Object break : " + score.ToString();
+        scoreboard.text = text + score.ToString();
     }
 }

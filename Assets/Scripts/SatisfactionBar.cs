@@ -43,5 +43,6 @@ public class SatisfactionBar : MonoBehaviour
         nbrObjToBreak = nbr;
         nbrObjBreak = 0;
         transform.localScale = new Vector3(sizeMax, 1, 1);
+        Debug.Log("[SatisfactionBar]:\n Bar Reset");
     }
 }

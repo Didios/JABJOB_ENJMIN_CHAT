@@ -27,7 +27,7 @@ public class BreakableObject : MonoBehaviour
     public SatisfactionBar bar;
 
     //infos
-    private bool hasBreak = false;
+    [SerializeField] private bool hasBreak = false;
 
     private void Start()
     {
@@ -94,6 +94,12 @@ public class BreakableObject : MonoBehaviour
         transform.rotation = new Quaternion();
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         collider_.enabled = false;
+    }
+
+    public void DeFreeze()
+    {
+        rigidBody.constraints = RigidbodyConstraints.None;
+        collider_.enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)

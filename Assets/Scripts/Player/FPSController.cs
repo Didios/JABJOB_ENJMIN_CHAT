@@ -54,6 +54,7 @@ public class FPSController : MonoBehaviour
     public bool holdSomething = false;
     [Header("Holding")]
     private Transform holdObj;
+    private Transform holdObjParent;
     public float distGrab;
     public Vector3 posHoldObj;
 
@@ -143,7 +144,8 @@ public class FPSController : MonoBehaviour
                                 holdObj = hit.transform;
                                 obj.hold = true;
                                 obj.Freeze();
-                                
+
+                                holdObjParent = holdObj.parent;
                                 holdObj.position = transform.position + 
                                                     transform.forward * posHoldObj.x + 
                                                     transform.right * posHoldObj.y + 
@@ -163,8 +165,9 @@ public class FPSController : MonoBehaviour
             {
                 if (holdSomething)
                 {
-                    holdObj.parent = transform.parent;
+                    holdObj.parent = holdObjParent;
                     holdObj.GetComponent<BreakableObject>().hold = false;
+                    holdObj.GetComponent<BreakableObject>().DeFreeze();
 
                     Throw(holdObj, false);
                     holdSomething = false;
