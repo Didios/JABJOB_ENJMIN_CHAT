@@ -8,14 +8,10 @@ public class FPSController : MonoBehaviour
 {
     [Header("Move")]
     // speed
-
     public AnimationCurve speedCurve;
     [SerializeField]
     private float time = 0;
-    /*
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    //*/
+
     // saut
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -59,14 +55,17 @@ public class FPSController : MonoBehaviour
     public Vector3 posHoldObj;
 
     // tir
-    private float shootTimer = 0;
     [Header("Fire")]
+    private float shootTimer = 0;
     public float shootCooldown = 2;
+    public ShooterBar shootUI;
 
     public bool activate = true;
 
     void Start()
     {
+        shootUI.ResetBar(maxProj, maxProj);
+
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
@@ -107,18 +106,6 @@ public class FPSController : MonoBehaviour
                 
                 curSpeedX = speedCurve.Evaluate(time) * Input.GetAxis("Vertical");
                 curSpeedY = speedCurve.Evaluate(time) * Input.GetAxis("Horizontal");
-                /*
-                if (isRunning)
-                {
-                    curSpeedX = runningSpeed * Input.GetAxis("Vertical");
-                    curSpeedY = runningSpeed * Input.GetAxis("Horizontal");
-                }
-                else
-                {
-                    curSpeedX = walkingSpeed * Input.GetAxis("Vertical");
-                    curSpeedY = walkingSpeed * Input.GetAxis("Horizontal");
-                }
-                //*/
             }
 
             float movementDirectionY = moveDirection.y;
@@ -131,7 +118,7 @@ public class FPSController : MonoBehaviour
             // on gère le hold
             if (Input.GetButtonDown("Fire2"))
             {
-                if (!holdSomething)
+                if (!holdSomething) // prendre l'objet viser
                 {
                     RaycastHit hit;
                     if (Physics.Raycast(transform.position, transform.forward, out hit, distGrab))
@@ -146,9 +133,9 @@ public class FPSController : MonoBehaviour
                                 obj.Freeze();
 
                                 holdObjParent = holdObj.parent;
-                                holdObj.position = transform.position + 
-                                                    transform.forward * posHoldObj.x + 
-                                                    transform.right * posHoldObj.y + 
+                                holdObj.position = transform.position +
+                                                    transform.forward * posHoldObj.x +
+                                                    transform.right * posHoldObj.y +
                                                     transform.up * posHoldObj.z;
                                 holdObj.parent = transform;
 
@@ -160,14 +147,30 @@ public class FPSController : MonoBehaviour
                 }
             }
 
+            if (holdSomething) // garder l'objet devant soi - éviter qu'il rentre dans des objets
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.forward, out hit, distGrab))
+                {
+                    if (hit.collider == null)
+                    {
+                        holdObj.localPosition = posHoldObj;
+                    }
+                    else
+                    {
+                        holdObj.position = hit.point;
+                    }
+                }
+            }
+
             // on gère le tir
-            if (Input.GetButtonDown("Fire1") && shootTimer <= 0)
+            if (Input.GetButtonDown("Fire1") && (shootTimer <= 0 || holdSomething))
             {
                 if (holdSomething)
                 {
                     holdObj.parent = holdObjParent;
                     holdObj.GetComponent<BreakableObject>().hold = false;
-                    holdObj.GetComponent<BreakableObject>().DeFreeze();
+                    holdObj.GetComponent<BreakableObject>().UnFreeze();
 
                     Throw(holdObj, false);
                     holdSomething = false;
@@ -176,9 +179,10 @@ public class FPSController : MonoBehaviour
                 {
                     Throw(crachat, true);
                     countNbrProj += 1;
-                }
 
-                shootTimer = shootCooldown;
+                    shootUI.UpdateBar(-1, shootCooldown);
+                    shootTimer = shootCooldown;
+                }
             }
             if (shootTimer > 0) { shootTimer -= Time.deltaTime; }
 

@@ -15,7 +15,7 @@ public class BreakableObject : MonoBehaviour
 
     // speed
     public bool usingLimit = true;
-    public float limitSpeed = 5; // the necessary speed to break the object in m/s
+    public float limitSpeed = 2; // the necessary speed to break the object in m/s
     private float ancientSpeed = 0;
 
     // zone
@@ -23,21 +23,41 @@ public class BreakableObject : MonoBehaviour
     public string tagDestroy = "DeathZone";
 
     // UI
-    public ScoreBoard score;
     public SatisfactionBar bar;
 
     //infos
     [SerializeField] private bool hasBreak = false;
+    [SerializeField] private bool hasOutline = true;
+    private Outline visibility;
+
+    private float TimerInvincibility = 5;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         collider_ = GetComponent<Collider>();
+        if (hasOutline) // check outline
+        {
+            visibility = GetComponent<Outline>();
+            if (visibility == null)
+            {
+                visibility = gameObject.AddComponent<Outline>();
+
+                visibility.OutlineColor = Color.red;
+                visibility.OutlineMode = Outline.Mode.OutlineAll;
+                visibility.OutlineWidth = 10;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (TimerInvincibility >= 0)
+        {
+            TimerInvincibility -= Time.deltaTime;
+        }
+
         if ((ancientSpeed > limitSpeed && rigidBody.velocity.magnitude < limitSpeed && usingLimit) || // if the speed exceeds the limit if ther is a limit
             breakObject || // if the code call to break
             (ancientSpeed > rigidBody.velocity.magnitude && !usingLimit)) // if the object slow down, in case of no speed limit
@@ -62,12 +82,11 @@ public class BreakableObject : MonoBehaviour
 
     private void Break()
     {
-        if (!hasBreak)
+        if (!hasBreak && TimerInvincibility < 0)
         {
             if (weight > 0)
             {
-                score.Increment();
-                bar.AddBreakObj(weight);
+                bar.UpdateBar(weight);
             }
 
             if (breakedObject != null)
@@ -83,6 +102,10 @@ public class BreakableObject : MonoBehaviour
                 // delete the ancient object
                 Destroy(gameObject);
             }
+            else if (hasOutline)
+            {
+                visibility.enabled = false;
+            }
 
             Debug.Log($"[BreakableObject]\n {transform.name} Break");
             hasBreak = true;
@@ -96,7 +119,7 @@ public class BreakableObject : MonoBehaviour
         collider_.enabled = false;
     }
 
-    public void DeFreeze()
+    public void UnFreeze()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
         collider_.enabled = true;
@@ -104,6 +127,10 @@ public class BreakableObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == tagDestroy) { Break(); }
+        if (collision.transform.tag == tagDestroy) { Destroy(gameObject); }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == tagDestroy) { Destroy(gameObject); }
     }
 }

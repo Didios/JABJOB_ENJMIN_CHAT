@@ -36,6 +36,8 @@ public class PathFinding : MonoBehaviour
 
     public void Start()
     {
+        message.text = "";
+
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agentRigidbody = GetComponent<Rigidbody>();
