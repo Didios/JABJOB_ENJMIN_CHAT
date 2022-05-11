@@ -12,29 +12,32 @@ public class ShooterBar : MonoBehaviour
 
     // ball
     public Transform ballPrefab;
-    private List<Transform> listBallsBar;
+    private List<Transform> listBallsBar = new List<Transform>();
     public Vector3 localStart = new Vector3();
     public int nbrLine = 10;
     public float space = 10;
 
     // cooldown
+    public CooldownBar cooldownBar;
+    /*
     public Transform cooldownBar;
     public Axis cooldownAxis;
     public float cooldown = 0;
     private float maxCooldown = 2;
-
+    */
     [Header("Variables")]
     public int maxCount = 1;
     public int actualCount = 0;
+    public bool showDebug = false;
 
     void Start()
     {
         cooldownBar.gameObject.SetActive(false);
         textUI.text = $"{actualCount} {textDisplay}";
-        listBallsBar = new List<Transform>();
         ResetBalls();
     }
 
+    /*
     private void Update()
     {
         if (cooldown > 0)
@@ -60,11 +63,15 @@ public class ShooterBar : MonoBehaviour
             cooldownBar.localScale = new Vector3(1, 1, 1);
         }
     }
+    */
 
     public void UpdateBar(int count, float cd = 0)
     {
+        /*
         maxCooldown = cd;
         cooldown = cd;
+        */
+        cooldownBar.SetCooldown(cd);
 
         actualCount += count;
         actualCount = Mathf.Min(actualCount, maxCount);
@@ -77,7 +84,7 @@ public class ShooterBar : MonoBehaviour
 
         textUI.text = $"{actualCount} {textDisplay}";
 
-        Debug.Log("[ShooterBar]\n Update");
+        if (showDebug) Debug.Log("[ShooterBar]\n Update");
     }
 
     public void ResetBar(int max, int actual)
@@ -88,8 +95,7 @@ public class ShooterBar : MonoBehaviour
         textUI.text = $"{actualCount} {textDisplay}";
         ResetBalls();
 
-
-        Debug.Log("[ShooterBar]\n Reset Bar");
+        if (showDebug) Debug.Log("[ShooterBar]\n Reset Bar");
     }
 
     private void ResetBalls()
@@ -115,6 +121,6 @@ public class ShooterBar : MonoBehaviour
             }
         }
 
-        Debug.Log("[ShooterBar]\n Reset Balls Sprite");
+        if (showDebug) Debug.Log("[ShooterBar]\n Reset Balls Sprite");
     }
 }

@@ -17,12 +17,12 @@ public class SwitchLight : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (light_.enabled) { light_.enabled = false; }
-        else { light_.enabled = true; }
+        Switch();
     }
 
-    private void OnCollisionStay(Collision collision)
+    public void Switch()
     {
-        
+        if (light_.enabled) { light_.enabled = false; }
+        else { light_.enabled = true; }
     }
 }

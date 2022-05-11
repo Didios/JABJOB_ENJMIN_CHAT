@@ -56,22 +56,49 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\Status\NoiseStatus.cs" />
     <Compile Include="Assets\Scripts\Object\OrientableObject.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Normal\SubStateNoise.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\UpdateMachine.cs" />
     <Compile Include="Assets\Scripts\Object\BreakableObject.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\StateInfoController.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Hunt\SubStateRunning.cs" />
     <Compile Include="Assets\Scripts\Object\BounceObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\OwnerHand.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\MachineState.cs" />
     <Compile Include="Assets\Scripts\Ennemy\PathFinding.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\SenseHearing.cs" />
     <Compile Include="Assets\Scripts\Object\RegenObject.cs" />
+    <Compile Include="Assets\Scripts\Object\FlashNoiseObject.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateNormal.cs" />
     <Compile Include="Assets\Scripts\Player\FPSController.cs" />
     <Compile Include="Assets\Scripts\Object\EphemeralObject.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Peaceful\SubStateWait.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\MachineStateInfo.cs" />
+    <Compile Include="Assets\Scripts\UI\ScrollableManager.cs" />
     <Compile Include="Assets\Scripts\LevelConfig.cs" />
     <Compile Include="Assets\Scripts\Player\Punch.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateHunt.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\StateBase.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\AgentController.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateStunned.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\SenseLight.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\SenseSight.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\AISense.cs" />
     <Compile Include="Assets\Scripts\UI\SatisfactionBar.cs" />
-    <Compile Include="Assets\Scripts\UI\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
-    <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Hunt\SubStateOutside.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\Status\LightStatus.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Peaceful\SubStateWalk.cs" />
     <Compile Include="Assets\Scripts\UI\ShooterBar.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Normal\SubStatePeaceful.cs" />
+    <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateLight.cs" />
+    <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\OwnerHandState.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\OwnerStunnedDetection.cs" />
+    <Compile Include="Assets\Scripts\UI\CooldownBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

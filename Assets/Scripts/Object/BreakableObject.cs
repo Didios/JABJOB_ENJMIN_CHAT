@@ -4,33 +4,37 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
-    // object
+    [Header("Object")]
     private Rigidbody rigidBody;
     private Collider collider_;
-    public Transform breakedObject; // the version breaked of the object
-    public bool breakObject = false; // to break the object with the code
-    public int weight = 1;
+    [Tooltip("Breaked version of the object")] public Transform breakedObject;
+    [Tooltip("Break by script")] public bool breakObject = false;
+    [Tooltip("weight on bar")] public int weight = 1;
     public bool holdeable = false;
-    public bool hold = false;
+    [HideInInspector] public bool hold = false;
 
-    // speed
-    public bool usingLimit = true;
-    public float limitSpeed = 2; // the necessary speed to break the object in m/s
+    [Header("Break type")]
+    [Tooltip("Break when velocity decrease")] public bool usingLimit = true;
+    public float limitSpeed = 2;
     private float ancientSpeed = 0;
-
-    // zone
-    public bool usingZone = true;
+    [Space]
+    [Tooltip("Break when touch a zone with tag")] public bool usingZone = true;
     public string tagDestroy = "DeathZone";
+    [Space]
+    [Tooltip("Break on collision")] public bool usingTouch = false;
 
-    // UI
+    [Header("UI")]
     public SatisfactionBar bar;
 
-    //infos
+    [Header("Other infos")]
     [SerializeField] private bool hasBreak = false;
     [SerializeField] private bool hasOutline = true;
+    [SerializeField] private bool hasNoise = false;
     private Outline visibility;
 
-    private float TimerInvincibility = 5;
+    [SerializeField][Tooltip("first time invincible")] private float TimerInvincibility = 5;
+
+    public bool showDebug = false;
 
     private void Start()
     {
@@ -99,15 +103,27 @@ public class BreakableObject : MonoBehaviour
                 //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
                 obj.GetComponent<Rigidbody>().velocity = rigidBody.velocity;
 
+                if (hasNoise)
+                {
+                    obj.GetComponent<FlashNoiseObject>().isActive = true;
+                }
+
                 // delete the ancient object
                 Destroy(gameObject);
             }
-            else if (hasOutline)
+            else
             {
-                visibility.enabled = false;
+                if (hasOutline)
+                {
+                    visibility.enabled = false;
+                }
+                if (hasNoise)
+                {
+                    GetComponent<FlashNoiseObject>().isActive = true;
+                }
             }
 
-            Debug.Log($"[BreakableObject]\n {transform.name} Break");
+            if (showDebug) Debug.Log($"[BreakableObject]\n {transform.name} Break");
             hasBreak = true;
         }
     }
@@ -127,7 +143,14 @@ public class BreakableObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == tagDestroy) { Destroy(gameObject); }
+        if (collision.transform.tag == tagDestroy)
+        {
+            Destroy(gameObject);
+        }
+        else if (usingTouch && !hold)
+        {
+            Break();
+        }
     }
     private void OnCollisionStay(Collision collision)
     {

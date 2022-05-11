@@ -60,6 +60,8 @@ public class FPSController : MonoBehaviour
     public float shootCooldown = 2;
     public ShooterBar shootUI;
 
+    [Header("Other")]
+    public bool showDebug = false;
     public bool activate = true;
 
     void Start()
@@ -140,7 +142,7 @@ public class FPSController : MonoBehaviour
                                 holdObj.parent = transform;
 
                                 holdSomething = true;
-                                Debug.Log("[FPSController]:\n Grab something");
+                                if (showDebug) Debug.Log("[FPSController]:\n Grab something");
                             }
                         }
                     }
@@ -247,7 +249,7 @@ public class FPSController : MonoBehaviour
     {
         if (collision.transform.tag == tagFear)
         {
-            Debug.Log("OUCH !");
+            if (showDebug) Debug.Log("OUCH !");
             Vector3 forceFear = -transform.forward * forceBack;
             forceFear.y = forceUp;
 

@@ -17,6 +17,7 @@ public class SatisfactionBar : MonoBehaviour
     [Header("Variables")]
     public int maxCount = 1;
     private int count = 0;
+    public bool showDebug = false;
 
     public bool finish
     {
@@ -51,7 +52,7 @@ public class SatisfactionBar : MonoBehaviour
         gauge.localScale = _scale;
         gaugeImg.color = GetColorPercent(_percent);
 
-        Debug.Log("[SatisfactionBar]:\n Bar Update");
+        if (showDebug) Debug.Log("[SatisfactionBar]:\n Bar Update");
 
     }
 
@@ -66,7 +67,7 @@ public class SatisfactionBar : MonoBehaviour
         maxCount = newMax;
         count = 0;
 
-        Debug.Log("[SatisfactionBar]:\n Bar Reset");
+        if (showDebug) Debug.Log("[SatisfactionBar]:\n Bar Reset");
     }
 
     public Color GetColorPercent(int percentage)

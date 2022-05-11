@@ -13,8 +13,10 @@ public class LevelConfig
     [Header("Entities")]
     [SerializeField] private Transform originOwner;
     [HideInInspector] public Transform owner;
-    [HideInInspector] public PathFinding pathfindingOwner;
-    [HideInInspector] public OwnerHand handOwner;
+    [HideInInspector] public StateInfoController controllerOwner;
+    [HideInInspector] public OwnerHandState handOwner;
+    //[HideInInspector] public PathFinding pathfindingOwner;
+    //[HideInInspector] public OwnerHand handOwner;
     [SerializeField] private Vector3 localSpawnOwner;
     [SerializeField] private Vector3 localSpawnPlayer;
 
@@ -41,7 +43,11 @@ public class LevelConfig
     public void Clean()
     {
         if (tempLevel != null) Object.Destroy(tempLevel.gameObject);
-        if (owner != null) Object.Destroy(owner.gameObject);
+        if (owner != null)
+        {
+            if (handOwner.hasGrabbed) handOwner.player.parent = handOwner.tempTrans;
+            Object.Destroy(owner.gameObject);
+        }
     }
 
     public void Reset()
@@ -64,10 +70,16 @@ public class LevelConfig
 
     public void ResetOwner()
     {
-        if (owner != null) Object.Destroy(owner.gameObject);
+        if (owner != null)
+        {
+            if (handOwner.hasGrabbed) handOwner.player.parent = handOwner.tempTrans;
+            Object.Destroy(owner.gameObject);
+        }
         owner = Object.Instantiate<Transform>(originOwner, worldSpawnOwner, originOwner.rotation);
-        handOwner = owner.GetComponentInChildren<OwnerHand>();
-        pathfindingOwner = owner.GetComponentInChildren<PathFinding>();
+        //handOwner = owner.GetComponentInChildren<OwnerHand>();
+        //pathfindingOwner = owner.GetComponentInChildren<PathFinding>();
+        controllerOwner = owner.GetComponent<StateInfoController>();
+        handOwner = owner.GetComponentInChildren<OwnerHandState>();
 
         Debug.Log($"[LevelConfig]:\n Owner N°{levelNumber} Reset");
     }

@@ -10,6 +10,8 @@ public class Punch : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
+    public bool showDebug = false;
+
     void Start()
     {
         if (_animator == null) { _animator = GetComponent<Animator>(); }
@@ -33,7 +35,7 @@ public class Punch : MonoBehaviour
                 if (hitTurn != null) { hitTurn.AddTurn(transform.forward * force); }
                 else if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * force, ForceMode.Impulse); }
 
-                Debug.Log("[Punch]:\n Strength : " + force);
+                if (showDebug) Debug.Log("[Punch]:\n Strength : " + force);
             }
         }
     }

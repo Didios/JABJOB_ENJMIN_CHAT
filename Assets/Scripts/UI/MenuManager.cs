@@ -8,15 +8,17 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     [Header("Character")]
-    // player
     public Transform player;
     private Rigidbody playerRigidbody;
     private FPSController playerController;
     private CharacterController playerCharacterController;
 
-    //owner
-    private PathFinding ownerPath;
-    private OwnerHand ownerHand;
+    /* OWNER */
+    //private PathFinding ownerPath;
+    //private OwnerHand ownerHand;
+    private StateInfoController owner;
+    private MachineStateInfo ownerInfos;
+    private OwnerHandState ownerHand;
 
     [Header("UI General")]
     public Vector3 posCameraMenu;
@@ -25,8 +27,6 @@ public class MenuManager : MonoBehaviour
     [Header("UI InGame")]
     public SatisfactionBar scorebar;
     public TextMeshProUGUI levelText;
-
-    //[Header("UI Menu")]
 
     [Header("UI HowToPlay")]
     public List<GameObject> panelList;
@@ -49,7 +49,10 @@ public class MenuManager : MonoBehaviour
         playerCharacterController = player.GetComponent<CharacterController>();
 
         levels[lvl].Reset();
-        ownerPath = levels[lvl].pathfindingOwner;
+        //ownerPath = levels[lvl].pathfindingOwner;
+        //ownerHand = levels[lvl].handOwner;
+        owner = levels[lvl].controllerOwner;
+        ownerInfos = owner.infos;
         ownerHand = levels[lvl].handOwner;
 
         levelText.text = "Start a new Game !";
@@ -60,8 +63,11 @@ public class MenuManager : MonoBehaviour
     {
         if (inGame)
         {
-            if (ownerHand.finish) // lose case
+            if (ownerInfos.gameOver)//(ownerHand.finish) // lose case
             {
+                levelText.text = "You Lose";
+                NextLevel(false); //retour ecran principal
+                /*
                 if (ownerHand.lose)
                 {
                     levelText.text = "You Lose";
@@ -73,6 +79,7 @@ public class MenuManager : MonoBehaviour
                     levelText.text = "Next Level";
                     NextLevel(true);
                 }
+                */
             }
             else if (scorebar.finish) // win case
             {
@@ -96,8 +103,10 @@ public class MenuManager : MonoBehaviour
         playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner
-        ownerPath.activate = true;
-        ownerHand.activate = true;
+        //ownerPath.activate = true;
+        //ownerHand.activate = true;
+        owner.isActive = true;
+        ownerHand.isActive = true;
 
         CanvasChange(2);
         inGame = true;
@@ -112,11 +121,17 @@ public class MenuManager : MonoBehaviour
 
         // reset du niveau/set du prochain
         // stop and set/reset owner
-        ownerPath.activate = false;
-        ownerHand.activate = false;
+        //ownerPath.activate = false;
+        //ownerHand.activate = false;
+        owner.isActive = false;
+        ownerHand.isActive = false;
+
         levels[lvl].Reset();
-        ownerPath = levels[lvl].pathfindingOwner;
-        ownerHand = levels[lvl].handOwner;
+
+        //ownerPath = levels[lvl].pathfindingOwner;
+        //ownerHand = levels[lvl].handOwner;
+        owner = levels[lvl].controllerOwner;
+        ownerInfos = owner.infos;
 
         // placement camera (player)
         player.position = posCameraMenu;
@@ -125,13 +140,13 @@ public class MenuManager : MonoBehaviour
         CanvasChange(0);
 
         // other
-        playButton.interactable = true;
+        //playButton.interactable = true;
         inGame = false;
     }
 
     public void NextLevel(bool win)
     {
-        playButton.interactable = false;
+        //playButton.interactable = false;
         if (win) lvl += 1;
 
         if (lvl >= levels.Count)

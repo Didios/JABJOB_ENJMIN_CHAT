@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* can work alone */
 public class OwnerHand : MonoBehaviour
 {
     // player

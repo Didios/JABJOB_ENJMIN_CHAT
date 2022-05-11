@@ -8,12 +8,14 @@ ScriptsOnlyBuild:
     - HideableObject
     - MenuManager
     - OrientableObject
+    - Outline
     - OwnerHand
     - PathFinding
     - Punch
     - RegenObject
     - SatisfactionBar
-    - ScoreBoard
+    - ScrollableManager
+    - ShooterBar
     - SwitchLight
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -86,57 +88,61 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1506}
+      Script: {instanceID: 1538}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 1722}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1750}
+      Script: {instanceID: 1818}
     - Class: 114
-      Script: {instanceID: 2026}
+      Script: {instanceID: 1846}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 2128}
     - Class: 114
-      Script: {instanceID: 2158}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2180}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2288}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2440}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 2552}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2588}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2608}
+      Script: {instanceID: 2712}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2734}
     - Class: 114
-      Script: {instanceID: 2870}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3208}
+      Script: {instanceID: 3026}
     - Class: 114
-      Script: {instanceID: 3576}
+      Script: {instanceID: 3344}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 3896}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3966}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 4232}
     - Class: 114
-      Script: {instanceID: 4172}
+      Script: {instanceID: 4252}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4488}
+      Script: {instanceID: 4492}
+    - Class: 114
+      Script: {instanceID: 4650}
+    - Class: 114
+      Script: {instanceID: 22364}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,22 +180,28 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: 8b3a8c1e7ed3cd482ae89742f5dac0c2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OrientableObject
   - hash:
       serializedVersion: 2
+      Hash: ff7f58b226cfe4de0dc241bd88d5a904
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Outline
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -240,7 +252,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: b46dd23e839c2f8237230be80e8a987b
+      Hash: 7270a4fc0887683e78c136d08ae254ca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BreakableObject
@@ -420,7 +432,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 086776ce0d4c995548948b71a2931d65
+      Hash: 2dabae0747628d493d1027b952a3aa1e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPSController
@@ -552,12 +564,6 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 768e0b2401d6f4fdefbb3f86c12c662e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreBoard
-  - hash:
-      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -588,7 +594,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 5476cc5d1c41d349a130864790228259
+      Hash: e46ed1f4f0926903df7fe82762476bc5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SatisfactionBar
@@ -630,13 +636,19 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 10a57a6eddd859879514d43c0f11f62c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShooterBar
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 5179409235059dcee7e1758a79a01d60
+      Hash: 4cf77c6d979f879ad6ffe70825a58c74
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -676,8 +688,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SwitchLight
+  - hash:
+      serializedVersion: 2
+      Hash: 40f4cca8179d135886a084289e4c8358
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScrollableManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/TestPerso.unity
-  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.3/JABJOB
+  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.4/JABJOB
     test.exe
