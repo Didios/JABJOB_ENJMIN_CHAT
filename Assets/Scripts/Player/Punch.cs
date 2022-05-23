@@ -31,9 +31,22 @@ public class Punch : MonoBehaviour
                 var force = -(strengthMax / distMax) * hit.distance + strengthMax;
 
                 var hitTurn = hit.transform.GetComponent<OrientableObject>();
+                var hitBreak = hit.transform.GetComponent<BreakableObject>();
 
-                if (hitTurn != null) { hitTurn.AddTurn(transform.forward * force); }
-                else if (hit.rigidbody != null) { hit.rigidbody.AddForce(transform.forward * force, ForceMode.Impulse); }
+                if (hitTurn != null)
+                {
+                    hitTurn.AddTurn(transform.forward * force);
+                }
+
+                if (hitBreak != null)
+                {
+                    hitBreak.Touch();
+                }
+
+                if (hit.rigidbody != null)
+                {
+                    hit.rigidbody.AddForce(transform.forward * force, ForceMode.Impulse);
+                }
 
                 if (showDebug) Debug.Log("[Punch]:\n Strength : " + force);
             }

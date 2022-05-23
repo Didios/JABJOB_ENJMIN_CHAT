@@ -97,6 +97,10 @@ public class MenuManager : MonoBehaviour
     // Switch between screen mode
     public void Game()
     {
+        levels[lvl].Reset();
+        owner = levels[lvl].controllerOwner;
+        ownerInfos = owner.infos;
+
         //player
         playerRigidbody.useGravity = true;
         playerController.activate = true;
@@ -126,12 +130,8 @@ public class MenuManager : MonoBehaviour
         owner.isActive = false;
         ownerHand.isActive = false;
 
-        levels[lvl].Reset();
-
         //ownerPath = levels[lvl].pathfindingOwner;
         //ownerHand = levels[lvl].handOwner;
-        owner = levels[lvl].controllerOwner;
-        ownerInfos = owner.infos;
 
         // placement camera (player)
         player.position = posCameraMenu;
@@ -146,6 +146,7 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel(bool win)
     {
+        levels[lvl].Clean();
         //playButton.interactable = false;
         if (win) lvl += 1;
 

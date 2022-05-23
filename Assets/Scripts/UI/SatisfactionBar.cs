@@ -19,6 +19,9 @@ public class SatisfactionBar : MonoBehaviour
     private int count = 0;
     public bool showDebug = false;
 
+    [Header("Particle")]
+    public ParticleSystem particleSys;
+
     public bool finish
     {
         get { return count >= maxCount; }
@@ -52,8 +55,9 @@ public class SatisfactionBar : MonoBehaviour
         gauge.localScale = _scale;
         gaugeImg.color = GetColorPercent(_percent);
 
-        if (showDebug) Debug.Log("[SatisfactionBar]:\n Bar Update");
+        particleSys.Play();
 
+        if (showDebug) Debug.Log("[SatisfactionBar]:\n Bar Update");
     }
 
     public void ResetBar(int newMax)

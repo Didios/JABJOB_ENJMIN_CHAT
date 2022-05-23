@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BounceObject
     - BreakableObject
+    - CooldownBar
     - EphemeralObject
     - FPSController
     - HideableObject
@@ -10,12 +11,18 @@ ScriptsOnlyBuild:
     - OrientableObject
     - Outline
     - OwnerHand
+    - OwnerHandState
+    - OwnerStunnedDetection
     - PathFinding
     - Punch
     - RegenObject
     - SatisfactionBar
     - ScrollableManager
+    - SenseHearing
+    - SenseLight
+    - SenseSight
     - ShooterBar
+    - StateInfoController
     - SwitchLight
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -90,59 +97,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1538}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1818}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 1846}
+      Script: {instanceID: 1820}
     - Class: 114
-      Script: {instanceID: 2128}
+      Script: {instanceID: 1916}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 2106}
+    - Class: 114
+      Script: {instanceID: 2232}
+    - Class: 114
+      Script: {instanceID: 2244}
     - Class: 114
       Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2288}
+      Script: {instanceID: 2418}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2554}
+      Script: {instanceID: 2578}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2656}
     - Class: 114
-      Script: {instanceID: 2676}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2712}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2716}
     - Class: 114
-      Script: {instanceID: 2918}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3000}
+      Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 3026}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3344}
+      Script: {instanceID: 3198}
     - Class: 114
-      Script: {instanceID: 3896}
+      Script: {instanceID: 3336}
     - Class: 114
-      Script: {instanceID: 3966}
+      Script: {instanceID: 3720}
     - Class: 114
-      Script: {instanceID: 4232}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 3756}
     - Class: 114
-      Script: {instanceID: 4326}
+      Script: {instanceID: 3898}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 3906}
     - Class: 114
-      Script: {instanceID: 4650}
+      Script: {instanceID: 3976}
     - Class: 114
-      Script: {instanceID: 22364}
+      Script: {instanceID: 4248}
+    - Class: 114
+      Script: {instanceID: 4268}
+    - Class: 114
+      Script: {instanceID: 4342}
+    - Class: 114
+      Script: {instanceID: 4510}
+    - Class: 114
+      Script: {instanceID: 4670}
+    - Class: 114
+      Script: {instanceID: 4678}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -184,6 +205,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 2ef098a7fc3b74d72997349b08f187c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NoiseStatus
   - hash:
       serializedVersion: 2
       Hash: 8b3a8c1e7ed3cd482ae89742f5dac0c2
@@ -252,7 +279,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 7270a4fc0887683e78c136d08ae254ca
+      Hash: ec5cb528ddba68019d69cb9250064d13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BreakableObject
@@ -262,6 +289,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: b5d90793fdf00c30654ce0627098648c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StateInfoController
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -354,6 +387,12 @@ ScriptsOnlyBuild:
     className: PathFinding
   - hash:
       serializedVersion: 2
+      Hash: 7465182efc35782be9a9e2006dac6ebe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SenseHearing
+  - hash:
+      serializedVersion: 2
       Hash: 55cfc1d5af57fa848a24dd9d5795e0ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -396,6 +435,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 2020e3469927b6477a449427b25c374b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlashNoiseObject
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -432,7 +477,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 2dabae0747628d493d1027b952a3aa1e
+      Hash: b350c9ac937957ff80dd00c24a0ca23c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPSController
@@ -460,6 +505,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 7d2856c6560af3237f868ac660fe086f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScrollableManager
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -492,7 +543,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 0e58b34e058110eb37e3e42cb96b7edd
+      Hash: 19d44a141a76b2ae8d863d3cc007ff41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Punch
@@ -546,6 +597,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: 0311afa3b847ae6f5fcdc09577da3298
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AgentController
+  - hash:
+      serializedVersion: 2
       Hash: a81d4c2c1cf3ad164d277d927a193679
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -564,10 +621,28 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 5daa2f53f419ede9680bffb7b9b09dec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SenseLight
+  - hash:
+      serializedVersion: 2
+      Hash: fe5fd541d826dbcdc44505d89cebc3d2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SenseSight
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 38974e01dab02324a90a90f6df55a3e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OwnerHandState
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -594,7 +669,13 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: e46ed1f4f0926903df7fe82762476bc5
+      Hash: 888b2a95c7f0b4265e36eed22b186e1e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OwnerStunnedDetection
+  - hash:
+      serializedVersion: 2
+      Hash: 885946dfce470ca15db4484205e59f5f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SatisfactionBar
@@ -624,6 +705,12 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: fc2875d5b8a9efc328386bbc03c67f37
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightStatus
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -636,7 +723,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 10a57a6eddd859879514d43c0f11f62c
+      Hash: 701532be1a327b85db4ce50802989bc0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShooterBar
@@ -648,7 +735,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 4cf77c6d979f879ad6ffe70825a58c74
+      Hash: 788d55e293b8b38aa5496a1c23518b20
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -690,12 +777,11 @@ ScriptsOnlyBuild:
     className: SwitchLight
   - hash:
       serializedVersion: 2
-      Hash: 40f4cca8179d135886a084289e4c8358
+      Hash: 6edf40fe7481034b84beb153921c9373
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ScrollableManager
+    className: CooldownBar
   platform: 19
   scenePathNames:
   - Assets/Scenes/TestPerso.unity
-  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.4/JABJOB
-    test.exe
+  playerPath: F:/C.A.T_V1.7/JABJOB test.exe

@@ -38,7 +38,6 @@ public class BreakableObject : MonoBehaviour
 
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody>();
         collider_ = GetComponent<Collider>();
         if (hasOutline) // check outline
         {
@@ -52,6 +51,11 @@ public class BreakableObject : MonoBehaviour
                 visibility.OutlineWidth = 10;
             }
         }
+
+        if (usingLimit)
+        {
+            rigidBody = GetComponent<Rigidbody>();
+        }
     }
 
     // Update is called once per frame
@@ -62,25 +66,35 @@ public class BreakableObject : MonoBehaviour
             TimerInvincibility -= Time.deltaTime;
         }
 
-        if ((ancientSpeed > limitSpeed && rigidBody.velocity.magnitude < limitSpeed && usingLimit) || // if the speed exceeds the limit if ther is a limit
-            breakObject || // if the code call to break
-            (ancientSpeed > rigidBody.velocity.magnitude && !usingLimit)) // if the object slow down, in case of no speed limit
+        if (usingLimit)
+        {
+            if ((ancientSpeed > limitSpeed && rigidBody.velocity.magnitude < limitSpeed && usingLimit) || // if the speed exceeds the limit if ther is a limit
+                (ancientSpeed > rigidBody.velocity.magnitude)) // if the object slow down, in case of no speed limit
+            {
+                Break();
+            }
+
+            ancientSpeed = rigidBody.velocity.magnitude;
+        }
+
+        if (breakObject)
         {
             Break();
         }
 
-        ancientSpeed = rigidBody.velocity.magnitude;
-
-        if (hold)
+        if (holdeable)
         {
-            transform.rotation = new Quaternion();
-            rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-            collider_.enabled = false;
-        }
-        else
-        {
-            rigidBody.constraints = RigidbodyConstraints.None;
-            collider_.enabled = true;
+            if (hold)
+            {
+                transform.rotation = new Quaternion();
+                rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+                collider_.enabled = false;
+            }
+            else
+            {
+                rigidBody.constraints = RigidbodyConstraints.None;
+                collider_.enabled = true;
+            }
         }
     }
 
@@ -141,17 +155,31 @@ public class BreakableObject : MonoBehaviour
         collider_.enabled = true;
     }
 
+    public void Touch()
+    {
+        if ((usingTouch && holdeable && !hold) ||
+            (usingTouch && !holdeable))
+        {
+            if (TimerInvincibility < 0)
+            {
+                Break();
+            }
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == tagDestroy)
         {
+            Break();
             Destroy(gameObject);
         }
-        else if (usingTouch && !hold)
+        else 
         {
-            Break();
+            Touch();
         }
     }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.transform.tag == tagDestroy) { Destroy(gameObject); }

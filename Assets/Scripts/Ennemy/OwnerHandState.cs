@@ -135,7 +135,7 @@ public class OwnerHandState : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == player.gameObject)
+        if (collision.gameObject == player.gameObject && !ownerInfos.isStunned)
         {
             Catch();
             if (showDebug) Debug.Log("[OwnerHand]\n Owner grabbed Player");
@@ -148,7 +148,7 @@ public class OwnerHandState : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player.gameObject)
+        if (other.gameObject == player.gameObject && !ownerInfos.isStunned)
         {
             Catch();
             if (showDebug) Debug.Log("[OwnerHand]\n owner grabbed Player");

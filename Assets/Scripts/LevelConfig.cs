@@ -28,8 +28,12 @@ public class LevelConfig
 
     // other infos
     private bool hasBeenSet = false;
-    [HideInInspector] public Vector3 worldSpawnOwner { get { return localSpawnOwner + posLevel; } private set { } }
-    [HideInInspector] public Vector3 worldSpawnPlayer { get { return localSpawnPlayer + posLevel; } private set { } }
+    [HideInInspector] public Vector3 worldSpawnOwner { get { if (posLevel.sqrMagnitude == 0) return localSpawnOwner + levelObject.position;
+            else return localSpawnOwner + posLevel;
+        } private set { } }
+    [HideInInspector] public Vector3 worldSpawnPlayer { get { if (posLevel.sqrMagnitude == 0) return localSpawnPlayer + levelObject.position;
+            else return localSpawnPlayer + posLevel;
+        } private set { } }
     [HideInInspector] public Vector3 worldSaveMove { get { return levelObject.position + saveMove; } private set { } }
 
     private void SetLevel()
