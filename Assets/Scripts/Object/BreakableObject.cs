@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BreakableObject : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BreakableObject : MonoBehaviour
     [Tooltip("Break when velocity decrease")] public bool usingLimit = true;
     public float limitSpeed = 2;
     private float ancientSpeed = 0;
+    private bool canBreak = false;
     [Space]
     [Tooltip("Break when touch a zone with tag")] public bool usingZone = true;
     public string tagDestroy = "DeathZone";
@@ -32,13 +34,16 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] private bool hasNoise = false;
     private Outline visibility;
 
-    [SerializeField][Tooltip("first time invincible")] private float TimerInvincibility = 5;
+    [SerializeField] [Tooltip("first time invincible")] private float TimerInvincibility = 5;
 
+    [Space]
     public bool showDebug = false;
 
     private void Start()
     {
+        rigidBody = GetComponent<Rigidbody>();
         collider_ = GetComponent<Collider>();
+
         if (hasOutline) // check outline
         {
             visibility = GetComponent<Outline>();
@@ -51,37 +56,36 @@ public class BreakableObject : MonoBehaviour
                 visibility.OutlineWidth = 10;
             }
         }
-
-        if (usingLimit)
-        {
-            rigidBody = GetComponent<Rigidbody>();
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Invincibility Timer
         if (TimerInvincibility >= 0)
         {
             TimerInvincibility -= Time.deltaTime;
         }
 
+        // Break with velocity
         if (usingLimit)
         {
             if ((ancientSpeed > limitSpeed && rigidBody.velocity.magnitude < limitSpeed && usingLimit) || // if the speed exceeds the limit if ther is a limit
                 (ancientSpeed > rigidBody.velocity.magnitude)) // if the object slow down, in case of no speed limit
             {
-                Break();
+                canBreak = true;// Break();
             }
 
             ancientSpeed = rigidBody.velocity.magnitude;
         }
 
+        // Break with Code
         if (breakObject)
         {
             Break();
         }
 
+        // Holdeable object
         if (holdeable)
         {
             if (hold)
@@ -109,21 +113,46 @@ public class BreakableObject : MonoBehaviour
 
             if (breakedObject != null)
             {
-                // creation of the break object at the exact same position
-                var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
-
-                // give the same parent
-                obj.parent = transform.parent;
-                //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
-                obj.GetComponent<Rigidbody>().velocity = rigidBody.velocity;
-
-                if (hasNoise)
+                // in case object cannot be destroyed
+                try
                 {
-                    obj.GetComponent<FlashNoiseObject>().isActive = true;
-                }
+                    // creation of the break object at the exact same position
+                    var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
 
-                // delete the ancient object
-                Destroy(gameObject);
+                    // give the same parent
+                    obj.parent = transform.parent;
+                    //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
+
+                    // set velocity to make illusion
+                    if (rigidBody != null)
+                    {
+                        var rigid = obj.GetComponent<Rigidbody>();
+                        if (rigid != null)
+                        {
+                            rigid.velocity = rigidBody.velocity;
+                        }
+                        else
+                        {
+                            foreach (Rigidbody childRigid in obj.GetComponentsInChildren<Rigidbody>())
+                            {
+                                if (childRigid != null)
+                                {
+                                    childRigid.velocity = rigidBody.velocity;
+                                }
+                            }
+                        }
+                    }
+
+                    if (hasNoise)
+                        obj.GetComponent<FlashNoiseObject>().isActive = true;
+
+                    // delete the ancient object
+                    Destroy(gameObject);
+                }
+                catch (Exception e)
+                {
+                    Debug.Log(e);
+                }
             }
             else
             {
@@ -169,19 +198,33 @@ public class BreakableObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == tagDestroy)
+        if (collision.transform.CompareTag(tagDestroy))
         {
             Break();
             Destroy(gameObject);
         }
-        else 
+        else
         {
             Touch();
         }
+
+        if (TimerInvincibility > 0)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+        else
+        {
+            if (canBreak)
+            {
+                Break();
+            }
+        }
     }
 
+    /*
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.transform.tag == tagDestroy) { Destroy(gameObject); }
+        if (collision.transform.CompareTag(tagDestroy)) { Destroy(gameObject); }
     }
+    */
 }

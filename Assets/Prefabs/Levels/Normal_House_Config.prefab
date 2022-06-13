@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 8880535072846283616}
   - component: {fileID: 8880535072846283617}
   - component: {fileID: 8880535072846283646}
+  - component: {fileID: 4375941014524715762}
   m_Layer: 0
   m_Name: Book_12
   m_TagString: Untagged
@@ -327,8 +328,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4375941014524715762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072846283644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072849366094
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +387,7 @@ Transform:
   - {fileID: 8880535073648333988}
   - {fileID: 8880535074555075893}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535072872917539
 GameObject:
@@ -399,7 +423,7 @@ Transform:
   - {fileID: 8880535074774344457}
   - {fileID: 8880535073076738471}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535072887723170
 GameObject:
@@ -415,6 +439,7 @@ GameObject:
   - component: {fileID: 8880535072887723174}
   - component: {fileID: 8880535072887723175}
   - component: {fileID: 8880535072887723172}
+  - component: {fileID: 2700087539498391667}
   m_Layer: 0
   m_Name: Plate _10
   m_TagString: Untagged
@@ -536,8 +561,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2700087539498391667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072887723170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072906063372
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +600,7 @@ GameObject:
   - component: {fileID: 8880535072906063344}
   - component: {fileID: 8880535072906063345}
   - component: {fileID: 8880535072906063374}
+  - component: {fileID: 3628229248395967045}
   m_Layer: 0
   m_Name: Glass_0
   m_TagString: Untagged
@@ -673,8 +722,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3628229248395967045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072906063372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072906513697
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +761,7 @@ GameObject:
   - component: {fileID: 8880535072906513701}
   - component: {fileID: 8880535072906513698}
   - component: {fileID: 8880535072906513699}
+  - component: {fileID: 5021060931142964587}
   m_Layer: 0
   m_Name: Plate_4
   m_TagString: Untagged
@@ -810,8 +883,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5021060931142964587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072906513697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072912383339
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +922,7 @@ GameObject:
   - component: {fileID: 8880535072912383343}
   - component: {fileID: 8880535072912383340}
   - component: {fileID: 8880535072912383341}
+  - component: {fileID: 4139821807252847994}
   m_Layer: 0
   m_Name: Glass_18
   m_TagString: Untagged
@@ -947,8 +1044,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4139821807252847994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072912383339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072928506216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1129,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1059,6 +1179,7 @@ GameObject:
   - component: {fileID: 8880535072934691972}
   - component: {fileID: 8880535072934691973}
   - component: {fileID: 8880535072934691970}
+  - component: {fileID: 2463471953081696649}
   m_Layer: 0
   m_Name: Wine_glass_13
   m_TagString: Untagged
@@ -1180,8 +1301,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2463471953081696649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072934691968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072939491724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1340,7 @@ GameObject:
   - component: {fileID: 8880535072939491696}
   - component: {fileID: 8880535072939491697}
   - component: {fileID: 8880535072939491726}
+  - component: {fileID: 1195141660146948985}
   m_Layer: 0
   m_Name: Book_16
   m_TagString: Untagged
@@ -1317,8 +1462,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1195141660146948985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072939491724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072957336471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1475,7 +1643,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1525,6 +1693,7 @@ GameObject:
   - component: {fileID: 8880535072959494387}
   - component: {fileID: 8880535072959494384}
   - component: {fileID: 8880535072959494385}
+  - component: {fileID: 810795018531700745}
   m_Layer: 0
   m_Name: Book_13
   m_TagString: Untagged
@@ -1646,8 +1815,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &810795018531700745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072959494415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072975565654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1854,7 @@ GameObject:
   - component: {fileID: 8880535072975565658}
   - component: {fileID: 8880535072975565659}
   - component: {fileID: 8880535072975565656}
+  - component: {fileID: 2336262778406755805}
   m_Layer: 0
   m_Name: Glass_3
   m_TagString: Untagged
@@ -1783,8 +1976,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2336262778406755805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072975565654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535072992803742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +2015,7 @@ GameObject:
   - component: {fileID: 8880535072992803714}
   - component: {fileID: 8880535072992803715}
   - component: {fileID: 8880535072992803712}
+  - component: {fileID: 5452983896479717083}
   m_Layer: 0
   m_Name: Glass_15
   m_TagString: Untagged
@@ -1920,8 +2137,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5452983896479717083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535072992803742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073000360095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2176,7 @@ GameObject:
   - component: {fileID: 8880535073000360067}
   - component: {fileID: 8880535073000360064}
   - component: {fileID: 8880535073000360065}
+  - component: {fileID: 5961771257973571500}
   m_Layer: 0
   m_Name: Wine_glass_2
   m_TagString: Untagged
@@ -2057,8 +2298,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5961771257973571500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073000360095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073009462373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,6 +2337,7 @@ GameObject:
   - component: {fileID: 8880535073009462377}
   - component: {fileID: 8880535073009462374}
   - component: {fileID: 8880535073009462375}
+  - component: {fileID: 6154842014298032937}
   m_Layer: 0
   m_Name: Book_26
   m_TagString: Untagged
@@ -2194,8 +2459,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6154842014298032937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073009462373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073015002708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2498,7 @@ GameObject:
   - component: {fileID: 8880535073015002712}
   - component: {fileID: 8880535073015002713}
   - component: {fileID: 8880535073015002710}
+  - component: {fileID: 7188413472981462117}
   m_Layer: 0
   m_Name: BreakableObject (4)
   m_TagString: Untagged
@@ -2331,101 +2620,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
---- !u!1 &8880535073015600404
-GameObject:
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7188413472981462117
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8880535073015600407}
-  - component: {fileID: 8880535073015600406}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8880535073015600407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880535073015600404}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 36.30883, y: 4.0600004, z: -26.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!108 &8880535073015600406
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880535073015600404}
-  m_Enabled: 0
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_GameObject: {fileID: 8880535073015002708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073018876675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2705,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2695,7 +2914,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2841,6 +3060,7 @@ GameObject:
   - component: {fileID: 8880535073037310642}
   - component: {fileID: 8880535073037310643}
   - component: {fileID: 8880535073037310640}
+  - component: {fileID: 4682284350387337890}
   m_Layer: 0
   m_Name: BreakableObject (3)
   m_TagString: Untagged
@@ -2962,8 +3182,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4682284350387337890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073037310670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073043239966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,6 +3263,7 @@ GameObject:
   - component: {fileID: 8880535073065071793}
   - component: {fileID: 8880535073065071822}
   - component: {fileID: 8880535073065071823}
+  - component: {fileID: 7947403344412283846}
   m_Layer: 0
   m_Name: Wine_glass_4
   m_TagString: Untagged
@@ -3141,8 +3385,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7947403344412283846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073065071821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073067402624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,7 +3470,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3253,6 +3520,7 @@ GameObject:
   - component: {fileID: 8880535073076738472}
   - component: {fileID: 8880535073076738473}
   - component: {fileID: 8880535073076738470}
+  - component: {fileID: 3735483344857664460}
   m_Layer: 0
   m_Name: Box_0
   m_TagString: Untagged
@@ -3373,8 +3641,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3735483344857664460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073076738468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073077914843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,6 +3761,7 @@ GameObject:
   - component: {fileID: 8880535073085601315}
   - component: {fileID: 8880535073085601312}
   - component: {fileID: 8880535073085601313}
+  - component: {fileID: 5071350716078769344}
   m_Layer: 0
   m_Name: Wine_glass_14
   m_TagString: Untagged
@@ -3591,8 +3883,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5071350716078769344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073085601343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073096428104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,7 +3968,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3703,6 +4018,7 @@ GameObject:
   - component: {fileID: 8880535073110313746}
   - component: {fileID: 8880535073110313747}
   - component: {fileID: 8880535073110313744}
+  - component: {fileID: 624225318551807645}
   m_Layer: 0
   m_Name: Plate_8
   m_TagString: Untagged
@@ -3824,8 +4140,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &624225318551807645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073110313774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073118186614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,8 +4226,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74e59d78693782a4a979553ffb90df17, type: 2}
-  - {fileID: 2100000, guid: 31d42208e18abd3458b0844e70d8e2e3, type: 2}
+  - {fileID: 8992934318045909824, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
+  - {fileID: -2394082507869054314, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3985,7 +4324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4081,7 +4420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4131,6 +4470,7 @@ GameObject:
   - component: {fileID: 8880535073152095185}
   - component: {fileID: 8880535073152095214}
   - component: {fileID: 8880535073152095215}
+  - component: {fileID: 7517319586271385694}
   m_Layer: 0
   m_Name: Glass_10
   m_TagString: Untagged
@@ -4252,8 +4592,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7517319586271385694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073152095213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073154817631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4314,7 +4677,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4410,7 +4773,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4460,6 +4823,7 @@ GameObject:
   - component: {fileID: 8880535073177530491}
   - component: {fileID: 8880535073177530488}
   - component: {fileID: 8880535073177530489}
+  - component: {fileID: 1044533404694069176}
   m_Layer: 0
   m_Name: Glass_11
   m_TagString: Untagged
@@ -4581,8 +4945,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1044533404694069176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073177530487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073184642496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,7 +5030,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4774,6 +5161,7 @@ GameObject:
   - component: {fileID: 8880535073202106634}
   - component: {fileID: 8880535073202106635}
   - component: {fileID: 8880535073202106632}
+  - component: {fileID: 5065378375422833642}
   m_Layer: 0
   m_Name: Glass_5
   m_TagString: Untagged
@@ -4895,8 +5283,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5065378375422833642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073202106630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073206164744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,6 +5322,7 @@ GameObject:
   - component: {fileID: 8880535073206164748}
   - component: {fileID: 8880535073206164749}
   - component: {fileID: 8880535073206164746}
+  - component: {fileID: 1248524014876886}
   m_Layer: 0
   m_Name: Plate _11
   m_TagString: Untagged
@@ -5032,8 +5444,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1248524014876886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073206164744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073209743196
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,6 +5483,7 @@ GameObject:
   - component: {fileID: 8880535073209743168}
   - component: {fileID: 8880535073209743169}
   - component: {fileID: 8880535073209743198}
+  - component: {fileID: 5621127141720914383}
   m_Layer: 0
   m_Name: Glass_1
   m_TagString: Untagged
@@ -5169,8 +5605,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5621127141720914383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073209743196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073230063477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,6 +5644,7 @@ GameObject:
   - component: {fileID: 8880535073230063481}
   - component: {fileID: 8880535073230063478}
   - component: {fileID: 8880535073230063479}
+  - component: {fileID: 1215334928069576400}
   m_Layer: 0
   m_Name: Plate_6
   m_TagString: Untagged
@@ -5306,8 +5766,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1215334928069576400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073230063477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073245662583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5368,8 +5851,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5419,6 +5902,7 @@ GameObject:
   - component: {fileID: 8880535073279315931}
   - component: {fileID: 8880535073279315928}
   - component: {fileID: 8880535073279315932}
+  - component: {fileID: 1726571221642277976}
   m_Layer: 0
   m_Name: Coffee_recipient
   m_TagString: Untagged
@@ -5527,8 +6011,13 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
 --- !u!64 &8880535073279315932
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5543,6 +6032,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4303451306548365743, guid: 6d434cf18bff07449858764778d11235, type: 3}
+--- !u!114 &1726571221642277976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073279315926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073284827214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,7 +6191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5734,6 +6241,7 @@ GameObject:
   - component: {fileID: 8880535073356700578}
   - component: {fileID: 8880535073356700579}
   - component: {fileID: 8880535073356700576}
+  - component: {fileID: 2206292320184313278}
   m_Layer: 0
   m_Name: Book_15
   m_TagString: Untagged
@@ -5855,8 +6363,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2206292320184313278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073356700606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073383510871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,6 +6402,7 @@ GameObject:
   - component: {fileID: 8880535073383510875}
   - component: {fileID: 8880535073383510872}
   - component: {fileID: 8880535073383510873}
+  - component: {fileID: 1162690524744228754}
   m_Layer: 0
   m_Name: Glass_7
   m_TagString: Untagged
@@ -5992,8 +6524,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1162690524744228754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073383510871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073403967822
 GameObject:
   m_ObjectHideFlags: 0
@@ -6054,7 +6609,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6104,6 +6659,7 @@ GameObject:
   - component: {fileID: 8880535073405494830}
   - component: {fileID: 8880535073405494831}
   - component: {fileID: 8880535073405494828}
+  - component: {fileID: 7993328541014000333}
   m_Layer: 0
   m_Name: Book_4
   m_TagString: Untagged
@@ -6225,8 +6781,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7993328541014000333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073405494826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073408671593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,7 +6866,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6383,7 +6962,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6433,6 +7012,7 @@ GameObject:
   - component: {fileID: 8880535073420043902}
   - component: {fileID: 8880535073420043903}
   - component: {fileID: 8880535073420043900}
+  - component: {fileID: 5535494966604502115}
   m_Layer: 0
   m_Name: Glass_9
   m_TagString: Untagged
@@ -6554,8 +7134,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5535494966604502115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073420043898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073423134586
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,6 +7173,7 @@ GameObject:
   - component: {fileID: 8880535073423134590}
   - component: {fileID: 8880535073423134591}
   - component: {fileID: 8880535073423134588}
+  - component: {fileID: 6536654488651609364}
   m_Layer: 0
   m_Name: Glass_19
   m_TagString: Untagged
@@ -6691,8 +7295,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6536654488651609364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073423134586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073441534970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,7 +7380,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40d08e792a9f2e34f85b5cefb3147d95, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6884,7 +7511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6981,7 +7608,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7077,7 +7704,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7173,7 +7800,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -2310514774154243031, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7304,6 +7931,7 @@ GameObject:
   - component: {fileID: 8880535073490178993}
   - component: {fileID: 8880535073490179022}
   - component: {fileID: 8880535073490179023}
+  - component: {fileID: 7218161213700419004}
   m_Layer: 0
   m_Name: Glass_16
   m_TagString: Untagged
@@ -7425,8 +8053,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7218161213700419004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073490179021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073500384588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7441,6 +8092,7 @@ GameObject:
   - component: {fileID: 8880535073500384560}
   - component: {fileID: 8880535073500384561}
   - component: {fileID: 8880535073500384590}
+  - component: {fileID: 8608965099787963267}
   m_Layer: 0
   m_Name: Plate_9
   m_TagString: Untagged
@@ -7562,8 +8214,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8608965099787963267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073500384588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073520107118
 GameObject:
   m_ObjectHideFlags: 0
@@ -7578,6 +8253,7 @@ GameObject:
   - component: {fileID: 8880535073520107090}
   - component: {fileID: 8880535073520107091}
   - component: {fileID: 8880535073520107088}
+  - component: {fileID: 7750578120205107537}
   m_Layer: 0
   m_Name: Glass_14
   m_TagString: Untagged
@@ -7699,8 +8375,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7750578120205107537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073520107118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073523116655
 GameObject:
   m_ObjectHideFlags: 0
@@ -7761,7 +8460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7857,7 +8556,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7953,7 +8652,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8146,8 +8845,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8243,7 +8942,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8293,6 +8992,7 @@ GameObject:
   - component: {fileID: 8880535073568151265}
   - component: {fileID: 8880535073568151294}
   - component: {fileID: 8880535073568151295}
+  - component: {fileID: 4273857591750797992}
   m_Layer: 0
   m_Name: Book_8
   m_TagString: Untagged
@@ -8414,8 +9114,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4273857591750797992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073568151293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073576444504
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,6 +9153,7 @@ GameObject:
   - component: {fileID: 8880535073576444508}
   - component: {fileID: 8880535073576444509}
   - component: {fileID: 8880535073576444506}
+  - component: {fileID: 8218690469366410513}
   m_Layer: 0
   m_Name: Book_29
   m_TagString: Untagged
@@ -8551,8 +9275,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8218690469366410513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073576444504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073578626178
 GameObject:
   m_ObjectHideFlags: 0
@@ -8613,7 +9360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8663,6 +9410,7 @@ GameObject:
   - component: {fileID: 8880535073590576483}
   - component: {fileID: 8880535073590576480}
   - component: {fileID: 8880535073590576481}
+  - component: {fileID: 6249784628412160953}
   m_Layer: 0
   m_Name: Box_3
   m_TagString: Untagged
@@ -8783,8 +9531,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6249784628412160953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073590576511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073608605830
 GameObject:
   m_ObjectHideFlags: 0
@@ -8799,6 +9570,7 @@ GameObject:
   - component: {fileID: 8880535073608605834}
   - component: {fileID: 8880535073608605835}
   - component: {fileID: 8880535073608605832}
+  - component: {fileID: 4117545474207344360}
   m_Layer: 0
   m_Name: Wine_glass_7
   m_TagString: Untagged
@@ -8920,8 +9692,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4117545474207344360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073608605830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073617841566
 GameObject:
   m_ObjectHideFlags: 0
@@ -8936,6 +9731,7 @@ GameObject:
   - component: {fileID: 8880535073617841538}
   - component: {fileID: 8880535073617841539}
   - component: {fileID: 8880535073617841536}
+  - component: {fileID: 7314725236731827241}
   m_Layer: 0
   m_Name: Wine_glass_0
   m_TagString: Untagged
@@ -9057,8 +9853,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7314725236731827241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073617841566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073619302248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9119,7 +9938,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9169,6 +9988,7 @@ GameObject:
   - component: {fileID: 8880535073621538935}
   - component: {fileID: 8880535073621538932}
   - component: {fileID: 8880535073621538933}
+  - component: {fileID: 1946437669385476354}
   m_Layer: 0
   m_Name: Plate_1
   m_TagString: Untagged
@@ -9290,8 +10110,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1946437669385476354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073621538931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073628011962
 GameObject:
   m_ObjectHideFlags: 0
@@ -9352,7 +10195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9448,7 +10291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a143d06b66913f544a3e4471e5b0feed, type: 2}
+  - {fileID: -471287328372531623, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9544,7 +10387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6041e5e954ab27f44bd9bd89cba00031, type: 2}
+  - {fileID: -8373584595250389242, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9640,7 +10483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9690,6 +10533,7 @@ GameObject:
   - component: {fileID: 8880535073648333993}
   - component: {fileID: 8880535073648333990}
   - component: {fileID: 8880535073648333991}
+  - component: {fileID: 5203162468743586136}
   m_Layer: 0
   m_Name: Microwave
   m_TagString: Untagged
@@ -9813,8 +10657,31 @@ MonoBehaviour:
   limitSpeed: 4
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5203162468743586136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073648333989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073660453683
 GameObject:
   m_ObjectHideFlags: 0
@@ -9875,7 +10742,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9925,6 +10792,7 @@ GameObject:
   - component: {fileID: 8880535073674775888}
   - component: {fileID: 8880535073674775889}
   - component: {fileID: 8880535073674775918}
+  - component: {fileID: 3736704157883460478}
   m_Layer: 0
   m_Name: Book_2
   m_TagString: Untagged
@@ -10046,8 +10914,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3736704157883460478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073674775916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073677339526
 GameObject:
   m_ObjectHideFlags: 0
@@ -10108,7 +10999,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10158,6 +11049,7 @@ GameObject:
   - component: {fileID: 8880535073696565204}
   - component: {fileID: 8880535073696565205}
   - component: {fileID: 8880535073696565202}
+  - component: {fileID: 4129021969883428489}
   m_Layer: 0
   m_Name: Book_24
   m_TagString: Untagged
@@ -10279,8 +11171,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4129021969883428489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073696565200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073721865091
 GameObject:
   m_ObjectHideFlags: 0
@@ -10423,7 +11338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10473,6 +11388,7 @@ GameObject:
   - component: {fileID: 8880535073726295227}
   - component: {fileID: 8880535073726295224}
   - component: {fileID: 8880535073726295225}
+  - component: {fileID: 6883365557214355774}
   m_Layer: 0
   m_Name: Box_5
   m_TagString: Untagged
@@ -10593,8 +11509,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6883365557214355774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073726295223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073746841549
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,6 +11548,7 @@ GameObject:
   - component: {fileID: 8880535073746841521}
   - component: {fileID: 8880535073746841550}
   - component: {fileID: 8880535073746841551}
+  - component: {fileID: 6115204849626477713}
   m_Layer: 0
   m_Name: Wine_bottle_0
   m_TagString: Untagged
@@ -10732,8 +11672,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6115204849626477713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073746841549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073758557199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10794,7 +11757,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10844,6 +11807,7 @@ GameObject:
   - component: {fileID: 8880535073762491817}
   - component: {fileID: 8880535073762491814}
   - component: {fileID: 8880535073762491815}
+  - component: {fileID: 5072413888005229617}
   m_Layer: 0
   m_Name: Plate_0
   m_TagString: Untagged
@@ -10965,8 +11929,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5072413888005229617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073762491813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073777003491
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,6 +11968,7 @@ GameObject:
   - component: {fileID: 8880535073777003495}
   - component: {fileID: 8880535073777003492}
   - component: {fileID: 8880535073777003493}
+  - component: {fileID: 6283461804871051626}
   m_Layer: 0
   m_Name: Book_31
   m_TagString: Untagged
@@ -11102,8 +12090,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6283461804871051626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073777003491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073782364283
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,6 +12129,7 @@ GameObject:
   - component: {fileID: 8880535073782364287}
   - component: {fileID: 8880535073782364284}
   - component: {fileID: 8880535073782364285}
+  - component: {fileID: 5421164380983164954}
   m_Layer: 0
   m_Name: Wine_bottle_1
   m_TagString: Untagged
@@ -11241,8 +12253,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5421164380983164954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073782364283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073798919084
 GameObject:
   m_ObjectHideFlags: 0
@@ -11303,7 +12338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11353,6 +12388,7 @@ GameObject:
   - component: {fileID: 8880535073806388640}
   - component: {fileID: 8880535073806388641}
   - component: {fileID: 8880535073806388670}
+  - component: {fileID: 4790894999333853955}
   m_Layer: 0
   m_Name: Wine_glass_3
   m_TagString: Untagged
@@ -11474,8 +12510,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4790894999333853955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073806388668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073812926657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11490,6 +12549,7 @@ GameObject:
   - component: {fileID: 8880535073812926661}
   - component: {fileID: 8880535073812926658}
   - component: {fileID: 8880535073812926659}
+  - component: {fileID: 7820966050623056249}
   m_Layer: 0
   m_Name: Glass_13
   m_TagString: Untagged
@@ -11611,8 +12671,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7820966050623056249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073812926657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073814477056
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,7 +12930,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11897,6 +12980,7 @@ GameObject:
   - component: {fileID: 8880535073823493664}
   - component: {fileID: 8880535073823493665}
   - component: {fileID: 8880535073823493694}
+  - component: {fileID: 2291460878862922271}
   m_Layer: 0
   m_Name: BreakableObject (6)
   m_TagString: Untagged
@@ -12018,8 +13102,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2291460878862922271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073823493692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073829518564
 GameObject:
   m_ObjectHideFlags: 0
@@ -12127,6 +13234,7 @@ GameObject:
   - component: {fileID: 8880535073841456542}
   - component: {fileID: 8880535073841456543}
   - component: {fileID: 8880535073841456540}
+  - component: {fileID: 5698291998987978653}
   m_Layer: 0
   m_Name: BreakableObject (1)
   m_TagString: Untagged
@@ -12248,8 +13356,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5698291998987978653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073841456538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073843037152
 GameObject:
   m_ObjectHideFlags: 0
@@ -12277,7 +13408,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8880535073015600407}
   - {fileID: 8880535074575650557}
   - {fileID: 8880535074870395306}
   - {fileID: 8880535072872917538}
@@ -12349,8 +13479,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12623,7 +13753,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12719,7 +13849,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12769,6 +13899,7 @@ GameObject:
   - component: {fileID: 8880535073868794907}
   - component: {fileID: 8880535073868794904}
   - component: {fileID: 8880535073868794908}
+  - component: {fileID: 7919736190343922669}
   m_Layer: 0
   m_Name: Laptop
   m_TagString: Untagged
@@ -12878,8 +14009,13 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
 --- !u!64 &8880535073868794908
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12894,6 +14030,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1912213703759168438, guid: 9c09508830f3c7a479a6ef792d071ac2, type: 3}
+--- !u!114 &7919736190343922669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073868794902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073879978176
 GameObject:
   m_ObjectHideFlags: 0
@@ -12908,6 +14062,7 @@ GameObject:
   - component: {fileID: 8880535073879978180}
   - component: {fileID: 8880535073879978181}
   - component: {fileID: 8880535073879978178}
+  - component: {fileID: 6186785303798231111}
   m_Layer: 0
   m_Name: BreakableObject (5)
   m_TagString: Untagged
@@ -13029,8 +14184,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6186785303798231111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073879978176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073892143308
 GameObject:
   m_ObjectHideFlags: 0
@@ -13045,6 +14223,7 @@ GameObject:
   - component: {fileID: 8880535073892143280}
   - component: {fileID: 8880535073892143281}
   - component: {fileID: 8880535073892143310}
+  - component: {fileID: 1868717633059272584}
   m_Layer: 0
   m_Name: Book_30
   m_TagString: Untagged
@@ -13166,8 +14345,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1868717633059272584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073892143308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073894212478
 GameObject:
   m_ObjectHideFlags: 0
@@ -13182,6 +14384,7 @@ GameObject:
   - component: {fileID: 8880535073894212450}
   - component: {fileID: 8880535073894212451}
   - component: {fileID: 8880535073894212448}
+  - component: {fileID: 7408752522854111856}
   m_Layer: 0
   m_Name: Book_14
   m_TagString: Untagged
@@ -13303,8 +14506,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7408752522854111856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073894212478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073908283753
 GameObject:
   m_ObjectHideFlags: 0
@@ -13461,7 +14687,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13557,7 +14783,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13653,7 +14879,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13749,7 +14975,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13845,7 +15071,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13941,7 +15167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -2310514774154243031, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13991,6 +15217,7 @@ GameObject:
   - component: {fileID: 8880535073949938966}
   - component: {fileID: 8880535073949938967}
   - component: {fileID: 8880535073949938964}
+  - component: {fileID: 6826900130897367223}
   m_Layer: 0
   m_Name: Book_20
   m_TagString: Untagged
@@ -14112,8 +15339,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6826900130897367223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073949938962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073951717680
 GameObject:
   m_ObjectHideFlags: 0
@@ -14174,7 +15424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14224,6 +15474,7 @@ GameObject:
   - component: {fileID: 8880535073969283745}
   - component: {fileID: 8880535073969283774}
   - component: {fileID: 8880535073969283775}
+  - component: {fileID: 1256126603421977126}
   m_Layer: 0
   m_Name: Glass_12
   m_TagString: Untagged
@@ -14345,8 +15596,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1256126603421977126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073969283773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535073977101958
 GameObject:
   m_ObjectHideFlags: 0
@@ -14503,7 +15777,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14599,7 +15873,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14695,7 +15969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14745,6 +16019,7 @@ GameObject:
   - component: {fileID: 8880535073997302814}
   - component: {fileID: 8880535073997302815}
   - component: {fileID: 8880535073997302812}
+  - component: {fileID: 2266946616488703138}
   m_Layer: 0
   m_Name: Book_5
   m_TagString: Untagged
@@ -14866,8 +16141,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2266946616488703138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535073997302810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074002453040
 GameObject:
   m_ObjectHideFlags: 0
@@ -14932,7 +16230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14982,6 +16280,7 @@ GameObject:
   - component: {fileID: 8880535074027068829}
   - component: {fileID: 8880535074027068826}
   - component: {fileID: 8880535074027068827}
+  - component: {fileID: 4933299064151201680}
   m_Layer: 0
   m_Name: Book_10
   m_TagString: Untagged
@@ -15103,8 +16402,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4933299064151201680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074027068825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074028341265
 GameObject:
   m_ObjectHideFlags: 0
@@ -15250,7 +16572,7 @@ Transform:
   - {fileID: 8880535072906063375}
   - {fileID: 8880535074341937081}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074051995315
 GameObject:
@@ -15312,7 +16634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15408,8 +16730,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15459,6 +16781,7 @@ GameObject:
   - component: {fileID: 8880535074056138078}
   - component: {fileID: 8880535074056138079}
   - component: {fileID: 8880535074056138076}
+  - component: {fileID: 2666059002093125703}
   m_Layer: 0
   m_Name: Book_27
   m_TagString: Untagged
@@ -15580,8 +16903,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2666059002093125703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074056138074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074057123669
 GameObject:
   m_ObjectHideFlags: 0
@@ -15596,6 +16942,7 @@ GameObject:
   - component: {fileID: 8880535074057123673}
   - component: {fileID: 8880535074057123670}
   - component: {fileID: 8880535074057123671}
+  - component: {fileID: 1483236844715262823}
   m_Layer: 0
   m_Name: Bowl_3
   m_TagString: Untagged
@@ -15717,8 +17064,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1483236844715262823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074057123669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074059209454
 GameObject:
   m_ObjectHideFlags: 0
@@ -15733,6 +17103,7 @@ GameObject:
   - component: {fileID: 8880535074059209426}
   - component: {fileID: 8880535074059209427}
   - component: {fileID: 8880535074059209424}
+  - component: {fileID: 3298093498425771698}
   m_Layer: 0
   m_Name: Wine_glass_15
   m_TagString: Untagged
@@ -15854,8 +17225,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3298093498425771698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074059209454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074067837007
 GameObject:
   m_ObjectHideFlags: 0
@@ -15951,6 +17345,7 @@ GameObject:
   - component: {fileID: 8880535074074350633}
   - component: {fileID: 8880535074074350630}
   - component: {fileID: 8880535074074350631}
+  - component: {fileID: 2544102681174384667}
   m_Layer: 0
   m_Name: Wine_glass_1
   m_TagString: Untagged
@@ -16072,8 +17467,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2544102681174384667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074074350629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074102031524
 GameObject:
   m_ObjectHideFlags: 0
@@ -16088,6 +17506,7 @@ GameObject:
   - component: {fileID: 8880535074102031528}
   - component: {fileID: 8880535074102031529}
   - component: {fileID: 8880535074102031526}
+  - component: {fileID: 6277153284330025678}
   m_Layer: 0
   m_Name: Book_9
   m_TagString: Untagged
@@ -16209,8 +17628,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6277153284330025678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074102031524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074114670358
 GameObject:
   m_ObjectHideFlags: 0
@@ -16225,6 +17667,7 @@ GameObject:
   - component: {fileID: 8880535074114670362}
   - component: {fileID: 8880535074114670363}
   - component: {fileID: 8880535074114670360}
+  - component: {fileID: 5509217159852324619}
   m_Layer: 0
   m_Name: Book_23
   m_TagString: Untagged
@@ -16346,8 +17789,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5509217159852324619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074114670358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074122735217
 GameObject:
   m_ObjectHideFlags: 0
@@ -16408,7 +17874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16458,6 +17924,7 @@ GameObject:
   - component: {fileID: 8880535074127131292}
   - component: {fileID: 8880535074127131293}
   - component: {fileID: 8880535074127131290}
+  - component: {fileID: 9201971931394101099}
   m_Layer: 0
   m_Name: Book_28
   m_TagString: Untagged
@@ -16579,8 +18046,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &9201971931394101099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074127131288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074142539555
 GameObject:
   m_ObjectHideFlags: 0
@@ -16691,6 +18181,7 @@ GameObject:
   - component: {fileID: 8880535074150875549}
   - component: {fileID: 8880535074150875546}
   - component: {fileID: 8880535074150875547}
+  - component: {fileID: 484805520379226789}
   m_Layer: 0
   m_Name: Book_0
   m_TagString: Untagged
@@ -16812,8 +18303,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &484805520379226789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074150875545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074168661264
 GameObject:
   m_ObjectHideFlags: 0
@@ -16828,6 +18342,7 @@ GameObject:
   - component: {fileID: 8880535074168661268}
   - component: {fileID: 8880535074168661269}
   - component: {fileID: 8880535074168661266}
+  - component: {fileID: 1593496232191643249}
   m_Layer: 0
   m_Name: Book_1
   m_TagString: Untagged
@@ -16949,8 +18464,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1593496232191643249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074168661264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074168809583
 GameObject:
   m_ObjectHideFlags: 0
@@ -16965,6 +18503,7 @@ GameObject:
   - component: {fileID: 8880535074168809555}
   - component: {fileID: 8880535074168809552}
   - component: {fileID: 8880535074168809553}
+  - component: {fileID: 5106983023653957612}
   m_Layer: 0
   m_Name: Book_3
   m_TagString: Untagged
@@ -17086,8 +18625,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5106983023653957612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074168809583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074178482698
 GameObject:
   m_ObjectHideFlags: 0
@@ -17149,7 +18711,7 @@ Transform:
   - {fileID: 8880535074736927756}
   - {fileID: 8880535074959198531}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074196350598
 GameObject:
@@ -17211,7 +18773,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17261,6 +18823,7 @@ GameObject:
   - component: {fileID: 8880535074199651133}
   - component: {fileID: 8880535074199651130}
   - component: {fileID: 8880535074199651131}
+  - component: {fileID: 1278864844954454160}
   m_Layer: 0
   m_Name: Book_17
   m_TagString: Untagged
@@ -17382,8 +18945,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1278864844954454160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074199651129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074216836328
 GameObject:
   m_ObjectHideFlags: 0
@@ -17398,6 +18984,7 @@ GameObject:
   - component: {fileID: 8880535074216836332}
   - component: {fileID: 8880535074216836333}
   - component: {fileID: 8880535074216836330}
+  - component: {fileID: 5251200622411188893}
   m_Layer: 0
   m_Name: Wine_glass_11
   m_TagString: Untagged
@@ -17519,8 +19106,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5251200622411188893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074216836328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074221083757
 GameObject:
   m_ObjectHideFlags: 0
@@ -17535,6 +19145,7 @@ GameObject:
   - component: {fileID: 8880535074221083729}
   - component: {fileID: 8880535074221083758}
   - component: {fileID: 8880535074221083759}
+  - component: {fileID: 3300974180798076297}
   m_Layer: 0
   m_Name: Book_21
   m_TagString: Untagged
@@ -17656,8 +19267,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3300974180798076297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074221083757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074225551323
 GameObject:
   m_ObjectHideFlags: 0
@@ -17768,6 +19402,7 @@ GameObject:
   - component: {fileID: 8880535074233971942}
   - component: {fileID: 8880535074233971943}
   - component: {fileID: 8880535074233971940}
+  - component: {fileID: 2661087709528641108}
   m_Layer: 0
   m_Name: Wine_glass_6
   m_TagString: Untagged
@@ -17889,8 +19524,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2661087709528641108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074233971938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074248709576
 GameObject:
   m_ObjectHideFlags: 0
@@ -17951,7 +19609,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18001,7 +19659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8880535074256904588
 Transform:
   m_ObjectHideFlags: 0
@@ -18081,7 +19739,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18177,7 +19835,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18273,7 +19931,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18416,6 +20074,7 @@ GameObject:
   - component: {fileID: 8880535074275878832}
   - component: {fileID: 8880535074275878833}
   - component: {fileID: 8880535074275878862}
+  - component: {fileID: 9173343849005888578}
   m_Layer: 0
   m_Name: Plate_3
   m_TagString: Untagged
@@ -18537,8 +20196,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &9173343849005888578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074275878860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074295798763
 GameObject:
   m_ObjectHideFlags: 0
@@ -18599,7 +20281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18649,6 +20331,7 @@ GameObject:
   - component: {fileID: 8880535074297848697}
   - component: {fileID: 8880535074297848694}
   - component: {fileID: 8880535074297848695}
+  - component: {fileID: 7252542291613678393}
   m_Layer: 0
   m_Name: Bowl_4
   m_TagString: Untagged
@@ -18770,8 +20453,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7252542291613678393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074297848693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074305028394
 GameObject:
   m_ObjectHideFlags: 0
@@ -18832,7 +20538,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a143d06b66913f544a3e4471e5b0feed, type: 2}
+  - {fileID: -471287328372531623, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18928,7 +20634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19117,7 +20823,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19213,7 +20919,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19313,7 +21019,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53497f3e32e72dc4e8503c0b08b82315, type: 2}
+  - {fileID: -3173229275106171563, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19409,7 +21115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19555,6 +21261,7 @@ GameObject:
   - component: {fileID: 8880535074341937082}
   - component: {fileID: 8880535074341937083}
   - component: {fileID: 8880535074341937080}
+  - component: {fileID: 2290960643205045631}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -19676,8 +21383,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2290960643205045631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074341937078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074352592749
 GameObject:
   m_ObjectHideFlags: 0
@@ -19738,7 +21468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19906,6 +21636,7 @@ GameObject:
   - component: {fileID: 8880535074379015162}
   - component: {fileID: 8880535074379015163}
   - component: {fileID: 8880535074379015160}
+  - component: {fileID: 4873758648834845030}
   m_Layer: 0
   m_Name: Bowl_1
   m_TagString: Untagged
@@ -20027,8 +21758,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4873758648834845030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074379015158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074380900240
 GameObject:
   m_ObjectHideFlags: 0
@@ -20056,7 +21810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8880535074380900240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4056373, y: 0.583039, z: 2.8556206}
+  m_LocalPosition: {x: 5.396, y: 0.583039, z: 2.856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8880535074447364151}
@@ -20089,7 +21843,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20185,7 +21939,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20281,7 +22035,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20331,6 +22085,7 @@ GameObject:
   - component: {fileID: 8880535074431469411}
   - component: {fileID: 8880535074431469408}
   - component: {fileID: 8880535074431469409}
+  - component: {fileID: 6875386713339425440}
   m_Layer: 0
   m_Name: Wine_glass_16
   m_TagString: Untagged
@@ -20452,8 +22207,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6875386713339425440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074431469439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074434887119
 GameObject:
   m_ObjectHideFlags: 0
@@ -20514,7 +22292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20775,6 +22553,7 @@ GameObject:
   - component: {fileID: 8880535074451559726}
   - component: {fileID: 8880535074451559727}
   - component: {fileID: 8880535074451559724}
+  - component: {fileID: 8047866588906367806}
   m_Layer: 0
   m_Name: Toaster
   m_TagString: Untagged
@@ -20897,8 +22676,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8047866588906367806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074451559722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074457172297
 GameObject:
   m_ObjectHideFlags: 0
@@ -20959,7 +22761,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21008,6 +22810,7 @@ GameObject:
   - component: {fileID: 8880535074457190357}
   - component: {fileID: 8880535074457190354}
   - component: {fileID: 8880535074457190355}
+  - component: {fileID: 7896436691520213834}
   m_Layer: 0
   m_Name: Plate_7
   m_TagString: Untagged
@@ -21129,8 +22932,31 @@ MonoBehaviour:
   limitSpeed: 10
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7896436691520213834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074457190353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074457721290
 GameObject:
   m_ObjectHideFlags: 0
@@ -21287,7 +23113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42dc5fd9cc3bd044d8aadd24b5f8ea90, type: 2}
+  - {fileID: 8597989225479796929, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21383,7 +23209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21479,7 +23305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f824ffd5482cb4f89145182d81c355, type: 2}
+  - {fileID: 7209514650377959485, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21529,6 +23355,7 @@ GameObject:
   - component: {fileID: 8880535074480192314}
   - component: {fileID: 8880535074480192315}
   - component: {fileID: 8880535074480192312}
+  - component: {fileID: 4181999013927689286}
   m_Layer: 0
   m_Name: BreakableObject (2)
   m_TagString: Untagged
@@ -21650,8 +23477,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4181999013927689286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074480192310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074481022814
 GameObject:
   m_ObjectHideFlags: 0
@@ -21685,7 +23535,7 @@ Transform:
   - {fileID: 8880535074057123668}
   - {fileID: 8880535074297848692}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074484018564
 GameObject:
@@ -21747,7 +23597,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21939,7 +23789,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21989,6 +23839,7 @@ GameObject:
   - component: {fileID: 8880535074497213800}
   - component: {fileID: 8880535074497213801}
   - component: {fileID: 8880535074497213798}
+  - component: {fileID: 1915272286435663459}
   m_Layer: 0
   m_Name: Wine_glass_9
   m_TagString: Untagged
@@ -22110,8 +23961,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1915272286435663459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074497213796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074505107554
 GameObject:
   m_ObjectHideFlags: 0
@@ -22172,7 +24046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22268,7 +24142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22411,6 +24285,7 @@ GameObject:
   - component: {fileID: 8880535074542085944}
   - component: {fileID: 8880535074542085945}
   - component: {fileID: 8880535074542085942}
+  - component: {fileID: 1211398987719362194}
   m_Layer: 0
   m_Name: Glass_6
   m_TagString: Untagged
@@ -22532,8 +24407,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1211398987719362194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074542085940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074542319913
 GameObject:
   m_ObjectHideFlags: 0
@@ -22546,6 +24444,7 @@ GameObject:
   - component: {fileID: 8880535074542319917}
   - component: {fileID: 8880535074542319914}
   - component: {fileID: 8880535074542319915}
+  - component: {fileID: 1582471122300235978}
   m_Layer: 0
   m_Name: Piano
   m_TagString: Untagged
@@ -22620,8 +24519,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &1582471122300235978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074542319913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074542776765
 GameObject:
   m_ObjectHideFlags: 0
@@ -22682,7 +24604,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22778,7 +24700,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22874,7 +24796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 376d6718411454943af0ec46faabbfcf, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22924,6 +24846,7 @@ GameObject:
   - component: {fileID: 8880535074555075894}
   - component: {fileID: 8880535074555075895}
   - component: {fileID: 8880535074555075892}
+  - component: {fileID: 3712469067931663847}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -23045,8 +24968,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &3712469067931663847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074555075890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074575650554
 GameObject:
   m_ObjectHideFlags: 0
@@ -23087,7 +25033,7 @@ Transform:
   - {fileID: 8880535073206164747}
   - {fileID: 8880535073762491812}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074582004126
 GameObject:
@@ -23103,6 +25049,7 @@ GameObject:
   - component: {fileID: 8880535074582004098}
   - component: {fileID: 8880535074582004099}
   - component: {fileID: 8880535074582004096}
+  - component: {fileID: 4642170535038175590}
   m_Layer: 0
   m_Name: Book_18
   m_TagString: Untagged
@@ -23224,8 +25171,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4642170535038175590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074582004126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074595472682
 GameObject:
   m_ObjectHideFlags: 0
@@ -23287,7 +25257,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: 5200753494579969130, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23557,7 +25527,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23607,6 +25577,7 @@ GameObject:
   - component: {fileID: 8880535074623321933}
   - component: {fileID: 8880535074623321930}
   - component: {fileID: 8880535074623321931}
+  - component: {fileID: 5850493635748175636}
   m_Layer: 0
   m_Name: Glass_8
   m_TagString: Untagged
@@ -23728,8 +25699,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5850493635748175636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074623321929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074625113959
 GameObject:
   m_ObjectHideFlags: 0
@@ -23883,7 +25877,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23933,6 +25927,7 @@ GameObject:
   - component: {fileID: 8880535074637171772}
   - component: {fileID: 8880535074637171773}
   - component: {fileID: 8880535074637171770}
+  - component: {fileID: 2130197594779509059}
   m_Layer: 0
   m_Name: Book_22
   m_TagString: Untagged
@@ -24054,8 +26049,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2130197594779509059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074637171768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074645358433
 GameObject:
   m_ObjectHideFlags: 0
@@ -24116,7 +26134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24166,6 +26184,7 @@ GameObject:
   - component: {fileID: 8880535074654425567}
   - component: {fileID: 8880535074654425564}
   - component: {fileID: 8880535074654425565}
+  - component: {fileID: 8306792049084499138}
   m_Layer: 0
   m_Name: Glass_2
   m_TagString: Untagged
@@ -24287,8 +26306,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8306792049084499138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074654425563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074664347737
 GameObject:
   m_ObjectHideFlags: 0
@@ -24349,7 +26391,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 531a8c62f37297340a8e4f79c8a45806, type: 2}
+  - {fileID: 1792539558728417982, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24446,7 +26488,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24496,6 +26538,7 @@ GameObject:
   - component: {fileID: 8880535074672328461}
   - component: {fileID: 8880535074672328458}
   - component: {fileID: 8880535074672328459}
+  - component: {fileID: 2973888457053944995}
   m_Layer: 0
   m_Name: Wine_glass_5
   m_TagString: Untagged
@@ -24617,8 +26660,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2973888457053944995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074672328457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074684739348
 GameObject:
   m_ObjectHideFlags: 0
@@ -24633,6 +26699,7 @@ GameObject:
   - component: {fileID: 8880535074684739352}
   - component: {fileID: 8880535074684739353}
   - component: {fileID: 8880535074684739350}
+  - component: {fileID: 5110010992376787478}
   m_Layer: 0
   m_Name: Book_6
   m_TagString: Untagged
@@ -24754,8 +26821,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5110010992376787478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074684739348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074700085298
 GameObject:
   m_ObjectHideFlags: 0
@@ -24770,6 +26860,7 @@ GameObject:
   - component: {fileID: 8880535074700085302}
   - component: {fileID: 8880535074700085303}
   - component: {fileID: 8880535074700085300}
+  - component: {fileID: 138593913222668023}
   m_Layer: 0
   m_Name: Book_25
   m_TagString: Untagged
@@ -24891,8 +26982,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &138593913222668023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074700085298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074709115449
 GameObject:
   m_ObjectHideFlags: 0
@@ -25065,7 +27179,7 @@ Transform:
   - {fileID: 8880535073746841548}
   - {fileID: 8880535073782364282}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074729484355
 GameObject:
@@ -25127,7 +27241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25177,6 +27291,7 @@ GameObject:
   - component: {fileID: 8880535074736927729}
   - component: {fileID: 8880535074736927758}
   - component: {fileID: 8880535074736927759}
+  - component: {fileID: 4701333382982028198}
   m_Layer: 0
   m_Name: Book_11
   m_TagString: Untagged
@@ -25298,8 +27413,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4701333382982028198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074736927757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074736973549
 GameObject:
   m_ObjectHideFlags: 0
@@ -25314,6 +27452,7 @@ GameObject:
   - component: {fileID: 8880535074736973521}
   - component: {fileID: 8880535074736973550}
   - component: {fileID: 8880535074736973551}
+  - component: {fileID: 8016544727611396129}
   m_Layer: 0
   m_Name: Box_4
   m_TagString: Untagged
@@ -25434,8 +27573,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8016544727611396129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074736973549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074743710609
 GameObject:
   m_ObjectHideFlags: 0
@@ -25450,6 +27612,7 @@ GameObject:
   - component: {fileID: 8880535074743710613}
   - component: {fileID: 8880535074743710610}
   - component: {fileID: 8880535074743710611}
+  - component: {fileID: 2405514062693946757}
   m_Layer: 0
   m_Name: Bowl_0
   m_TagString: Untagged
@@ -25571,8 +27734,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &2405514062693946757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074743710609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074766540931
 GameObject:
   m_ObjectHideFlags: 0
@@ -25587,6 +27773,7 @@ GameObject:
   - component: {fileID: 8880535074766540935}
   - component: {fileID: 8880535074766540932}
   - component: {fileID: 8880535074766540933}
+  - component: {fileID: 6903458097085226479}
   m_Layer: 0
   m_Name: Book_7
   m_TagString: Untagged
@@ -25708,8 +27895,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6903458097085226479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074766540931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074774344454
 GameObject:
   m_ObjectHideFlags: 0
@@ -25724,6 +27934,7 @@ GameObject:
   - component: {fileID: 8880535074774344458}
   - component: {fileID: 8880535074774344459}
   - component: {fileID: 8880535074774344456}
+  - component: {fileID: 4930975896713329300}
   m_Layer: 0
   m_Name: Box_1
   m_TagString: Untagged
@@ -25844,8 +28055,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4930975896713329300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074774344454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074788884243
 GameObject:
   m_ObjectHideFlags: 0
@@ -25860,6 +28094,7 @@ GameObject:
   - component: {fileID: 8880535074788884247}
   - component: {fileID: 8880535074788884244}
   - component: {fileID: 8880535074788884245}
+  - component: {fileID: 6644592467390025241}
   m_Layer: 0
   m_Name: Wine_glass_8
   m_TagString: Untagged
@@ -25981,8 +28216,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6644592467390025241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074788884243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074797610226
 GameObject:
   m_ObjectHideFlags: 0
@@ -26043,7 +28301,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -2310514774154243031, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26093,6 +28351,7 @@ GameObject:
   - component: {fileID: 8880535074803849681}
   - component: {fileID: 8880535074803849710}
   - component: {fileID: 8880535074803849711}
+  - component: {fileID: 6327627430492260218}
   m_Layer: 0
   m_Name: Wine_glass_10
   m_TagString: Untagged
@@ -26214,8 +28473,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &6327627430492260218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074803849709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074804982847
 GameObject:
   m_ObjectHideFlags: 0
@@ -26230,6 +28512,7 @@ GameObject:
   - component: {fileID: 8880535074804982819}
   - component: {fileID: 8880535074804982816}
   - component: {fileID: 8880535074804982817}
+  - component: {fileID: 7025694597064413397}
   m_Layer: 0
   m_Name: Plate_5
   m_TagString: Untagged
@@ -26351,8 +28634,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7025694597064413397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074804982847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074809237014
 GameObject:
   m_ObjectHideFlags: 0
@@ -26367,6 +28673,7 @@ GameObject:
   - component: {fileID: 8880535074809237018}
   - component: {fileID: 8880535074809237019}
   - component: {fileID: 8880535074809237016}
+  - component: {fileID: 710436387660355063}
   m_Layer: 0
   m_Name: Wine_glass_12
   m_TagString: Untagged
@@ -26488,8 +28795,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &710436387660355063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074809237014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074830197322
 GameObject:
   m_ObjectHideFlags: 0
@@ -26504,6 +28834,7 @@ GameObject:
   - component: {fileID: 8880535074830197326}
   - component: {fileID: 8880535074830197327}
   - component: {fileID: 8880535074830197324}
+  - component: {fileID: 5936064565888705206}
   m_Layer: 0
   m_Name: Bowl_2
   m_TagString: Untagged
@@ -26625,8 +28956,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5936064565888705206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074830197322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074832009949
 GameObject:
   m_ObjectHideFlags: 0
@@ -26641,6 +28995,7 @@ GameObject:
   - component: {fileID: 8880535074832009921}
   - component: {fileID: 8880535074832009950}
   - component: {fileID: 8880535074832009951}
+  - component: {fileID: 8462109001484357432}
   m_Layer: 0
   m_Name: Book_19
   m_TagString: Untagged
@@ -26762,8 +29117,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &8462109001484357432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074832009949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074870395307
 GameObject:
   m_ObjectHideFlags: 0
@@ -26798,7 +29176,7 @@ Transform:
   - {fileID: 8880535073879978179}
   - {fileID: 8880535073823493695}
   m_Father: {fileID: 8880535073843037155}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8880535074874559387
 GameObject:
@@ -26860,7 +29238,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26910,6 +29288,7 @@ GameObject:
   - component: {fileID: 8880535074887756129}
   - component: {fileID: 8880535074887756158}
   - component: {fileID: 8880535074887756159}
+  - component: {fileID: 68373353867153518}
   m_Layer: 0
   m_Name: Plate_2
   m_TagString: Untagged
@@ -27031,8 +29410,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &68373353867153518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074887756157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074889048568
 GameObject:
   m_ObjectHideFlags: 0
@@ -27093,7 +29495,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27224,6 +29626,7 @@ GameObject:
   - component: {fileID: 8880535074902364986}
   - component: {fileID: 8880535074902364987}
   - component: {fileID: 8880535074902364984}
+  - component: {fileID: 5216162858447114146}
   m_Layer: 0
   m_Name: Box_2
   m_TagString: Untagged
@@ -27344,8 +29747,31 @@ MonoBehaviour:
   limitSpeed: 1
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &5216162858447114146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074902364982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074903723547
 GameObject:
   m_ObjectHideFlags: 0
@@ -27406,7 +29832,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ea8a01f89e21b44b91f4b19fc8ee4f1, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27456,6 +29882,7 @@ GameObject:
   - component: {fileID: 8880535074912395338}
   - component: {fileID: 8880535074912395339}
   - component: {fileID: 8880535074912395336}
+  - component: {fileID: 7094800443600872378}
   m_Layer: 0
   m_Name: Glass_17
   m_TagString: Untagged
@@ -27577,8 +30004,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7094800443600872378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074912395334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074923602445
 GameObject:
   m_ObjectHideFlags: 0
@@ -27689,6 +30139,7 @@ GameObject:
   - component: {fileID: 8880535074929384262}
   - component: {fileID: 8880535074929384263}
   - component: {fileID: 8880535074929384260}
+  - component: {fileID: 4491726984957906041}
   m_Layer: 0
   m_Name: Glass_4
   m_TagString: Untagged
@@ -27810,8 +30261,31 @@ MonoBehaviour:
   limitSpeed: 2
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &4491726984957906041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074929384258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074938961231
 GameObject:
   m_ObjectHideFlags: 0
@@ -27968,7 +30442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28031,8 +30505,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8880535074947472319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.450001, y: 6.436, z: 0}
-  m_LocalScale: {x: 7.051155, y: 1, z: 8.694788}
+  m_LocalPosition: {x: -3.02, y: 6.436, z: 0}
+  m_LocalScale: {x: 18.11097, y: 1, z: 19.807596}
   m_Children: []
   m_Father: {fileID: 8880535074256904588}
   m_RootOrder: 3
@@ -28064,7 +30538,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b6d5b9762fe4d34286aeb9f814d4efa, type: 2}
+  - {fileID: -2400404728525148765, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28113,6 +30587,7 @@ GameObject:
   - component: {fileID: 8880535074954983020}
   - component: {fileID: 8880535074954983021}
   - component: {fileID: 8880535074954982993}
+  - component: {fileID: 7033211556893020924}
   m_Layer: 0
   m_Name: Coffee_machine
   m_TagString: Untagged
@@ -28220,8 +30695,13 @@ MonoBehaviour:
   limitSpeed: 4
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
 --- !u!64 &8880535074954982993
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28236,6 +30716,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2774220565605923555, guid: 6d434cf18bff07449858764778d11235, type: 3}
+--- !u!114 &7033211556893020924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074954983019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8880535074956763027
 GameObject:
   m_ObjectHideFlags: 0
@@ -28296,7 +30794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca3b8588e9dd51149b1ca87e046d1b69, type: 2}
+  - {fileID: -749338713933554755, guid: 4d0f24aa3cc4e79439aed65d5ececc3b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28428,6 +30926,7 @@ GameObject:
   - component: {fileID: 8880535074959198532}
   - component: {fileID: 8880535074959198533}
   - component: {fileID: 8880535074959198530}
+  - component: {fileID: 7464888358910825565}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -28549,8 +31048,31 @@ MonoBehaviour:
   limitSpeed: 5
   usingZone: 0
   tagDestroy: 
-  score: {fileID: 0}
+  usingTouch: 0
   bar: {fileID: 0}
+  hasBreak: 0
+  hasOutline: 1
+  hasNoise: 0
+  TimerInvincibility: 5
+  showDebug: 0
+--- !u!114 &7464888358910825565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880535074959198528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &8880535073240159514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28617,7 +31139,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -28697,7 +31219,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -28777,7 +31299,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -28857,7 +31379,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -28937,7 +31459,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -29017,7 +31539,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -29097,7 +31619,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name
@@ -29177,7 +31699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5906734a851c5c740a0d1d6b219525b3, type: 2}
+      objectReference: {fileID: 2100000, guid: e95ef309a9a110f4ca3f7e67ddb6e22e, type: 2}
     - target: {fileID: 919132149155446097, guid: 6bd799ce746c7d743a3631714262cf75,
         type: 3}
       propertyPath: m_Name

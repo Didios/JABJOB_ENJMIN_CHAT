@@ -26,6 +26,9 @@ public class MenuManager : MonoBehaviour
 
     [Header("UI InGame")]
     public SatisfactionBar scorebar;
+    public TextMeshProUGUI messageGame;
+
+    [Header("UI Menu")]
     public TextMeshProUGUI levelText;
 
     [Header("UI HowToPlay")]
@@ -97,6 +100,8 @@ public class MenuManager : MonoBehaviour
     // Switch between screen mode
     public void Game()
     {
+        messageGame.text = "";
+
         levels[lvl].Reset();
         owner = levels[lvl].controllerOwner;
         ownerInfos = owner.infos;
@@ -104,6 +109,7 @@ public class MenuManager : MonoBehaviour
         //player
         playerRigidbody.useGravity = true;
         playerController.activate = true;
+        playerController.ResetShoot();
         playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner

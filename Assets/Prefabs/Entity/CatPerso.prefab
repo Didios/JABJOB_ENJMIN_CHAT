@@ -99,7 +99,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -159,6 +159,7 @@ MonoBehaviour:
   distMax: 0
   strengthMax: 0
   _animator: {fileID: 0}
+  showDebug: 0
 --- !u!1 &9107530759437847285
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab0f9f5be9200044096c1901bebaf814, type: 2}
+  - {fileID: 2100000, guid: b8aa30cc06404d44685be4d70cea2d12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

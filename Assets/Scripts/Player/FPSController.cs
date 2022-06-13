@@ -105,7 +105,7 @@ public class FPSController : MonoBehaviour
                 if (time > 1) time = 1;
                 else if (time < 0) time = 0;
 
-                
+
                 curSpeedX = speedCurve.Evaluate(time) * Input.GetAxis("Vertical");
                 curSpeedY = speedCurve.Evaluate(time) * Input.GetAxis("Horizontal");
             }
@@ -245,6 +245,11 @@ public class FPSController : MonoBehaviour
         }
     }
 
+    public void ResetShoot()
+    {
+        shootUI.ResetBar(maxProj, maxProj);
+    }
+
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == tagFear)
@@ -263,7 +268,7 @@ public class FPSController : MonoBehaviour
         Gizmos.DrawSphere(transform.position + transform.forward * 1.1f, 0.2f);
         // debug position tenir objet
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(transform.position + 
+        Gizmos.DrawSphere(transform.position +
             transform.forward * posHoldObj.x +
             transform.right * posHoldObj.y +
             transform.up * posHoldObj.z, 0.2f);

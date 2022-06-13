@@ -12,18 +12,6 @@ public class PathFinding : MonoBehaviour
     private Rigidbody agentRigidbody;
     private int indexDestPoint = 0;
 
-    //animation
-    public bool hasAnim = false;
-    private Animator animator;
-
-    // target
-    public bool goToPriority = false;
-    public Vector3 targetPriority;
-
-    // player
-    public bool goToPlayer = false;
-    public Transform player;
-
     // collision
     private bool colliderDetectionStatus = false;
     public float stunnedTime = 0;
@@ -32,26 +20,13 @@ public class PathFinding : MonoBehaviour
     // message
     public TextMeshProUGUI message;
 
-    public bool activate = false;
-
     public void Start()
     {
-        message.text = "";
-
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         agentRigidbody = GetComponent<Rigidbody>();
 
-        if (hasAnim)
-        {
-            animator = GetComponent<Animator>();
-            animator.SetBool("walk", true);
-        }
-
-        if (activate)
-        {
-            GotoNextPoint();
-        }
+        GotoNextPoint();
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -60,8 +35,6 @@ public class PathFinding : MonoBehaviour
         {
             colliderDetectionStatus = true;
             Destroy(collision.gameObject); // the collision object is remove
-
-            if (hasAnim) animator.SetBool("walk", false);
 
             // stop the agent
             agentRigidbody.constraints = RigidbodyConstraints.FreezeAll;
@@ -76,73 +49,43 @@ public class PathFinding : MonoBehaviour
 
     private void GotoNextPoint()
     {
-        if (activate)
-        {
-            if (goToPriority)
-            {
-                agent.destination = targetPriority;
-                goToPriority = false;
-            }
-            else if (goToPlayer)
-            {
-                agent.destination = player.position;
-                if (agent.remainingDistance < 0.1f) { goToPlayer = false; }
-            }
-            else
-            {
-                // Returns if no points have been set up
-                if (points.Length == 0)
-                    return;
+        // Returns if no points have been set up
+        if (points.Length == 0)
+            return;
 
-                // Set the agent to go to the currently selected destination.
-                agent.destination = points[indexDestPoint].position;
+        // Set the agent to go to the currently selected destination.
+        agent.destination = points[indexDestPoint].position;
 
-                // Choose the next point in the array as the destination,
-                // cycling to the start if necessary.
-                indexDestPoint = (indexDestPoint + 1) % points.Length;
-            }
-        }
+        // Choose the next point in the array as the destination,
+        // cycling to the start if necessary.
+        indexDestPoint = (indexDestPoint + 1) % points.Length;
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (activate)
+        // Choose the next destination point when the agent gets
+        // close to the current one.
+        if (colliderDetectionStatus)
         {
-            // Choose the next destination point when the agent gets
-            // close to the current one.
-            if (colliderDetectionStatus)
+            if (stunnedTime > waitingTime)
             {
-                if (stunnedTime > waitingTime)
-                {
-                    // make the agent moveable
-                    agentRigidbody.constraints = RigidbodyConstraints.None;
-                    agent.isStopped = false;
-                    if (hasAnim) animator.SetBool("walk", true);
+                // make the agent moveable
+                agentRigidbody.constraints = RigidbodyConstraints.None;
+                agent.isStopped = false;
 
-                    // reset composant Timer
-                    colliderDetectionStatus = false;
-                    stunnedTime = 0;
+                // reset composant Timer
+                colliderDetectionStatus = false;
+                stunnedTime = 0;
 
-                    // delete message for player
-                    message.text = "";
-                }
-                else { stunnedTime += Time.deltaTime; }
+                // delete message for player
+                message.text = "";
             }
-            else
-            {
-                if (goToPriority || goToPlayer) { GotoNextPoint(); }
-                else if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
-            }
-        }
+            else { stunnedTime += Time.deltaTime; }
+        } 
         else
         {
-            // stop the agent
-            agentRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            agent.isStopped = true;
-
-            colliderDetectionStatus = true;
-            stunnedTime = 100;
+            if (!agent.pathPending && agent.remainingDistance < 0.5f) { GotoNextPoint(); }
         }
     }
 
@@ -155,7 +98,7 @@ public class PathFinding : MonoBehaviour
             if (i == points.Length - 1) { Gizmos.DrawLine(points[i].position, points[0].position); }
             else { Gizmos.DrawLine(points[i].position, points[i+1].position); }
 
-            Gizmos.DrawSphere(points[i].position, 0.5f);
+            Gizmos.DrawSphere(points[i].position, 1);
         }
     }
 }

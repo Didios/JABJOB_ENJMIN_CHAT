@@ -10,11 +10,13 @@ public class Punch : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
+    public bool hasAnimator = true;
     public bool showDebug = false;
 
     void Start()
     {
-        if (_animator == null) { _animator = GetComponent<Animator>(); }
+        if (_animator == null && hasAnimator) 
+            _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,7 +24,8 @@ public class Punch : MonoBehaviour
         if (Input.GetButtonDown("Fire3"))
         {
             // punch animation launch
-            _animator.SetTrigger("punch");
+            if (hasAnimator)
+                _animator.SetTrigger("punch");
 
             // punch In-Game
             RaycastHit hit;
