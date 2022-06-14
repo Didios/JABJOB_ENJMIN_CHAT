@@ -26,6 +26,7 @@ public class BreakableObject : MonoBehaviour
     [Tooltip("Break on collision")] public bool usingTouch = false;
 
     [Header("UI")]
+    public bool useBar = true;
     public SatisfactionBar bar;
 
     [Header("Other infos")]
@@ -34,6 +35,7 @@ public class BreakableObject : MonoBehaviour
     [SerializeField] private bool hasNoise = false;
     private Outline visibility;
 
+    public bool autoDestroy = false;
     [SerializeField] [Tooltip("first time invincible")] private float TimerInvincibility = 5;
 
     [Space]
@@ -65,6 +67,10 @@ public class BreakableObject : MonoBehaviour
         if (TimerInvincibility >= 0)
         {
             TimerInvincibility -= Time.deltaTime;
+        }
+        else if (autoDestroy)
+        {
+            Destroy(gameObject);
         }
 
         // Break with velocity
@@ -108,7 +114,10 @@ public class BreakableObject : MonoBehaviour
         {
             if (weight > 0)
             {
-                bar.UpdateBar(weight);
+                if (useBar)
+                {
+                    bar.UpdateBar(weight);
+                }
             }
 
             if (breakedObject != null)

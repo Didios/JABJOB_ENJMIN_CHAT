@@ -14,6 +14,7 @@ public class MachineStateInfo
     [Header("Controller")]
     public AgentController agent;
     public float distanceMinToTarget;
+    public Vector2 distanceMinMax;
     public bool isStunned;
     public bool isArrived;
 

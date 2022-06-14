@@ -30,6 +30,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("UI Menu")]
     public TextMeshProUGUI levelText;
+    public DioramaManager diorama;
 
     [Header("UI HowToPlay")]
     public List<GameObject> panelList;
@@ -41,12 +42,16 @@ public class MenuManager : MonoBehaviour
     public List<LevelConfig> levels = new List<LevelConfig>();
 
     // infos
+    private bool inTransition = false;
+    private bool goGame = true;
     private bool inGame = false;
     private int lvl = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        diorama.ActiveCam();
+
         playerController = player.GetComponent<FPSController>();
         playerRigidbody = player.GetComponent<Rigidbody>();
         playerCharacterController = player.GetComponent<CharacterController>();
@@ -64,6 +69,26 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+        if (inTransition)
+        {
+            if (goGame)
+            {
+                if (diorama.touchTarget)
+                {
+                    inTransition = false;
+                    Game();
+                }
+            }
+            else
+            {
+                if (diorama.touchTarget)
+                {
+                    inTransition = false;
+                    Menu();
+                }
+            }
+        }
+
         if (inGame)
         {
             if (ownerInfos.gameOver)//(ownerHand.finish) // lose case
@@ -100,6 +125,12 @@ public class MenuManager : MonoBehaviour
     // Switch between screen mode
     public void Game()
     {
+        playerCharacterController.enabled = false;
+        player.position = levels[lvl].worldSpawnPlayer;
+        playerCharacterController.enabled = true;
+
+        scorebar.ResetBar(levels[lvl].scoreToGet);
+
         messageGame.text = "";
 
         levels[lvl].Reset();
@@ -120,6 +151,22 @@ public class MenuManager : MonoBehaviour
 
         CanvasChange(2);
         inGame = true;
+    }
+
+    public void ActiveTransition(bool _goGame)
+    {
+        goGame = _goGame;
+        inTransition = true;
+        CanvasChange(-1);
+
+        if (goGame)
+        {
+            diorama.SetTarget(levels[lvl].levelNumber);
+        }
+        else
+        {
+            diorama.SetBase();
+        }
     }
 
     public void Menu()
@@ -153,6 +200,7 @@ public class MenuManager : MonoBehaviour
     public void NextLevel(bool win)
     {
         levels[lvl].Clean();
+        diorama.ActiveCam();
         //playButton.interactable = false;
         if (win) lvl += 1;
 
@@ -160,19 +208,15 @@ public class MenuManager : MonoBehaviour
         {
             levelText.text = "You Finish C.A.T\nThanks for Playing !";
             lvl = 0;
-            Menu();
+            //Menu();
         }
         else
         {
-            playerCharacterController.enabled = false;
-            player.position = levels[lvl].worldSpawnPlayer;
-            playerCharacterController.enabled = true;
-
-            scorebar.ResetBar(levels[lvl].scoreToGet);
-
-            if (win) Game();
-            else Menu();
+            levelText.text = "Go to the Next Level !";
+            //if (win) Game();
+            //else Menu();
         }
+        ActiveTransition(false);
     }
 
     public void Quit()
