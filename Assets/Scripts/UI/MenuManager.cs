@@ -243,6 +243,12 @@ public class MenuManager : MonoBehaviour
         Debug.Log("[MenuManager]\n Change Panel");
     }
 
+    public void ResetScene()
+    {
+        SceneManager.UnloadSceneAsync("C.A.T_Main Game");
+        SceneManager.LoadScene("C.A.T_Main Game");
+    }
+
     private void OnDrawGizmosSelected()
     {
         // Gizmos Levels

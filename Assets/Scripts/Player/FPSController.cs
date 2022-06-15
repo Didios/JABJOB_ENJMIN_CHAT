@@ -95,11 +95,11 @@ public class FPSController : MonoBehaviour
             {
                 if (isRunning && time < 1)
                 {
-                    time += 0.03f;
+                    time += 0.01f;
                 }
                 else if (!isRunning && time > 0)
                 {
-                    time -= 0.2f;
+                    time -= 0.02f;
                 }
 
                 if (time > 1) time = 1;

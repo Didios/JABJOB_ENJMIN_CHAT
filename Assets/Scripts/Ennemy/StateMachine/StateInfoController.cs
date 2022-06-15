@@ -44,7 +44,7 @@ public class StateInfoController : AgentController
     {
         if (isActive)
         {
-            machine.updatePeriod = 2;
+            machine.updatePeriod = infos.updatePeriod;
             machine.showDebug = showDebug;
             machine.Update(infos);
         }

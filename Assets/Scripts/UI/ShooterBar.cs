@@ -32,7 +32,7 @@ public class ShooterBar : MonoBehaviour
 
     void Start()
     {
-        cooldownBar.gameObject.SetActive(false);
+        //cooldownBar.gameObject.SetActive(false);
         textUI.text = $"{actualCount} {textDisplay}";
         ResetBalls();
     }

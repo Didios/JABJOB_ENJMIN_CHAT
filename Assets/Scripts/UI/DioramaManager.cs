@@ -63,8 +63,6 @@ public class DioramaManager : MonoBehaviour
 
                     touchTarget = true;
                     animator.SetBool("loop", true);
-
-                    diorama[lockTarget].GetComponentInChildren<BreakableObject>().breakObject = true;
                 }
             }
         }
@@ -89,6 +87,10 @@ public class DioramaManager : MonoBehaviour
         touchTarget = false;
 
         goBase = false;
+
+        var _break = diorama[lockTarget].GetComponentInChildren<BreakableObject>();
+        if (_break != null)
+            _break.breakObject = true;
     }
 
     public void SetBase()

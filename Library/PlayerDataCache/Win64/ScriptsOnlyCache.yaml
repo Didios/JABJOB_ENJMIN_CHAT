@@ -38,6 +38,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    Unity.Timeline.Editor.dll:
+    - TimelinePreferences
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -920,5 +922,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/C.A.T_Main Game.unity
-  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.7/JABJOB
-    test.exe
+  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.8/JABJOB_CAT.exe

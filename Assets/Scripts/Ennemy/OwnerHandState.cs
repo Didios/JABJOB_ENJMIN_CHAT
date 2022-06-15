@@ -108,7 +108,7 @@ public class OwnerHandState : MonoBehaviour
 
         if (isAnim)
         {
-            animator.SetBool("catch", true);
+            animator.SetBool("inHand", true);
         }
     }
 
@@ -116,6 +116,7 @@ public class OwnerHandState : MonoBehaviour
     {
         hasGrabbed = false;
         ownerInfos.isCatch = false;
+        ownerInfos.isStunned = true;
 
         player.parent = tempTrans;
 
@@ -129,7 +130,7 @@ public class OwnerHandState : MonoBehaviour
 
         if (isAnim)
         {
-            animator.SetBool("catch", false);
+            animator.SetBool("inHand", false);
         }
     }
 
