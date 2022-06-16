@@ -36,12 +36,15 @@ public class LevelConfig
         } private set { } }
     [HideInInspector] public Vector3 worldSaveMove { get { return levelObject.position + saveMove; } private set { } }
 
-    private void SetLevel()
+    public void SetLevel()
     {
         posLevel = levelObject.position;
+        originOwner.gameObject.SetActive(false);
         levelObject.gameObject.SetActive(false);
         levelObject.position += saveMove;
         //levelObject.gameObject.SetActive(true);
+
+        hasBeenSet = true;
     }
 
     public void Clean()
@@ -59,7 +62,6 @@ public class LevelConfig
         if (!hasBeenSet)
         {
             SetLevel();
-            hasBeenSet = true;
         }
 
         Clean();
@@ -80,6 +82,7 @@ public class LevelConfig
             Object.Destroy(owner.gameObject);
         }
         owner = Object.Instantiate<Transform>(originOwner, worldSpawnOwner, originOwner.rotation);
+        owner.gameObject.SetActive(true);
         //handOwner = owner.GetComponentInChildren<OwnerHand>();
         //pathfindingOwner = owner.GetComponentInChildren<PathFinding>();
         controllerOwner = owner.GetComponent<StateInfoController>();

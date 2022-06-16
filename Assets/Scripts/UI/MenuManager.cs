@@ -56,6 +56,7 @@ public class MenuManager : MonoBehaviour
         playerRigidbody = player.GetComponent<Rigidbody>();
         playerCharacterController = player.GetComponent<CharacterController>();
 
+        foreach (LevelConfig l in levels) l.SetLevel();
         levels[lvl].Reset();
         //ownerPath = levels[lvl].pathfindingOwner;
         //ownerHand = levels[lvl].handOwner;
