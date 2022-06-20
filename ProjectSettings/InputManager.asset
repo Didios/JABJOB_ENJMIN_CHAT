@@ -7,8 +7,8 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName: right
+    descriptiveNegativeName: left
     negativeButton: 
     positiveButton: 
     altNegativeButton: q
@@ -23,8 +23,8 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName: forward
+    descriptiveNegativeName: backward
     negativeButton: 
     positiveButton: 
     altNegativeButton: s
@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: fire bullet
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -56,7 +56,7 @@ InputManager:
   - serializedVersion: 3
     m_Name: Fire2
     descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveNegativeName: hold
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
@@ -71,7 +71,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
-    descriptiveName: 
+    descriptiveName: punch
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -246,11 +246,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
-    descriptiveName: 
+    m_Name: Run
+    descriptiveName: run
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: a
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

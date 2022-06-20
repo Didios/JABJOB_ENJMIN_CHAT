@@ -30,6 +30,7 @@ public class BreakableObject : MonoBehaviour
     public SatisfactionBar bar;
 
     [Header("Other infos")]
+    [SerializeField] private bool useParentScale = false;
     [SerializeField] private bool hasBreak = false;
     [SerializeField] private bool hasOutline = true;
     [SerializeField] private bool hasNoise = false;
@@ -125,11 +126,20 @@ public class BreakableObject : MonoBehaviour
                 // in case object cannot be destroyed
                 try
                 {
-                    // creation of the break object at the exact same position
-                    var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
+                    Transform obj = null;
+                    if (useParentScale)
+                    {
+                        obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation, transform.parent);
+                    }
+                    else
+                    {
+                        // creation of the break object at the exact same position
+                        obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
+                        // give the same parent
+                        obj.parent = transform.parent;
+                    }
 
-                    // give the same parent
-                    obj.parent = transform.parent;
+
                     //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
 
                     // set velocity to make illusion

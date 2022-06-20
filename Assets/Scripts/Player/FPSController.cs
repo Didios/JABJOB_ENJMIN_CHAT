@@ -21,6 +21,7 @@ public class FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public Vector2 fovMinMax = new Vector2(60, 90);
     //public float lookYLimit = 45.0f;
 
     // deplacement
@@ -86,7 +87,7 @@ public class FPSController : MonoBehaviour
             }
 
             // course ?
-            bool isRunning = Input.GetButton("Fire3");
+            bool isRunning = Input.GetButton("Run");
 
             // mouvement du joueur
             float curSpeedX = 0;
@@ -105,7 +106,7 @@ public class FPSController : MonoBehaviour
                 if (time > 1) time = 1;
                 else if (time < 0) time = 0;
 
-
+                playerCamera.fieldOfView = fovMinMax.x + (fovMinMax.y - fovMinMax.x) * time;
                 curSpeedX = speedCurve.Evaluate(time) * Input.GetAxis("Vertical");
                 curSpeedY = speedCurve.Evaluate(time) * Input.GetAxis("Horizontal");
             }

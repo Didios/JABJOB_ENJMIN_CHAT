@@ -29,8 +29,6 @@ ScriptsOnlyBuild:
     - UnityEngine.AI.NavMeshLink
     - UnityEngine.AI.NavMeshModifier
     - UnityEngine.AI.NavMeshSurface
-    NavMeshComponentsEditor.dll:
-    - UnityEditor.AI.NavMeshAssetManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -215,6 +213,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
@@ -304,7 +304,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 7f9f36326efaa17492092e4364c4dbe8
+      Hash: cdf37ce9c1d9cf40555bf683d9c33b3e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BreakableObject
@@ -556,7 +556,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: b350c9ac937957ff80dd00c24a0ca23c
+      Hash: 59687be04d68d14b86508d68c85041d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPSController
@@ -923,4 +923,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/C.A.T_Main Game.unity
-  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.8.5/JABJOB_CAT.exe
+  playerPath: D:/Computer/cours_ENJMIN/cours/realisations/Unity/JABJOB/Builds/C.A.T_V1.9/JABJOB_CAT.exe
