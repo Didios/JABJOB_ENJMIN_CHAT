@@ -22,7 +22,7 @@ public class LevelConfig
 
     [Header("Level")]
     [SerializeField] private Transform levelObject;
-    private Transform tempLevel;
+    public Transform tempLevel;
     private Vector3 posLevel;
     [SerializeField] private Vector3 saveMove;
 

@@ -35,6 +35,9 @@ public class MenuManager : MonoBehaviour
     [Header("UI HowToPlay")]
     public List<GameObject> panelList;
 
+    [Header("UI Credits")]
+    public Credits credits;
+
     [Header("Canvas sub-infos")]
     public Button playButton;
 
@@ -45,6 +48,7 @@ public class MenuManager : MonoBehaviour
     private bool inTransition = false;
     private bool goGame = true;
     private bool inGame = false;
+    private bool inCredits = false;
     private int lvl = 0;
 
     // Start is called before the first frame update
@@ -92,7 +96,7 @@ public class MenuManager : MonoBehaviour
 
         if (inGame)
         {
-            if (ownerInfos.gameOver)//(ownerHand.finish) // lose case
+            if (ownerInfos.gameOver || player.position.y < 0 || Input.GetKeyDown(KeyCode.R))//(ownerHand.finish) // lose case
             {
                 levelText.text = "You Lose";
                 NextLevel(false); //retour ecran principal
@@ -117,6 +121,15 @@ public class MenuManager : MonoBehaviour
             }
         }
 
+        if (inCredits)
+        {
+            if (!credits.inMove)
+            {
+                inCredits = false;
+                CanvasChange(0);
+            }
+        }
+
         // CheatCode
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.N)) NextLevel(true);
@@ -134,6 +147,11 @@ public class MenuManager : MonoBehaviour
 
         messageGame.text = "";
 
+        var _audio = levels[lvl].tempLevel.GetComponent<AudioSource>();
+        if (_audio != null)
+        {
+            _audio.Play();
+        }
         /*
         levels[lvl].Reset();
         owner = levels[lvl].controllerOwner;
@@ -143,7 +161,7 @@ public class MenuManager : MonoBehaviour
         //player
         playerRigidbody.useGravity = true;
         playerController.activate = true;
-        playerController.ResetShoot();
+        playerController.ResetController();
         playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner
@@ -211,18 +229,38 @@ public class MenuManager : MonoBehaviour
         {
             levelText.text = "You Finish C.A.T\nThanks for Playing !";
             lvl = 0;
+            DisplayCredits();
             //Menu();
         }
         else
         {
             levelText.text = "Go to the Next Level !";
+            ActiveTransition(false);
             //if (win) Game();
             //else Menu();
         }
-        ActiveTransition(false);
+
         levels[lvl].Reset();
         owner = levels[lvl].controllerOwner;
         ownerInfos = owner.infos;
+    }
+
+    public void DisplayCredits()
+    {
+        // stop player
+        playerRigidbody.useGravity = false;
+        playerController.activate = false;
+        playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        // stop owner
+        owner.isActive = false;
+        ownerHand.isActive = false;
+
+        CanvasChange(3);
+
+        diorama.SetBase();
+        diorama.ActiveCam();
+        inCredits = true;
+        credits.StartCredits();
     }
 
     public void Quit()

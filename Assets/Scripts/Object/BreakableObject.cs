@@ -7,7 +7,7 @@ public class BreakableObject : MonoBehaviour
 {
     [Header("Object")]
     private Rigidbody rigidBody;
-    private Collider collider_;
+    private Collider[] colliders_;
     [Tooltip("Breaked version of the object")] public Transform breakedObject;
     [Tooltip("Break by script")] public bool breakObject = false;
     [Tooltip("weight on bar")] public int weight = 1;
@@ -30,6 +30,7 @@ public class BreakableObject : MonoBehaviour
     public SatisfactionBar bar;
 
     [Header("Other infos")]
+    [SerializeField] private bool useParentScale = false;
     [SerializeField] private bool hasBreak = false;
     [SerializeField] private bool hasOutline = true;
     [SerializeField] private bool hasNoise = false;
@@ -44,7 +45,7 @@ public class BreakableObject : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        collider_ = GetComponent<Collider>();
+        colliders_ = GetComponents<Collider>();
 
         if (hasOutline) // check outline
         {
@@ -98,12 +99,18 @@ public class BreakableObject : MonoBehaviour
             {
                 transform.rotation = new Quaternion();
                 rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-                collider_.enabled = false;
+                foreach(Collider c in colliders_)
+                {
+                    c.enabled = false;
+                }
             }
             else
             {
                 rigidBody.constraints = RigidbodyConstraints.None;
-                collider_.enabled = true;
+                foreach (Collider c in colliders_)
+                {
+                    c.enabled = true;
+                }
             }
         }
     }
@@ -125,11 +132,20 @@ public class BreakableObject : MonoBehaviour
                 // in case object cannot be destroyed
                 try
                 {
-                    // creation of the break object at the exact same position
-                    var obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
+                    Transform obj = null;
+                    if (useParentScale)
+                    {
+                        obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation, transform.parent);
+                    }
+                    else
+                    {
+                        // creation of the break object at the exact same position
+                        obj = GameObject.Instantiate<Transform>(breakedObject, transform.position, transform.rotation);
+                        // give the same parent
+                        obj.parent = transform.parent;
+                    }
 
-                    // give the same parent
-                    obj.parent = transform.parent;
+
                     //obj.localScale = transform.localScale; // scaling (be aware) ne marche pas car les fragments sont en scale 1 alors que les obj blender sont en scale 100
 
                     // set velocity to make illusion
@@ -184,13 +200,20 @@ public class BreakableObject : MonoBehaviour
     {
         transform.rotation = new Quaternion();
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-        collider_.enabled = false;
+        foreach (Collider c in colliders_)
+        {
+            c.enabled = false;
+        }
     }
 
     public void UnFreeze()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
-        collider_.enabled = true;
+
+        foreach (Collider c in colliders_)
+        {
+            c.enabled = false;
+        }
     }
 
     public void Touch()
