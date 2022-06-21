@@ -134,9 +134,11 @@ public class MenuManager : MonoBehaviour
 
         messageGame.text = "";
 
+        /*
         levels[lvl].Reset();
         owner = levels[lvl].controllerOwner;
         ownerInfos = owner.infos;
+        */
 
         //player
         playerRigidbody.useGravity = true;
@@ -218,6 +220,9 @@ public class MenuManager : MonoBehaviour
             //else Menu();
         }
         ActiveTransition(false);
+        levels[lvl].Reset();
+        owner = levels[lvl].controllerOwner;
+        ownerInfos = owner.infos;
     }
 
     public void Quit()
