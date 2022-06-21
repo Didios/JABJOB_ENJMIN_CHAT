@@ -5,7 +5,6 @@ using UnityEngine;
 public class OwnerStunnedDetection : MonoBehaviour
 {
     private MachineStateInfo ownerInfos;
-
     public string tagToStunned = "PukeBall";
 
     public void Start()

@@ -11,6 +11,9 @@ public class MachineStateInfo
     [Header("State Machine")]
     public float updatePeriod;
 
+    [Header("Audio")]
+    public List<AudioClip> _hurtSounds = new List<AudioClip>();
+
     [Header("Controller")]
     public AgentController agent;
     public float distanceMinToTarget;

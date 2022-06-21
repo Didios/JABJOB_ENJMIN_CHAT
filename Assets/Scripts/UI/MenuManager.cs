@@ -147,6 +147,11 @@ public class MenuManager : MonoBehaviour
 
         messageGame.text = "";
 
+        var _audio = levels[lvl].tempLevel.GetComponent<AudioSource>();
+        if (_audio != null)
+        {
+            _audio.Play();
+        }
         /*
         levels[lvl].Reset();
         owner = levels[lvl].controllerOwner;
@@ -156,7 +161,7 @@ public class MenuManager : MonoBehaviour
         //player
         playerRigidbody.useGravity = true;
         playerController.activate = true;
-        playerController.ResetShoot();
+        playerController.ResetController();
         playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner

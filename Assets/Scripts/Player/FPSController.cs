@@ -246,8 +246,13 @@ public class FPSController : MonoBehaviour
         }
     }
 
-    public void ResetShoot()
+    public void ResetController()
     {
+        if (holdSomething)
+        {
+            Destroy(holdObj.gameObject);
+            holdSomething = false;
+        }
         shootUI.ResetBar(maxProj, maxProj);
     }
 

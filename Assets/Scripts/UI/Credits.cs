@@ -6,8 +6,8 @@ public class Credits : MonoBehaviour
 {
     public Vector3 posStartLocal;
     public Vector3 posEndLocal;
-    private Vector3 posStart { get { return transform.position + posStartLocal; } set { } }
-    private Vector3 posEnd { get { return transform.position + posEndLocal; } set { } }
+    private Vector3 posStart;
+    private Vector3 posEnd;
     private Vector3 dir;
 
     public float speed;
@@ -17,6 +17,9 @@ public class Credits : MonoBehaviour
 
     private void Start()
     {
+        posStart = transform.position + posStartLocal;
+        posEnd = transform.position + posEndLocal;
+
         dir = (posEnd - posStart).normalized;
     }
 
@@ -47,12 +50,18 @@ public class Credits : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(posStart, 10f);
+        var _start = transform.position + posStartLocal;
+        var _end = transform.position + posEndLocal;
 
-        Gizmos.DrawLine(posStart, posEnd);
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(_start, 10);
+
+        Gizmos.DrawLine(_start, _end);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(_end + (_start - _end).normalized * distMin, 10);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(posEnd, 10f);
+        Gizmos.DrawSphere(_end, 10);
     }
 }

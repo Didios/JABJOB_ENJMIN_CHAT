@@ -7,7 +7,7 @@ public class BreakableObject : MonoBehaviour
 {
     [Header("Object")]
     private Rigidbody rigidBody;
-    private Collider collider_;
+    private Collider[] colliders_;
     [Tooltip("Breaked version of the object")] public Transform breakedObject;
     [Tooltip("Break by script")] public bool breakObject = false;
     [Tooltip("weight on bar")] public int weight = 1;
@@ -45,7 +45,7 @@ public class BreakableObject : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        collider_ = GetComponent<Collider>();
+        colliders_ = GetComponents<Collider>();
 
         if (hasOutline) // check outline
         {
@@ -99,12 +99,18 @@ public class BreakableObject : MonoBehaviour
             {
                 transform.rotation = new Quaternion();
                 rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-                collider_.enabled = false;
+                foreach(Collider c in colliders_)
+                {
+                    c.enabled = false;
+                }
             }
             else
             {
                 rigidBody.constraints = RigidbodyConstraints.None;
-                collider_.enabled = true;
+                foreach (Collider c in colliders_)
+                {
+                    c.enabled = true;
+                }
             }
         }
     }
@@ -194,13 +200,20 @@ public class BreakableObject : MonoBehaviour
     {
         transform.rotation = new Quaternion();
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-        collider_.enabled = false;
+        foreach (Collider c in colliders_)
+        {
+            c.enabled = false;
+        }
     }
 
     public void UnFreeze()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
-        collider_.enabled = true;
+
+        foreach (Collider c in colliders_)
+        {
+            c.enabled = false;
+        }
     }
 
     public void Touch()
