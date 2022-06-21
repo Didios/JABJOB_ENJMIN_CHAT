@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Object\RegenObject.cs" />
     <Compile Include="Assets\Scripts\Object\FlashNoiseObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateNormal.cs" />
+    <Compile Include="Assets\Scripts\UI\DioramaManager.cs" />
     <Compile Include="Assets\Scripts\Player\FPSController.cs" />
     <Compile Include="Assets\Scripts\Object\EphemeralObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Peaceful\SubStateWait.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\StateBase.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\AgentController.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateStunned.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\SenseLight.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\Sense\SenseSight.cs" />
     <Compile Include="Assets\Scripts\Ennemy\OwnerHandState.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Assets\Scripts\UI\ShooterBar.cs" />
     <Compile Include="Assets\Scripts\UI\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Normal\SubStatePeaceful.cs" />
+    <Compile Include="Assets\Scripts\UI\Credits.cs" />
     <Compile Include="Assets\Scripts\Object\HideableObject.cs" />
     <Compile Include="Assets\Scripts\Ennemy\StateMachine\State\Base\StateLight.cs" />
     <Compile Include="Assets\Scripts\Object\SwitchLight.cs" />
@@ -118,6 +121,7 @@
     <None Include="Assets\QuickOutline\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Textures\Font\TMP_SDF External Outline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -732,6 +736,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{ED7524C4-D0AC-D702-532C-D77030645E21}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
+      <Project>{D08F7EDB-51D0-17B5-00FD-80AC6597092F}</Project>
+      <Name>NavMeshComponentsExamplesEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamples.csproj">
+      <Project>{2131915C-9D56-CBED-E181-51DC5F731111}</Project>
+      <Name>NavMeshComponentsExamples</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{6B0AE691-89AE-A938-7B84-85E26611D0C4}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
