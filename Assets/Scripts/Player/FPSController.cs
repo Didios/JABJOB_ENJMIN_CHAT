@@ -3,220 +3,379 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-
 public class FPSController : MonoBehaviour
 {
-    [Header("Move")]
-    // speed
+    /* CONTROL TO SET
+     * 0    Axis MOUSE_Y    front / back view axis
+     * 1    Axis MOUSE_X    right / left view axis
+     * 2    Axis FRONT      forward / backward move axis
+     * 3    Axis SIDE       right / left move axis
+     * 4    Button RUN      run button
+     * 5    Button JUMP     jump button
+     * 6    Button FIRE     fire / throw button
+     * 7    Button GRAB     grab button
+     * 8    Button PUNCH     punch button
+     */
+
+    #region Parameters
+    [Header("Movement")]
+    /* PUBLIC */
     public AnimationCurve speedCurve;
-    [SerializeField]
-    private float time = 0;
-
-    // saut
-    public float jumpSpeed = 8.0f;
+    public MinMax speedCurveAcc = new MinMax(0.02f, 0.1f);
+    public float speedSide = 1; 
+    public float speedBack = 1;
+    public float jumpStrength = 8.0f;
     public float gravity = 20.0f;
-
-    [Header("Camera")]
-    // camera
-    public Camera playerCamera;
-    public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
-    public Vector2 fovMinMax = new Vector2(60, 90);
-    //public float lookYLimit = 45.0f;
-
-    // deplacement
+    /* PUBLIC SCRIPT INFO */
+    [HideInInspector] public Vector3 curSpeed = new Vector3();
+    [HideInInspector] public bool canMove = true;
+    [HideInInspector] public bool canJump = true;
+    public bool isSpeedAnalog = false;
+    /* PRIVATE */
+    private float speedTime = 0;
     private CharacterController characterController;
-    private Vector3 moveDirection = Vector3.zero;
-    private float rotationX = 0;
-    private float rotationY = 0;
+    private Vector3 moveDir = Vector3.zero;
+    private float rotX = 0;
+    private float rotY = 0;
     private Vector3 forceToAdd = Vector3.zero;
 
-    // fear something
-    [Header("Fear")]
-    public string tagFear = "Water";
-    public float forceUp = 5;
-    public float forceBack = 10;
+    [Header("Shift")]
+    public float speedReduction = 0.5f;
+    public Vector3 scaleReduction = new Vector3(1, 0.5f, 1);
+    private Vector3 scale;
+    private bool hasShift = false;
 
-    [Header("Projectile")]
-    // projectile
-    public float speedProj = 5;
-    public Transform crachat;
-    public int maxProj = 5;
-    public int countNbrProj = 0;
-    [HideInInspector]
-    public bool canMove = true;
+    [Header("Camera")]
+    public Camera playerCamera;
+    public float cameraLookSpeed = 2.0f;
+    public Vector2 cameraAngleLimit = new Vector2(360, 90);
+    public AnimationCurve fovCurve; // go from 60 to 90 is great
+    public bool canLockMouse = true;
 
-    // hold something
-    [HideInInspector]
-    public bool holdSomething = false;
-    [Header("Holding")]
-    private Transform holdObj;
-    private Transform holdObjParent;
-    public float distGrab;
-    public Vector3 posHoldObj;
+    // "FEAR" when touch, character jump of fear
+    [Header("Get Away From")]
+    public string tagFear = "Fear";
+    public Vector3 fearRelDir = new Vector3(-5, 10, 0);
 
-    // tir
+    [Header("Grab")]
+    /* PUBLIC */
+    public float grabDistMax;
+    public Vector3 grabRelPos;
+    public Vector2 throwRelRot = new Vector2(0, 1);
+    public float throwStrength = 5;
+    /* PUBLIC SCRIPT INFO */
+    [HideInInspector] public bool hasGrab = false;
+    /* PRIVATE */
+    private Quaternion grabRot;
+    private Transform grabTransform;
+    private Transform grabTransformParent;
+
     [Header("Fire")]
-    private float shootTimer = 0;
-    public float shootCooldown = 2;
-    public ShooterBar shootUI;
+    public Transform bullet;
+    public int bulletMax = 5;
+    public Vector3 fireRelPos;
+    public Vector2 fireRelRot = new Vector2(0, 1);
+    public float fireStrength = 5;
+    public float fireCd = 2;
+
+    public bool canFireAndGrab = false;
+    private float fireTimer = 0;
+    private int bulletCount = 0;
+
+    [Header("Punch")]
+    public float distMax;
+    public float strengthMax;
+    public Animator punchAnim;
+
+    public bool canPunchAndGrab = false;
+    private float punchTimer = 0;
+
+    [Header("Life")]
+    public int hpMax = 1;
+    [SerializeField] private int hp = 0;
+    [SerializeField] private bool isDead
+    {
+        get { return (hp == 0); }
+        set { }
+    }
 
     [Header("Other")]
-    public bool showDebug = false;
+    public bool canFireActivate = true;
+    public bool showDebug = true;
     public bool activate = true;
+    #endregion
 
     void Start()
     {
-        shootUI.ResetBar(maxProj, maxProj);
-
         characterController = GetComponent<CharacterController>();
-
-        // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        hp = hpMax;
+        scale = transform.localScale;
     }
 
     void Update()
     {
         if (activate)
         {
-            if (Cursor.visible)
+            if (!isDead)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-
-            // course ?
-            bool isRunning = Input.GetButton("Run");
-
-            // mouvement du joueur
-            float curSpeedX = 0;
-            float curSpeedY = 0;
-            if (canMove)
-            {
-                if (isRunning && time < 1)
+                if (Cursor.visible && canLockMouse)
                 {
-                    time += 0.01f;
-                }
-                else if (!isRunning && time > 0)
-                {
-                    time -= 0.02f;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                 }
 
-                if (time > 1) time = 1;
-                else if (time < 0) time = 0;
-
-                playerCamera.fieldOfView = fovMinMax.x + (fovMinMax.y - fovMinMax.x) * time;
-                curSpeedX = speedCurve.Evaluate(time) * Input.GetAxis("Vertical");
-                curSpeedY = speedCurve.Evaluate(time) * Input.GetAxis("Horizontal");
-            }
-
-            float movementDirectionY = moveDirection.y;
-            moveDirection = (transform.forward * curSpeedX) + (transform.right * curSpeedY);
-
-            // on gère le saut
-            if (Input.GetButton("Jump") && canMove && characterController.isGrounded) { moveDirection.y = jumpSpeed; }
-            else { moveDirection.y = movementDirectionY; }
-
-            // on gère le hold
-            if (Input.GetButtonDown("Fire2"))
-            {
-                if (!holdSomething) // prendre l'objet viser
+                if (Input.GetButton("ESCAPE"))
                 {
-                    RaycastHit hit;
-                    if (Physics.Raycast(transform.position, transform.forward, out hit, distGrab))
+                    activate = false;
+                    return;
+                }
+
+                // detect player input
+                bool isRunning = Input.GetButton("RUN");
+                bool isJumping = Input.GetButton("JUMP");
+                bool isShifting = Input.GetButton("SHIFT");
+
+                bool isFiring = Input.GetButton("FIRE");
+                bool isGrabbing = Input.GetButton("GRAB");
+                bool isThrowing = Input.GetButton("FIRE");
+                bool isPunching = Input.GetButton("PUNCH");
+
+                #region Movement XYZ
+                curSpeed = Vector3.zero;
+                if (canMove)
+                {
+                    var _frontMov = Input.GetAxis("FRONT");
+                    var _sideMov = Input.GetAxis("SIDE");
+                    if (isSpeedAnalog)
                     {
-                        BreakableObject obj = hit.transform.GetComponent<BreakableObject>();
-                        if (obj != null)
+                        if (_frontMov > 0)
                         {
-                            if (obj.holdeable)
+                            playerCamera.fieldOfView = fovCurve.Evaluate(_frontMov);
+                            curSpeed.x = speedCurve.Evaluate(_frontMov) * _frontMov;
+                        }
+                        else
+                        {
+                            playerCamera.fieldOfView = fovCurve.Evaluate(0);
+                            curSpeed.x = speedBack * _frontMov;
+                        }
+                        curSpeed.z = speedSide * _sideMov;
+                    }
+                    else
+                    {
+                        if (_frontMov > 0)
+                        {
+                            if (isRunning && speedTime < 1)
                             {
-                                holdObj = hit.transform;
-                                obj.hold = true;
-                                obj.Freeze();
+                                speedTime += speedCurveAcc.max;
+                            }
+                            else if (!isRunning && speedTime > 0)
+                            {
+                                speedTime += speedCurveAcc.min;
+                            }
+                            if (speedTime > 1) speedTime = 1;
+                            else if (speedTime < 0) speedTime = 0;
 
-                                holdObjParent = holdObj.parent;
-                                holdObj.position = transform.position +
-                                                    transform.forward * posHoldObj.x +
-                                                    transform.right * posHoldObj.y +
-                                                    transform.up * posHoldObj.z;
-                                holdObj.parent = transform;
+                            playerCamera.fieldOfView = fovCurve.Evaluate(speedTime);
+                            curSpeed.x = speedCurve.Evaluate(speedTime) * _frontMov;
+                        }
+                        else
+                        {
+                            speedTime += speedCurveAcc.min * 2;
+                            if (speedTime < 0) speedTime = 0;
 
-                                holdSomething = true;
-                                if (showDebug) Debug.Log("[FPSController]:\n Grab something");
+                            playerCamera.fieldOfView = fovCurve.Evaluate(speedTime);
+                            if (speedTime == 0)
+                            {
+                                curSpeed.x = speedBack * _frontMov;
+                            }
+                            else
+                            {
+                                curSpeed.x = speedCurve.Evaluate(speedTime) * _frontMov;
+                            }
+                        }
+                        curSpeed.z = speedSide * _sideMov;
+                    }
+                }
+
+                float movementDirY = moveDir.y;
+                moveDir = (transform.forward * curSpeed.x) + (transform.right * curSpeed.z);
+
+                if (isShifting)
+                {
+                    moveDir *= speedReduction;
+                    if (!hasShift)
+                    {
+                        transform.localScale = new Vector3(
+                            transform.localScale.x * scaleReduction.x,
+                            transform.localScale.y * scaleReduction.y,
+                            transform.localScale.z * scaleReduction.z);
+
+                        hasShift = true;
+                    }
+                }
+                else if (hasShift)
+                {
+                    transform.localScale = scale;
+                    hasShift = false;
+                }
+
+                if (isJumping && canJump && characterController.isGrounded) moveDir.y = jumpStrength;
+                else moveDir.y = movementDirY;
+
+                if (!characterController.isGrounded) moveDir.y -= gravity * Time.deltaTime;
+
+                moveDir += forceToAdd;
+                forceToAdd = Vector3.zero;
+
+                characterController.Move(moveDir * Time.deltaTime);
+                #endregion
+
+                #region Grab
+                if (isGrabbing)
+                {
+                    if (!hasGrab)
+                    {
+                        RaycastHit hit;
+                        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward,
+                                out hit, grabDistMax))
+                        {
+                            TransformInfos trans = hit.transform.GetComponent<TransformInfos>();
+                            if (trans != null)
+                            {
+                                if (trans.canBeGrab)
+                                {
+                                    grabTransform = hit.transform;
+                                    grabRot = grabTransform.rotation;
+                                    trans.GrabIt();
+
+                                    grabTransformParent = grabTransform.parent;
+                                    grabTransform.parent = transform;
+
+                                    grabTransform.position = transform.position
+                                        + transform.forward * grabRelPos.x
+                                        + transform.up * grabRelPos.y
+                                        + transform.right * grabRelPos.z;
+
+                                    hasGrab = true;
+                                    if (showDebug) Debug.Log("[FPSController]:\n Grab");
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            if (holdSomething) // garder l'objet devant soi - éviter qu'il rentre dans des objets
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, distGrab))
+                // keep grab object visible in front
+                if (hasGrab)
                 {
-                    if (hit.collider == null)
+                    grabTransform.localRotation = grabRot;
+
+                    var _maxDist = Vector3.Distance(Vector3.zero, grabRelPos);
+
+                    RaycastHit hit;
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, _maxDist))
                     {
-                        holdObj.localPosition = posHoldObj;
+                        if (hit.transform != grabTransform)
+                            grabTransform.position = hit.point;
                     }
                     else
+                        grabTransform.position = GetRelPos(grabRelPos, true);
+
+                    if (!canPunchAndGrab)
+                        isPunching = false;
+                }
+
+                if (isThrowing && hasGrab)
+                {
+                    grabTransform.parent = grabTransformParent;
+
+                    grabTransform.GetComponent<TransformInfos>().Unlock();
+                    Throw(grabTransform, false);
+                    hasGrab = false;
+
+                    if (!canFireAndGrab)
                     {
-                        holdObj.position = hit.point;
+                        isFiring = false;
+                        fireTimer = 0.3f; // prevent from throw and fire by accident
                     }
                 }
-            }
+                #endregion
 
-            // on gère le tir
-            if (Input.GetButtonDown("Fire1") && (shootTimer <= 0 || holdSomething))
-            {
-                if (holdSomething)
+                #region Fire
+                if (fireTimer > 0) { fireTimer -= Time.deltaTime; }
+
+                if (isFiring && fireTimer <= 0
+                    && bulletCount < bulletMax)
                 {
-                    holdObj.parent = holdObjParent;
-                    holdObj.GetComponent<BreakableObject>().hold = false;
-                    holdObj.GetComponent<BreakableObject>().UnFreeze();
+                    Throw(bullet, true);
+                    bulletCount += 1;
 
-                    Throw(holdObj, false);
-                    holdSomething = false;
+                    fireTimer = fireCd;
                 }
-                else if (countNbrProj < maxProj)
+                #endregion
+
+                #region Punch
+                if (punchTimer > 0) { punchTimer -= Time.deltaTime; }
+
+                if (isPunching && punchTimer <= 0)
                 {
-                    Throw(crachat, true);
-                    countNbrProj += 1;
+                    // punch In-Game
+                    RaycastHit hit;
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, distMax))
+                    {
+                        var _force = -(strengthMax / distMax) * hit.distance + strengthMax;
 
-                    shootUI.UpdateBar(-1, shootCooldown);
-                    shootTimer = shootCooldown;
+                        var _hitTurn = hit.transform.GetComponent<OrientableObject>();
+                        var _breakable = hit.transform.GetComponent<ODestructive>();
+
+                        if (_hitTurn != null)
+                            _hitTurn.AddTurn(playerCamera.transform.forward * _force);
+
+                        if (_breakable != null)
+                            _breakable.Contact();
+
+                        if (hit.rigidbody != null)
+                            hit.rigidbody.AddForce(playerCamera.transform.forward * _force, ForceMode.Impulse);
+
+                        if (punchAnim != null)
+                            punchAnim.SetTrigger("punch");
+
+                        punchTimer = 0.1f;
+
+                        if (showDebug) Debug.Log("[FPSController]:\n Punch: " + _force);
+                    }
                 }
-            }
-            if (shootTimer > 0) { shootTimer -= Time.deltaTime; }
+                #endregion
 
-            moveDirection += forceToAdd;
-            forceToAdd = Vector3.zero;
+                #region Camera Movement and Rotation
+                if (canMove)
+                {
+                    rotY += -Input.GetAxis("MOUSE_Y") * cameraLookSpeed;
+                    if (cameraAngleLimit.y < 360)
+                        rotY = Mathf.Clamp(rotY, -cameraAngleLimit.y, cameraAngleLimit.y);
+                    rotX += Input.GetAxis("MOUSE_X") * cameraLookSpeed;
+                    if (cameraAngleLimit.x < 360)
+                        rotX = Mathf.Clamp(rotX, -cameraAngleLimit.x, cameraAngleLimit.x);
 
-            // gravité
-            if (!characterController.isGrounded)
-            {
-                moveDirection.y -= gravity * Time.deltaTime;
-            }
-
-            // Move the controller
-            characterController.Move(moveDirection * Time.deltaTime);
-
-            // Player and Camera rotation
-            if (canMove)
-            {
-                rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-                rotationY += Input.GetAxis("Mouse X") * lookSpeed;
-                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-                //rotationY = Mathf.Clamp(rotationY, -lookYLimit, lookYLimit);
-                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
-                //transform.rotation *= Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeed, Input.GetAxis("Mouse X") * lookSpeed, 0);
-                transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
+                    playerCamera.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
+                    transform.rotation = Quaternion.Euler(0, rotX, 0);
+                }
+                #endregion
             }
         }
-        else if (!Cursor.visible)
+        else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            if (!Cursor.visible && canLockMouse)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
+            if (canFireActivate && Input.GetButton("FIRE"))
+            {
+                activate = true;
+                fireTimer = 0.5f;
+                return;
+            }
         }
     }
 
@@ -225,61 +384,140 @@ public class FPSController : MonoBehaviour
         forceToAdd += force;
     }
 
-    private void Throw(Transform obj, bool new_)
+    private void Throw(Transform obj, bool isBullet)
     {
-        if (new_)
+        if (isBullet)
         {
-            //Création du projectile au bon endroit
-            Transform proj = GameObject.Instantiate<Transform>(obj,
-                transform.position + transform.forward * 1.1f, transform.rotation);
+            Transform proj = GameObject.Instantiate<Transform>(bullet, GetRelPos(fireRelPos, true), new Quaternion());
 
-            //Ajout d une impulsion de départ
-            proj.GetComponent<Rigidbody>().AddForce(transform.forward * speedProj, ForceMode.Impulse);
+            proj.GetComponent<Rigidbody>().AddForce(GetRelRot(fireRelRot, true) * fireStrength, ForceMode.Impulse);
+
+            if (showDebug) Debug.Log("[FPSController]:\n Fire");
         }
         else
         {
-            // repositionnement
-            //obj.position = transform.position + transform.forward * 1.1f;
+            obj.GetComponent<Rigidbody>().AddForce(GetRelRot(throwRelRot, true) * throwStrength, ForceMode.Impulse);
 
-            //Ajout d une impulsion de départ
-            obj.GetComponent<Rigidbody>().AddForce(transform.forward * speedProj, ForceMode.Impulse);
+            if (showDebug) Debug.Log("[FPSController]:\n Throw");
         }
     }
 
     public void ResetController()
     {
-        if (holdSomething)
+        if (hasGrab)
         {
-            Destroy(holdObj.gameObject);
-            holdSomething = false;
+            Destroy(grabTransform.gameObject);
+            hasGrab = false;
         }
-        shootUI.ResetBar(maxProj, maxProj);
+
+        hp = hpMax;
+
+        bulletCount = 0;
+
+        moveDir = Vector3.zero;
+        forceToAdd = Vector3.zero;
+
+        if (showDebug) Debug.Log("[FPSController]:\n Reset");
+    }
+
+    public void Damage(int _dmg)
+    {
+        if (_dmg > 0)
+        {
+            hp -= _dmg;
+
+            if (hp < 0)
+                hp = 0;
+
+            if (showDebug) Debug.Log("[FPSController]:\n Damage");
+        }
+    }
+    public void Heal(int _hl)
+    {
+        if (_hl > 0)
+        {
+            hp += _hl;
+
+            if (hp > hpMax)
+                hp = hpMax;
+
+            if (showDebug) Debug.Log("[FPSController]:\n Heal");
+        }
+    }
+
+    private Vector3 GetRelPos(Vector3 _relativePosition, bool toCameraLook)
+    {
+        Transform _base = transform;
+        if (toCameraLook)
+            _base = playerCamera.transform;
+
+        Vector3 _worldPos = _base.position
+            + _base.forward * _relativePosition.x
+            + _base.up * _relativePosition.y
+            + _base.right * _relativePosition.z;
+
+        return _worldPos;
+    }
+    private Vector3 GetRelRot(Vector2 _angle, bool toCameraLook)
+    {
+        Transform _base = transform;
+        if (toCameraLook)
+            _base = playerCamera.transform;
+
+        Vector3 _worldRot = _base.forward + Mathf.Tan(_angle.x) * _base.right
+                + _base.forward + Mathf.Tan(_angle.y) * _base.up;
+
+        return _worldRot.normalized;
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == tagFear)
         {
-            if (showDebug) Debug.Log("OUCH !");
-            Vector3 forceFear = -transform.forward * forceBack;
-            forceFear.y = forceUp;
+            AddForce(fearRelDir);
 
-            AddForce(forceFear);
+            if (showDebug) Debug.Log("[FPSController]:\n Fear");
         }
     }
 
     private void OnDrawGizmos()
     {
-        // debug position de lancement
-        Gizmos.DrawSphere(transform.position + transform.forward * 1.1f, 0.2f);
-        // debug position tenir objet
-        Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(transform.position +
-            transform.forward * posHoldObj.x +
-            transform.right * posHoldObj.y +
-            transform.up * posHoldObj.z, 0.2f);
+        // FIRE
+        Gizmos.color = Color.red;
+        var _fire = GetRelPos(fireRelPos, true);
+        Gizmos.DrawSphere(_fire, 0.2f);
+        Gizmos.DrawLine(_fire, _fire + GetRelRot(fireRelRot, true) * fireStrength);
 
-        // debug direction du personnage avec distance hold
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * distGrab);
+        // GRAB
+        Gizmos.color = Color.blue;
+        var _grab = GetRelPos(grabRelPos, true);
+        Gizmos.DrawSphere(_grab, 0.2f);
+        Gizmos.DrawLine(_grab, _grab + GetRelRot(throwRelRot, true) * throwStrength);
+        
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(playerCamera.transform.position,
+            playerCamera.transform.position + playerCamera.transform.forward * grabDistMax);
+
+        // PUNCH
+        Gizmos.color = Color.gray;
+        Gizmos.DrawLine(playerCamera.transform.position, playerCamera.transform.position + playerCamera.transform.forward * distMax);
+
+        // FEAR
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(transform.position, GetRelPos(fearRelDir, false));
+    }
+}
+
+
+[System.Serializable]
+public class MinMax
+{
+    public float min;
+    public float max;
+
+    public MinMax(float _min, float _max)
+    {
+        min = _min;
+        max = _max;
     }
 }

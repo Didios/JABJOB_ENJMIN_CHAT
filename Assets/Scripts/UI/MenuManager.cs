@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -98,7 +98,7 @@ public class MenuManager : MonoBehaviour
         {
             if (ownerInfos.gameOver || player.position.y < 0 || Input.GetKeyDown(KeyCode.R))//(ownerHand.finish) // lose case
             {
-                levelText.text = "You Lose";
+                levelText.text = "You Lose ! \u2639 \n  Restart and make it better !";
                 NextLevel(false); //retour ecran principal
                 /*
                 if (ownerHand.lose)
@@ -116,7 +116,7 @@ public class MenuManager : MonoBehaviour
             }
             else if (scorebar.finish) // win case
             {
-                levelText.text = "You Win";
+                levelText.text = "You Win ! \u2638 \n Go to the Next Level !";
                 NextLevel(true);
             }
         }
@@ -132,7 +132,8 @@ public class MenuManager : MonoBehaviour
 
         // CheatCode
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.N)) NextLevel(true);
+        if (Input.GetKeyDown(KeyCode.N)) scorebar.finish = true;
+        if (Input.GetKeyDown(KeyCode.C)) { lvl = levels.Count - 1; NextLevel(true); }
 #endif
     }
 
@@ -162,7 +163,7 @@ public class MenuManager : MonoBehaviour
         playerRigidbody.useGravity = true;
         playerController.activate = true;
         playerController.ResetController();
-        playerRigidbody.constraints = RigidbodyConstraints.None;
+        //playerRigidbody.constraints = RigidbodyConstraints.None;
 
         //owner
         //ownerPath.activate = true;
@@ -195,7 +196,7 @@ public class MenuManager : MonoBehaviour
         // stop player
         playerRigidbody.useGravity = false;
         playerController.activate = false;
-        playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        //playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
         // reset du niveau/set du prochain
         // stop and set/reset owner
@@ -220,6 +221,8 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel(bool win)
     {
+        inGame = false;
+
         levels[lvl].Clean();
         diorama.ActiveCam();
         //playButton.interactable = false;
@@ -234,7 +237,6 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            levelText.text = "Go to the Next Level !";
             ActiveTransition(false);
             //if (win) Game();
             //else Menu();

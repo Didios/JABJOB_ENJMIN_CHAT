@@ -10,7 +10,7 @@ public class RegenObject : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            collision.transform.GetComponent<FPSController>().countNbrProj -= nbrRegen;
+            collision.transform.GetComponent<FPSController>().bulletMax += nbrRegen; //countNbrProj -= nbrRegen;
             Destroy(gameObject);
         }
     }

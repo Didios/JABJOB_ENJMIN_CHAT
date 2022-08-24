@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: JABJOB_GROUPE_F
   productName: JABJOB_CAT
-  defaultCursor: {fileID: 2800000, guid: 81639500fc0d7d34aaf5fc4881d83e23, type: 3}
+  defaultCursor: {fileID: 2800000, guid: cbadb543e2d2be44988b41fd4df39960, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: a130d1a35f7f5914cb1043cbd0618b61, type: 3}
-    duration: 2
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 17a8056445bcf0046a5d988e32311550,
+  - logo: {fileID: 21300000, guid: db581586f49fb0f49b277dbee571c605, type: 3}
+    duration: 5
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: db581586f49fb0f49b277dbee571c605,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -137,7 +137,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.11
+  bundleVersion: 1.15
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.CATco.JABJOBCAT
+    Standalone: com.JABJOBGROUPEF.JABJOBCAT
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 17a8056445bcf0046a5d988e32311550, type: 3}
+      m_Icon: {fileID: 2800000, guid: db581586f49fb0f49b277dbee571c605, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

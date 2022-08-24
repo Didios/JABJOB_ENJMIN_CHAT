@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Credits : MonoBehaviour
 {
+    public Transform creditsToMove;
+
     public Vector3 posStartLocal;
     public Vector3 posEndLocal;
-    private Vector3 posStart;
-    private Vector3 posEnd;
     private Vector3 dir;
 
     public float speed;
@@ -17,19 +17,16 @@ public class Credits : MonoBehaviour
 
     private void Start()
     {
-        posStart = transform.position + posStartLocal;
-        posEnd = transform.position + posEndLocal;
-
-        dir = (posEnd - posStart).normalized;
+        dir = (posEndLocal - posStartLocal).normalized;
     }
 
     private void Update()
     {
         if (inMove)
         {
-            transform.Translate(dir * speed * Time.deltaTime);
+            creditsToMove.Translate(dir * speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, posEnd) < distMin)
+            if (Vector3.Distance(creditsToMove.position, transform.position + posEndLocal) < distMin)
             {
                 inMove = false;
             }
@@ -38,13 +35,13 @@ public class Credits : MonoBehaviour
 
     public void StartCredits()
     {
-        transform.position = posStart;
+        creditsToMove.localPosition = posStartLocal;
         inMove = true;
     }
 
     public void EndCredits()
     {
-        transform.position = posEnd;
+        creditsToMove.localPosition = posEndLocal;
         inMove = false;
     }
 

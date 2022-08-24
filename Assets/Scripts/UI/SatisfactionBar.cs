@@ -25,7 +25,7 @@ public class SatisfactionBar : MonoBehaviour
     public bool finish
     {
         get { return count >= maxCount; }
-        private set { }
+        set { if (value) { count = maxCount; } else count = 0; }
     }
 
     private void Start()
@@ -86,15 +86,4 @@ public class SatisfactionBar : MonoBehaviour
 
         return _color;
     }
-}
-
-public enum Axis
-{
-    X,
-    Y,
-    Z,
-    XY,
-    XZ,
-    YZ,
-    XYZ
 }
